@@ -1,0 +1,322 @@
+{
+  "lastUpdate": "2025-08-05T19:02:54.404Z",
+  "components": [
+    {
+      "name": "DocumentSelectionToolbar",
+      "path": "DocumentSelectionToolbar",
+      "type": "directory",
+      "git": {
+        "firstCommit": {
+          "hash": "05b345f15b21c771216eba436237f16e8f32e805",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-05 18:18:57 +0000",
+          "message": "feat: Implement NPM component library structure"
+        },
+        "lastCommit": {
+          "hash": "05b345f15b21c771216eba436237f16e8f32e805",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-05 18:18:57 +0000",
+          "message": "feat: Implement NPM component library structure"
+        }
+      },
+      "stats": {
+        "size": 128,
+        "created": "2025-08-05T18:39:04.239Z",
+        "modified": "2025-08-05T18:39:04.239Z"
+      },
+      "lastModified": "2025-08-05T18:39:04.239Z",
+      "exports": []
+    },
+    {
+      "name": "DocumentSelectionToolbar",
+      "path": "DocumentSelectionToolbar/DocumentSelectionToolbar.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "05b345f15b21c771216eba436237f16e8f32e805",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-05 18:18:57 +0000",
+          "message": "feat: Implement NPM component library structure"
+        },
+        "lastCommit": {
+          "hash": "05b345f15b21c771216eba436237f16e8f32e805",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-05 18:18:57 +0000",
+          "message": "feat: Implement NPM component library structure"
+        }
+      },
+      "stats": {
+        "size": 1776,
+        "created": "2025-08-05T18:39:04.239Z",
+        "modified": "2025-08-05T18:39:04.239Z"
+      },
+      "lastModified": "2025-08-05T18:39:04.239Z",
+      "exports": []
+    },
+    {
+      "name": "MetricItem",
+      "path": "MetricItem",
+      "type": "directory",
+      "git": {
+        "firstCommit": {
+          "hash": "4b9df9f969e08fdd66db5be74261574a391b8d5f",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-05 18:25:51 +0000",
+          "message": "feat: Configure library build system"
+        },
+        "lastCommit": {
+          "hash": "4b9df9f969e08fdd66db5be74261574a391b8d5f",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-05 18:25:51 +0000",
+          "message": "feat: Configure library build system"
+        }
+      },
+      "stats": {
+        "size": 128,
+        "created": "2025-08-05T18:39:04.239Z",
+        "modified": "2025-08-05T18:39:04.239Z"
+      },
+      "lastModified": "2025-08-05T18:39:04.239Z",
+      "exports": []
+    },
+    {
+      "name": "MetricItem",
+      "path": "MetricItem/MetricItem.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "4b9df9f969e08fdd66db5be74261574a391b8d5f",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-05 18:25:51 +0000",
+          "message": "feat: Configure library build system"
+        },
+        "lastCommit": {
+          "hash": "4b9df9f969e08fdd66db5be74261574a391b8d5f",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-05 18:25:51 +0000",
+          "message": "feat: Configure library build system"
+        }
+      },
+      "stats": {
+        "size": 2087,
+        "created": "2025-08-05T18:39:04.239Z",
+        "modified": "2025-08-05T18:39:04.239Z"
+      },
+      "lastModified": "2025-08-05T18:39:04.239Z",
+      "exports": []
+    },
+    {
+      "name": "PackageSelectionToolbar",
+      "path": "PackageSelectionToolbar",
+      "type": "directory",
+      "git": {
+        "firstCommit": {
+          "hash": "05b345f15b21c771216eba436237f16e8f32e805",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-05 18:18:57 +0000",
+          "message": "feat: Implement NPM component library structure"
+        },
+        "lastCommit": {
+          "hash": "05b345f15b21c771216eba436237f16e8f32e805",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-05 18:18:57 +0000",
+          "message": "feat: Implement NPM component library structure"
+        }
+      },
+      "stats": {
+        "size": 128,
+        "created": "2025-08-05T18:39:04.239Z",
+        "modified": "2025-08-05T18:39:04.239Z"
+      },
+      "lastModified": "2025-08-05T18:39:04.239Z",
+      "exports": []
+    },
+    {
+      "name": "PackageSelectionToolbar",
+      "path": "PackageSelectionToolbar/PackageSelectionToolbar.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "05b345f15b21c771216eba436237f16e8f32e805",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-05 18:18:57 +0000",
+          "message": "feat: Implement NPM component library structure"
+        },
+        "lastCommit": {
+          "hash": "05b345f15b21c771216eba436237f16e8f32e805",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-05 18:18:57 +0000",
+          "message": "feat: Implement NPM component library structure"
+        }
+      },
+      "stats": {
+        "size": 1233,
+        "created": "2025-08-05T18:39:04.239Z",
+        "modified": "2025-08-05T18:39:04.239Z"
+      },
+      "lastModified": "2025-08-05T18:39:04.239Z",
+      "exports": []
+    },
+    {
+      "name": "SelectionToolbar",
+      "path": "SelectionToolbar",
+      "type": "directory",
+      "git": {
+        "firstCommit": {
+          "hash": "4b9df9f969e08fdd66db5be74261574a391b8d5f",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-05 18:25:51 +0000",
+          "message": "feat: Configure library build system"
+        },
+        "lastCommit": {
+          "hash": "4b9df9f969e08fdd66db5be74261574a391b8d5f",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-05 18:25:51 +0000",
+          "message": "feat: Configure library build system"
+        }
+      },
+      "stats": {
+        "size": 128,
+        "created": "2025-08-05T18:39:04.239Z",
+        "modified": "2025-08-05T18:39:04.240Z"
+      },
+      "lastModified": "2025-08-05T18:39:04.240Z",
+      "exports": []
+    },
+    {
+      "name": "SelectionToolbar",
+      "path": "SelectionToolbar/SelectionToolbar.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "4b9df9f969e08fdd66db5be74261574a391b8d5f",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-05 18:25:51 +0000",
+          "message": "feat: Configure library build system"
+        },
+        "lastCommit": {
+          "hash": "4b9df9f969e08fdd66db5be74261574a391b8d5f",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-05 18:25:51 +0000",
+          "message": "feat: Configure library build system"
+        }
+      },
+      "stats": {
+        "size": 4168,
+        "created": "2025-08-05T18:39:04.239Z",
+        "modified": "2025-08-05T18:39:04.240Z"
+      },
+      "lastModified": "2025-08-05T18:39:04.240Z",
+      "exports": []
+    },
+    {
+      "name": "ui",
+      "path": "ui",
+      "type": "directory",
+      "git": {
+        "firstCommit": {
+          "hash": "4b9df9f969e08fdd66db5be74261574a391b8d5f",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-05 18:25:51 +0000",
+          "message": "feat: Configure library build system"
+        },
+        "lastCommit": {
+          "hash": "4b9df9f969e08fdd66db5be74261574a391b8d5f",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-05 18:25:51 +0000",
+          "message": "feat: Configure library build system"
+        }
+      },
+      "stats": {
+        "size": 160,
+        "created": "2025-08-05T18:39:04.240Z",
+        "modified": "2025-08-05T18:39:04.240Z"
+      },
+      "lastModified": "2025-08-05T18:39:04.240Z",
+      "exports": []
+    },
+    {
+      "name": "button",
+      "path": "ui/button.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "4b9df9f969e08fdd66db5be74261574a391b8d5f",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-05 18:25:51 +0000",
+          "message": "feat: Configure library build system"
+        },
+        "lastCommit": {
+          "hash": "4b9df9f969e08fdd66db5be74261574a391b8d5f",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-05 18:25:51 +0000",
+          "message": "feat: Configure library build system"
+        }
+      },
+      "stats": {
+        "size": 1796,
+        "created": "2025-08-05T18:39:04.240Z",
+        "modified": "2025-08-05T18:39:04.240Z"
+      },
+      "lastModified": "2025-08-05T18:39:04.240Z",
+      "exports": []
+    },
+    {
+      "name": "dropdown-menu",
+      "path": "ui/dropdown-menu.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "4b9df9f969e08fdd66db5be74261574a391b8d5f",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-05 18:25:51 +0000",
+          "message": "feat: Configure library build system"
+        },
+        "lastCommit": {
+          "hash": "4b9df9f969e08fdd66db5be74261574a391b8d5f",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-05 18:25:51 +0000",
+          "message": "feat: Configure library build system"
+        }
+      },
+      "stats": {
+        "size": 3924,
+        "created": "2025-08-05T18:39:04.240Z",
+        "modified": "2025-08-05T18:39:04.240Z"
+      },
+      "lastModified": "2025-08-05T18:39:04.240Z",
+      "exports": []
+    },
+    {
+      "name": "tooltip",
+      "path": "ui/tooltip.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "4b9df9f969e08fdd66db5be74261574a391b8d5f",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-05 18:25:51 +0000",
+          "message": "feat: Configure library build system"
+        },
+        "lastCommit": {
+          "hash": "4b9df9f969e08fdd66db5be74261574a391b8d5f",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-05 18:25:51 +0000",
+          "message": "feat: Configure library build system"
+        }
+      },
+      "stats": {
+        "size": 1617,
+        "created": "2025-08-05T18:39:04.240Z",
+        "modified": "2025-08-05T18:39:04.240Z"
+      },
+      "lastModified": "2025-08-05T18:39:04.240Z",
+      "exports": []
+    }
+  ],
+  "stats": {
+    "total": 12,
+    "new": 12,
+    "updated": 0
+  }
+}
