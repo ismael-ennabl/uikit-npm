@@ -12,7 +12,8 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "prepublishOnly": "npm run build"
+    "update-metadata": "node scripts/update-metadata.js",
+    "prepublishOnly": "npm run update-metadata && npm run build"
   },
   "keywords": [
     "react",

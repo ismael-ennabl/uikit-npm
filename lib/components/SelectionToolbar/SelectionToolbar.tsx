@@ -1,3 +1,9 @@
+/**
+ * SelectionToolbar Component
+ * Created: 2025-01-08
+ * Last Modified: 2025-01-08
+ * @version 0.1.0
+ */
 import { X, ChevronDown, type LucideIcon } from 'lucide-react';
 import { Button } from '../ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '../ui/dropdown-menu';

@@ -1,3 +1,9 @@
+/**
+ * PackageSelectionToolbar Component
+ * Created: 2025-01-08
+ * Last Modified: 2025-01-08
+ * @version 0.1.0
+ */
 import { Share2, Download, Trash2, Table2, FileType } from 'lucide-react';
 import SelectionToolbar, { type ToolbarAction } from '../SelectionToolbar';
 

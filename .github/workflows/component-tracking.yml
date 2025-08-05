@@ -1,0 +1,75 @@
+name: Component Tracking and Publishing
+
+on:
+  push:
+    branches: [ main ]
+    paths: 
+      - 'lib/components/**'
+      - 'lib/package.json'
+
+jobs:
+  track-components:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        registry-url: 'https://registry.npmjs.org'
+
+    - name: Install dependencies
+      working-directory: ./lib
+      run: npm install
+
+    - name: Detect changed components
+      id: changes
+      run: |
+        git diff --name-only HEAD~1 HEAD | grep "^lib/components/" | grep -E "\.(tsx?|ts)$" || echo "No component changes"
+        echo "changed_files=$(git diff --name-only HEAD~1 HEAD | grep "^lib/components/" | grep -E "\.(tsx?|ts)$" | xargs)" >> $GITHUB_OUTPUT
+
+    - name: Update component metadata
+      if: steps.changes.outputs.changed_files != ''
+      run: |
+        cd lib
+        npm run update-metadata
+
+    - name: Auto-increment version
+      if: steps.changes.outputs.changed_files != ''
+      working-directory: ./lib
+      run: |
+        npm version patch --no-git-tag-version
+        echo "NEW_VERSION=$(node -p "require('./package.json').version")" >> $GITHUB_ENV
+
+    - name: Build library
+      if: steps.changes.outputs.changed_files != ''
+      working-directory: ./lib
+      run: npm run build
+
+    - name: Publish to NPM
+      if: steps.changes.outputs.changed_files != ''
+      working-directory: ./lib
+      run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+    - name: Create Git tag
+      if: steps.changes.outputs.changed_files != ''
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git tag "v${{ env.NEW_VERSION }}"
+        git push origin "v${{ env.NEW_VERSION }}"
+
+    - name: Commit metadata changes
+      if: steps.changes.outputs.changed_files != ''
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add lib/components/metadata.json lib/package.json
+        git commit -m "Update component metadata and version to ${{ env.NEW_VERSION }}" || exit 0
+        git push
