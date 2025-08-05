@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import AISearchInterface from '@/components/AISearchInterface';
 import { TYPOGRAPHY } from '@/styles/tokens';
 import { getPackageInfo } from '@/utils/packageNaming';
+import Footer from './Footer';
 const Layout = () => {
   const location = useLocation();
   const params = useParams();
@@ -48,6 +49,7 @@ const Layout = () => {
         <main className="flex-1 max-w-[1200px] mx-auto pb-8">
           <Outlet />
         </main>
+        <Footer />
       </div>;
   }
   return <div className="min-h-screen bg-[#F5F8FD]">
@@ -95,6 +97,7 @@ const Layout = () => {
       <main className="flex-1 max-w-[1200px] mx-auto pb-8">
         <Outlet />
       </main>
+      <Footer />
     </div>;
 };
 export default Layout;
