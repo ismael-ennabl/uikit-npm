@@ -1,0 +1,16 @@
+src/
+*.log
+.DS_Store
+node_modules/
+coverage/
+.nyc_output/
+*.tgz
+*.tar.gz
+.cache/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+rollup.config.js
+tsconfig.json
