@@ -74,7 +74,7 @@ jobs:
       run: |
         if [ "${{ steps.local_changes.outputs.has_changes }}" == "true" ] && [ "${{ steps.remote_changes.outputs.has_changes }}" == "true" ]; then
           echo "source=both" >> $GITHUB_OUTPUT
-          echo "⚠️ Changes detected from both sources"
+          echo "⚠️ Changes detected from both local and remote sources"
         elif [ "${{ steps.local_changes.outputs.has_changes }}" == "true" ]; then
           echo "source=local" >> $GITHUB_OUTPUT
           echo "📝 Changes detected from local development"
@@ -147,7 +147,11 @@ jobs:
         echo "**New Components:** ${{ steps.track.outputs.new-components }}" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "### Recent Components:" >> $GITHUB_STEP_SUMMARY
-        cat lib/component-metadata.json | jq -r '.components[] | select(.lastModified > (now - 86400 | strftime("%Y-%m-%d"))) | "- \(.name) (\(.lastModified))"' >> $GITHUB_STEP_SUMMARY
+        if [ -f "lib/component-metadata.json" ]; then
+          cat lib/component-metadata.json | jq -r '.components[] | select(.lastModified > (now - 86400 | strftime("%Y-%m-%d"))) | "- \(.name) (\(.lastModified))"' 2>/dev/null || echo "- No recent components found" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "- No metadata file found" >> $GITHUB_STEP_SUMMARY
+        fi
 
     - name: Update component metadata
       run: |
@@ -162,7 +166,7 @@ jobs:
         else
           npm version patch --no-git-tag-version
         fi
-        echo "NEW_VERSION=$(node -p "require('./package.json').version")" >> $GITHUB_ENV
+        echo "NEW_VERSION=$(node -p "import('./package.json').then(pkg => pkg.version)")" >> $GITHUB_ENV
 
     - name: Build library
       working-directory: ./lib
@@ -191,12 +195,16 @@ jobs:
 
     - name: Create release notes
       run: |
-        VERSION=$(cd lib && node -p "require('./package.json').version")
+        VERSION=$(cd lib && node -p "import('./package.json').then(pkg => pkg.version)")
         echo "## Release v$VERSION" >> $GITHUB_STEP_SUMMARY
         echo "**Change Source:** ${{ needs.detect-changes.outputs.change_source }}" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "### New Components:" >> $GITHUB_STEP_SUMMARY
-        cat lib/component-metadata.json | jq -r '.components[] | select(.lastModified > (now - 86400 | strftime("%Y-%m-%d"))) | "- \(.name)"' >> $GITHUB_STEP_SUMMARY
+        if [ -f "lib/component-metadata.json" ]; then
+          cat lib/component-metadata.json | jq -r '.components[] | select(.lastModified > (now - 86400 | strftime("%Y-%m-%d"))) | "- \(.name)"' 2>/dev/null || echo "- No new components found" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "- No metadata file found" >> $GITHUB_STEP_SUMMARY
+        fi
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "Published to NPM: https://www.npmjs.com/package/ennabl-ui-kit-beta" >> $GITHUB_STEP_SUMMARY
 
