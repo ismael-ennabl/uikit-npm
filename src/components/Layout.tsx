@@ -13,6 +13,7 @@ const Layout = () => {
   const isRootPage = location.pathname === '/';
   const isDocsLibraryPage = location.pathname === '/docs-library';
   const isDashboardPage = location.pathname === '/dashboard';
+  const isTablesPage = location.pathname === '/tables';
   if (isComparisonPage) {
     return <div className="min-h-screen bg-[#F5F8FD]">
         <header className="bg-[#F5F8FD]">
@@ -67,7 +68,12 @@ const Layout = () => {
                     <ArrowLeft className="w-4 h-4" />
                     <span className="text-xs">ennablDocs</span>
                   </Button>
-                </Link> : <Link to="/">
+                </Link> : isTablesPage ? <Button variant="ghost" size="sm" className="flex items-center space-x-0 font-light cursor-default" style={{
+              backgroundColor: '#EFF1F6',
+              color: '#B6B7BB'
+            }}>
+                  <span className="text-xs">Tables</span>
+                 </Button> : <Link to="/">
                   <Button variant="ghost" size="sm" className="flex items-center space-x-0 text-gray-600 hover:text-gray-900 bg-[#0000c5]/[0.04] font-light">
                     <ArrowLeft className="w-4 h-4" />
                     <span className="text-xs">Compare Docs</span>
@@ -91,6 +97,12 @@ const Layout = () => {
       {isDocsLibraryPage && <div className="max-w-[1200px] mx-auto px-8">
           <div className="mb-2">
             <h1 className={TYPOGRAPHY.h1}>Docs Library</h1>
+          </div>
+        </div>}
+      
+      {isTablesPage && <div className="max-w-[1200px] mx-auto px-8">
+          <div className="mb-2">
+            <h1 className={TYPOGRAPHY.h1}>Tables</h1>
           </div>
         </div>}
       

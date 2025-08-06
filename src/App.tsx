@@ -12,6 +12,7 @@ import DocumentComparison from "./pages/DocumentComparison";
 import PackageFiles from "./pages/PackageFiles";
 import Documents from "./pages/Documents";
 import AllDocuments from "./pages/AllDocuments";
+import Tables from "./pages/Tables";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ const App = () => (
                 <Route index element={<Documents />} />
                 <Route path="docs-library" element={<AllDocuments />} />
                 <Route path="dashboard" element={<Index />} />
+                <Route path="tables" element={<Tables />} />
                 <Route path="comparison/:id" element={<DocumentComparison />} />
                 <Route path="package/:id/files" element={<PackageFiles />} />
               </Route>
