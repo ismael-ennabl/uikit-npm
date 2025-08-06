@@ -62,30 +62,97 @@ const Section = ({
     onOpenChange?.(newOpen);
   };
 
+  // Inline styles for maximum protection against overrides
+  const titleInlineStyles: React.CSSProperties = {
+    color: 'hsl(210, 40%, 8%)',
+    fontSize: '1.25rem',
+    fontWeight: 600,
+    lineHeight: '1.75rem',
+    margin: '0.75rem 0',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+    textDecoration: 'none',
+    textTransform: 'none',
+    letterSpacing: 'normal',
+    wordSpacing: 'normal',
+    textAlign: 'left',
+    display: 'inline',
+    position: 'static',
+    float: 'none',
+    clear: 'none'
+  };
+
+  const contentInlineStyles: React.CSSProperties = {
+    backgroundColor: 'hsl(0, 0%, 100%)',
+    border: '1px solid hsl(220, 13%, 91%)',
+    borderRadius: '0.5rem',
+    padding: '1.5rem',
+    margin: '0.5rem 0 0 0',
+    boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)',
+    position: 'static',
+    float: 'none',
+    clear: 'none',
+    display: 'block'
+  };
+
   return (
-    <div className={ENNABL_BASE.wrapper}>
+    <div className={ENNABL_BASE.wrapper} data-ennabl-isolated="true">
       <Collapsible open={isOpen} onOpenChange={handleOpenChange}>
-        <div id={id} className={cn("ennabl-section", SECTION_PROTECTED.container, className)}>
+        <div 
+          id={id} 
+          className={cn("ennabl-section", SECTION_PROTECTED.container, className)}
+          data-ennabl-component="section"
+        >
           <CollapsibleTrigger asChild>
-            <div className={SECTION_PROTECTED.header}>
-              <div className={SECTION_PROTECTED.headerContent}>
-                <div className={SECTION_PROTECTED.headerLeft}>
+            <div 
+              className={SECTION_PROTECTED.header}
+              data-ennabl-element="header"
+            >
+              <div 
+                className={SECTION_PROTECTED.headerContent}
+                data-ennabl-element="header-content"
+              >
+                <div 
+                  className={SECTION_PROTECTED.headerLeft}
+                  data-ennabl-element="header-left"
+                >
                   {showDragHandle && (
-                    <GripVertical className={SECTION_PROTECTED.dragIcon} />
+                    <GripVertical 
+                      className={SECTION_PROTECTED.dragIcon}
+                      data-ennabl-element="drag-icon"
+                      style={{ height: '1rem', width: '1rem', color: 'hsl(0, 0%, 0%)', flexShrink: 0 }}
+                    />
                   )}
                   {isOpen ? (
-                    <ChevronDown className={SECTION_PROTECTED.chevronIcon} />
+                    <ChevronDown 
+                      className={SECTION_PROTECTED.chevronIcon}
+                      data-ennabl-element="chevron-icon"
+                      style={{ height: '1rem', width: '1rem', color: 'hsl(0, 0%, 0%)', flexShrink: 0 }}
+                    />
                   ) : (
-                    <ChevronRight className={SECTION_PROTECTED.chevronIcon} />
+                    <ChevronRight 
+                      className={SECTION_PROTECTED.chevronIcon}
+                      data-ennabl-element="chevron-icon"
+                      style={{ height: '1rem', width: '1rem', color: 'hsl(0, 0%, 0%)', flexShrink: 0 }}
+                    />
                   )}
-                  <span className={SECTION_PROTECTED.title}>{title}</span>
+                  <span 
+                    className={SECTION_PROTECTED.title}
+                    data-ennabl-element="title"
+                    style={titleInlineStyles}
+                  >
+                    {title}
+                  </span>
                   {badges.length > 0 && (
-                    <div className={SECTION_PROTECTED.badgesContainer}>
+                    <div 
+                      className={SECTION_PROTECTED.badgesContainer}
+                      data-ennabl-element="badges-container"
+                    >
                       {badges.map((badge, index) => (
                         <Badge
                           key={index}
                           variant={badge.variant || 'outline'}
                           className={SECTION_PROTECTED.badge}
+                          data-ennabl-element="badge"
                         >
                           {badge.text}
                         </Badge>
@@ -98,7 +165,11 @@ const Section = ({
           </CollapsibleTrigger>
           
           <CollapsibleContent>
-            <div className={cn(SECTION_PROTECTED.content, contentClassName)}>
+            <div 
+              className={cn(SECTION_PROTECTED.content, contentClassName)}
+              data-ennabl-element="content"
+              style={contentInlineStyles}
+            >
               {children}
             </div>
           </CollapsibleContent>

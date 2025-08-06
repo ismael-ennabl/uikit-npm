@@ -1,86 +1,241 @@
 /**
  * Protected styles for Section component
- * Uses scoped CSS with high specificity to prevent overrides
+ * Uses maximum CSS specificity to prevent overrides
+ * Multi-layer protection with inline styles, data attributes, and cascade layers
  */
 
-/* Component variables - fallback values if host project doesn't provide them */
-.ennabl-section {
-  --ennabl-section-title-color: #111827;
-  --ennabl-section-title-size: 1.25rem;
-  --ennabl-section-title-weight: 600;
-  --ennabl-section-title-line-height: 1.75rem;
-  --ennabl-section-title-margin: 0.75rem 0;
+/* CSS Cascade Layer for maximum priority */
+@layer ennabl-components {
   
-  --ennabl-section-icon-color: #000000;
-  --ennabl-section-icon-size: 1rem;
-  
-  --ennabl-section-content-bg: #ffffff;
-  --ennabl-section-content-border: #e5e7eb;
-  --ennabl-section-content-border-radius: 0.5rem;
-  --ennabl-section-content-padding: 1.5rem;
-  --ennabl-section-content-margin: 0.5rem 0 0 0;
-  --ennabl-section-content-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
-  
-  --ennabl-section-badge-color: #374151;
-  --ennabl-section-badge-border: #d1d5db;
+  /* Root-level CSS custom properties with maximum specificity */
+  :root {
+    --ennabl-section-title-color: hsl(210, 40%, 8%) !important;
+    --ennabl-section-title-size: 1.25rem !important;
+    --ennabl-section-title-weight: 600 !important;
+    --ennabl-section-title-line-height: 1.75rem !important;
+    --ennabl-section-title-margin: 0.75rem 0 !important;
+    
+    --ennabl-section-icon-color: hsl(0, 0%, 0%) !important;
+    --ennabl-section-icon-size: 1rem !important;
+    
+    --ennabl-section-content-bg: hsl(0, 0%, 100%) !important;
+    --ennabl-section-content-border: hsl(220, 13%, 91%) !important;
+    --ennabl-section-content-border-radius: 0.5rem !important;
+    --ennabl-section-content-padding: 1.5rem !important;
+    --ennabl-section-content-margin: 0.5rem 0 0 0 !important;
+    --ennabl-section-content-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1) !important;
+    
+    --ennabl-section-badge-color: hsl(215, 14%, 34%) !important;
+    --ennabl-section-badge-border: hsl(220, 13%, 84%) !important;
+  }
+
+  /* Maximum specificity selectors with data attributes */
+  .ennabl-ui[data-ennabl-isolated="true"] .ennabl-section[data-ennabl-component="section"] {
+    /* Style isolation and reset */
+    all: initial !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    box-sizing: border-box !important;
+    contain: style layout !important;
+    transform: translateZ(0) !important;
+    position: relative !important;
+  }
+
+  /* Container with maximum specificity */
+  .ennabl-ui[data-ennabl-isolated="true"] .ennabl-section[data-ennabl-component="section"] .ennabl-section__container[data-ennabl-element="container"] {
+    all: initial !important;
+    display: block !important;
+    scroll-margin-top: 1rem !important;
+    position: static !important;
+    float: none !important;
+    clear: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    overflow: visible !important;
+    z-index: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Header with complete reset */
+  .ennabl-ui[data-ennabl-isolated="true"] .ennabl-section[data-ennabl-component="section"] .ennabl-section__header[data-ennabl-element="header"] {
+    all: initial !important;
+    display: block !important;
+    padding: 0.5rem 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    outline: none !important;
+    background: transparent !important;
+    cursor: pointer !important;
+    width: 100% !important;
+    position: static !important;
+    float: none !important;
+    clear: none !important;
+    text-align: left !important;
+    vertical-align: baseline !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+  }
+
+  .ennabl-ui[data-ennabl-isolated="true"] .ennabl-section[data-ennabl-component="section"] .ennabl-section__header-content[data-ennabl-element="header-content"] {
+    all: initial !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    position: static !important;
+    box-sizing: border-box !important;
+  }
+
+  .ennabl-ui[data-ennabl-isolated="true"] .ennabl-section[data-ennabl-component="section"] .ennabl-section__header-left[data-ennabl-element="header-left"] {
+    all: initial !important;
+    display: flex !important;
+    align-items: baseline !important;
+    gap: 0.75rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    position: static !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Title with comprehensive reset and protection */
+  .ennabl-ui[data-ennabl-isolated="true"] .ennabl-section[data-ennabl-component="section"] .ennabl-section__title[data-ennabl-element="title"] {
+    all: initial !important;
+    display: inline !important;
+    color: var(--ennabl-section-title-color) !important;
+    font-size: var(--ennabl-section-title-size) !important;
+    font-weight: var(--ennabl-section-title-weight) !important;
+    line-height: var(--ennabl-section-title-line-height) !important;
+    margin: var(--ennabl-section-title-margin) !important;
+    padding: 0 !important;
+    border: none !important;
+    outline: none !important;
+    background: transparent !important;
+    text-decoration: none !important;
+    text-transform: none !important;
+    text-align: left !important;
+    text-indent: 0 !important;
+    text-shadow: none !important;
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
+    white-space: normal !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    font-style: normal !important;
+    font-variant: normal !important;
+    position: static !important;
+    float: none !important;
+    clear: none !important;
+    vertical-align: baseline !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+    z-index: auto !important;
+  }
+
+  /* Icons with complete protection */
+  .ennabl-ui[data-ennabl-isolated="true"] .ennabl-section[data-ennabl-component="section"] .ennabl-section__drag-icon[data-ennabl-element="drag-icon"],
+  .ennabl-ui[data-ennabl-isolated="true"] .ennabl-section[data-ennabl-component="section"] .ennabl-section__chevron-icon[data-ennabl-element="chevron-icon"] {
+    all: initial !important;
+    display: inline-block !important;
+    height: var(--ennabl-section-icon-size) !important;
+    width: var(--ennabl-section-icon-size) !important;
+    color: var(--ennabl-section-icon-color) !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    outline: none !important;
+    background: transparent !important;
+    position: static !important;
+    float: none !important;
+    clear: none !important;
+    vertical-align: baseline !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+    z-index: auto !important;
+  }
+
+  /* Badges with protection */
+  .ennabl-ui[data-ennabl-isolated="true"] .ennabl-section[data-ennabl-component="section"] .ennabl-section__badges-container[data-ennabl-element="badges-container"] {
+    all: initial !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    position: static !important;
+    box-sizing: border-box !important;
+  }
+
+  .ennabl-ui[data-ennabl-isolated="true"] .ennabl-section[data-ennabl-component="section"] .ennabl-section__badge[data-ennabl-element="badge"] {
+    color: var(--ennabl-section-badge-color) !important;
+    border-color: var(--ennabl-section-badge-border) !important;
+  }
+
+  /* Content area with complete reset and protection */
+  .ennabl-ui[data-ennabl-isolated="true"] .ennabl-section[data-ennabl-component="section"] .ennabl-section__content[data-ennabl-element="content"] {
+    all: initial !important;
+    display: block !important;
+    background-color: var(--ennabl-section-content-bg) !important;
+    border: 1px solid var(--ennabl-section-content-border) !important;
+    border-radius: var(--ennabl-section-content-border-radius) !important;
+    padding: var(--ennabl-section-content-padding) !important;
+    margin: var(--ennabl-section-content-margin) !important;
+    box-shadow: var(--ennabl-section-content-shadow) !important;
+    outline: none !important;
+    position: static !important;
+    float: none !important;
+    clear: none !important;
+    text-align: left !important;
+    vertical-align: baseline !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+    z-index: auto !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    line-height: 1.5 !important;
+    color: inherit !important;
+  }
+
 }
 
-/* Container */
-.ennabl-section__container {
+/* Fallback styles without data attributes for backwards compatibility */
+.ennabl-ui .ennabl-section .ennabl-section__container {
   scroll-margin-top: 1rem !important;
 }
 
-/* Header */
-.ennabl-section__header {
+.ennabl-ui .ennabl-section .ennabl-section__header {
   padding: 0.5rem 0 !important;
   cursor: pointer !important;
   width: 100% !important;
 }
 
-.ennabl-section__header-content {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-}
-
-.ennabl-section__header-left {
-  display: flex !important;
-  align-items: baseline !important;
-  gap: 0.75rem !important;
-}
-
-/* Title */
-.ennabl-section__title {
+.ennabl-ui .ennabl-section .ennabl-section__title {
   color: var(--ennabl-section-title-color) !important;
   font-size: var(--ennabl-section-title-size) !important;
   font-weight: var(--ennabl-section-title-weight) !important;
   line-height: var(--ennabl-section-title-line-height) !important;
   margin: var(--ennabl-section-title-margin) !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
 }
 
-/* Icons */
-.ennabl-section__drag-icon,
-.ennabl-section__chevron-icon {
-  height: var(--ennabl-section-icon-size) !important;
-  width: var(--ennabl-section-icon-size) !important;
-  color: var(--ennabl-section-icon-color) !important;
-  flex-shrink: 0 !important;
-}
-
-/* Badges */
-.ennabl-section__badges-container {
-  display: flex !important;
-  align-items: center !important;
-  gap: 0.5rem !important;
-}
-
-.ennabl-section__badge {
-  color: var(--ennabl-section-badge-color) !important;
-  border-color: var(--ennabl-section-badge-border) !important;
-}
-
-/* Content area */
-.ennabl-section__content {
+.ennabl-ui .ennabl-section .ennabl-section__content {
   background-color: var(--ennabl-section-content-bg) !important;
   border: 1px solid var(--ennabl-section-content-border) !important;
   border-radius: var(--ennabl-section-content-border-radius) !important;
@@ -89,19 +244,7 @@
   box-shadow: var(--ennabl-section-content-shadow) !important;
 }
 
-/* Reset any inherited styles that might interfere */
-.ennabl-section * {
-  box-sizing: border-box;
-}
-
-.ennabl-section__title,
-.ennabl-section__drag-icon,
-.ennabl-section__chevron-icon {
-  font-family: inherit;
-  font-style: normal;
-  font-variant: normal;
-  text-decoration: none;
-  text-transform: none;
-  letter-spacing: normal;
-  word-spacing: normal;
+/* Global reset for all ennabl components */
+.ennabl-ui *, .ennabl-ui *::before, .ennabl-ui *::after {
+  box-sizing: border-box !important;
 }
