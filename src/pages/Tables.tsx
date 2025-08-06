@@ -25,6 +25,7 @@ const Tables = () => {
           id="insurance-products"
           title="Insurance Products"
           className="mb-8"
+          showDragHandle={true}
           badges={[{ text: "Live Data", variant: "secondary" }]}
         >
           <ProductsTable 
@@ -39,6 +40,7 @@ const Tables = () => {
           id="insurance-clients"
           title="Insurance Clients"
           className="mb-8"
+          showDragHandle={true}
           badges={[{ text: "Contact Info", variant: "outline" }]}
         >
           <ClientsTable 
@@ -54,6 +56,7 @@ const Tables = () => {
           id="employee-directory"
           title="Employee Directory"
           className="mb-8"
+          showDragHandle={true}
           badges={[{ text: "Static Data", variant: "destructive" }]}
         >
           <div className="mt-4 rounded-lg border">
