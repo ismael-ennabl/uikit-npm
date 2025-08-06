@@ -19,19 +19,3 @@ export interface ActionItem {
 export interface DropdownActionItem extends ActionItem {
   icon: React.ComponentType<{ className?: string }>;
 }
-
-export interface SectionBadge {
-  text: string;
-  variant?: 'default' | 'outline' | 'secondary' | 'destructive';
-}
-
-export interface SectionProps extends ComponentBaseProps {
-  id: string;
-  title: string;
-  showDragHandle?: boolean;
-  defaultOpen?: boolean;
-  open?: boolean;
-  onOpenChange?: (open: boolean) => void;
-  badges?: SectionBadge[];
-  contentClassName?: string;
-}
