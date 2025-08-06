@@ -13,3 +13,10 @@ export type { FooterProps } from './Footer';
 
 export { default as Section } from './Section';
 export type { SectionProps, SectionBadge } from './Section';
+
+// Insurance domain components
+export { ProductsTable } from './ProductsTable';
+export type { ProductsTableProps } from './ProductsTable';
+
+export { ClientsTable } from './ClientsTable';
+export type { ClientsTableProps } from './ClientsTable';

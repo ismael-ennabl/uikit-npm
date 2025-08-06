@@ -1,8 +1,8 @@
 {
   "name": "ennabl-ui-kit-beta",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "type": "module",
-  "description": "A React component library with reusable UI components for document management applications",
+  "description": "A React component library with reusable UI components for document management and insurance applications",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -26,7 +26,10 @@
     "typescript",
     "ui-components",
     "design-system",
-    "document-management"
+    "document-management",
+    "insurance",
+    "mock-data",
+    "faker"
   ],
   "author": "Your Name",
   "license": "MIT",
@@ -54,6 +57,7 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@radix-ui/react-collapsible": "^1.1.11"
+    "@radix-ui/react-collapsible": "^1.1.11",
+    "@faker-js/faker": "^9.9.0"
   }
 }
