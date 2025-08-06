@@ -66,6 +66,29 @@ export const SELECTION_TOOLBAR = {
   chevronIcon: "h-3 w-3 ml-1"
 } as const;
 
+// Section component tokens
+export const SECTION = {
+  // Container
+  container: "scroll-mt-4",
+  
+  // Header
+  header: "py-2 cursor-pointer w-full",
+  headerContent: "flex items-center justify-between",
+  headerLeft: "flex items-baseline space-x-3",
+  
+  // Title and icons
+  title: "text-xl font-semibold text-gray-900 mb-3",
+  dragIcon: "h-4 w-4 text-black",
+  chevronIcon: "h-4 w-4 text-black",
+  
+  // Badges
+  badgesContainer: "flex items-center space-x-2",
+  badge: "text-gray-700 border-gray-300",
+  
+  // Content area (white wrapper)
+  content: "bg-white rounded-lg p-6 mt-2 border border-gray-200 shadow-sm",
+} as const;
+
 // Tooltip style tokens
 export const TOOLTIP_STYLES = {
   dark: "bg-black text-white",

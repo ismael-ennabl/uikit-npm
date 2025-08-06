@@ -10,3 +10,6 @@ export { default as DocumentSelectionToolbar } from './DocumentSelectionToolbar'
 
 export { default as Footer } from './Footer';
 export type { FooterProps } from './Footer';
+
+export { default as Section } from './Section';
+export type { SectionProps, SectionBadge } from './Section';
