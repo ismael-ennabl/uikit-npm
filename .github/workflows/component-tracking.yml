@@ -6,6 +6,11 @@ on:
     paths: 
       - 'lib/components/**'
       - 'lib/package.json'
+      - 'lib/package-lock.json'
+      - 'lib/index.ts'
+      - 'lib/types/**'
+      - 'lib/tokens/**'
+      - 'lib/utils/**'
       - '.github/workflows/component-tracking.yml'
   workflow_dispatch:
     inputs:
