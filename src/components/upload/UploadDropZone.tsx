@@ -19,7 +19,7 @@ const UploadDropZone = ({
 }: UploadDropZoneProps) => {
   return (
     <div
-      className={`bg-[#F5F8FD] rounded-lg p-12 text-center transition-colors mb-8 ${
+      className={`bg-page rounded-lg p-12 text-center transition-colors mb-8 ${
         dragActive 
           ? 'bg-[#E8F2FE]' 
           : 'hover:bg-[#E8F2FE]'

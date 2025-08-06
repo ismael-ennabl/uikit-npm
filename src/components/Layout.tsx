@@ -3,6 +3,7 @@ import Footer from './Footer';
 import { getPackageInfo } from '@/utils/packageNaming';
 import { RootHeader, DashboardHeader, DetailHeader } from './header';
 import { useUsageStats } from '@/hooks/useUsageStats';
+import { PAGE } from '@/styles/tokens';
 const Layout = () => {
   const location = useLocation();
   const params = useParams();
@@ -30,7 +31,7 @@ const Layout = () => {
     ];
     
     return (
-      <div className="min-h-screen flex flex-col">
+      <div className={PAGE.container}>
         <DetailHeader
            title={packageInfo.name}
           subtitle="Insurance policy comparison analysis"
@@ -56,7 +57,7 @@ const Layout = () => {
     ];
     
     return (
-      <div className="min-h-screen flex flex-col">
+      <div className={PAGE.container}>
         <DashboardHeader 
           title="Compare Docs"
           breadcrumbItems={breadcrumbItems}
@@ -79,7 +80,7 @@ const Layout = () => {
     ];
     
     return (
-      <div className="min-h-screen flex flex-col">
+      <div className={PAGE.container}>
         <DashboardHeader 
           title="Docs Library"
           breadcrumbItems={breadcrumbItems}
@@ -102,7 +103,7 @@ const Layout = () => {
     ];
     
     return (
-      <div className="min-h-screen flex flex-col">
+      <div className={PAGE.container}>
         <DashboardHeader 
           title="Tables"
           breadcrumbItems={breadcrumbItems}
@@ -127,7 +128,7 @@ const Layout = () => {
     ];
     
     return (
-      <div className="min-h-screen flex flex-col">
+      <div className={PAGE.container}>
         <DashboardHeader 
           title={packageInfo.name}
           breadcrumbItems={breadcrumbItems}
@@ -144,7 +145,7 @@ const Layout = () => {
 
   // Root page layout
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className={PAGE.container}>
       <RootHeader />
       
       <main className="flex-1">

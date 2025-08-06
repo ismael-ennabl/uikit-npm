@@ -234,11 +234,11 @@ const AskQuestionsModal = ({
   };
 
   return <Dialog open={open} onOpenChange={onClose}>
-      <DialogContent className="max-w-7xl h-[90vh] flex flex-col p-0 bg-[#F5F8FD] !rounded-[12px] overflow-hidden">
+      <DialogContent className="max-w-7xl h-[90vh] flex flex-col p-0 bg-page !rounded-[12px] overflow-hidden">
         <TooltipProvider>
         <div className="flex h-full min-h-0">
           {/* Left Sidebar */}
-          <div className="w-80 border-r bg-[#F5F8FD] flex flex-col p-4 rounded-l-[12px]">
+          <div className="w-80 border-r bg-page flex flex-col p-4 rounded-l-[12px]">
             {showPromptsLibrary ? (
               /* Prompts Library Sidebar */
               <div className="space-y-4">
@@ -498,7 +498,7 @@ const AskQuestionsModal = ({
               /* Regular Chat Interface */
               <>
                 {/* Chat Header */}
-                <div className="border-b p-4 bg-[#F5F8FD] rounded-tr-[12px] flex-shrink-0">
+                <div className="border-b p-4 bg-page rounded-tr-[12px] flex-shrink-0">
                   <div className="flex items-center gap-2">
                     <Sparkles className="h-5 w-5 text-primary" />
                     <h1 className={TYPOGRAPHY.h2}>Ask Questions</h1>
@@ -568,7 +568,7 @@ const AskQuestionsModal = ({
             </ScrollArea>
 
             {/* Input Area - Fixed at Bottom */}
-            <div className="border-t pt-4 flex-shrink-0 bg-[#F5F8FD] px-6 pb-6">
+            <div className="border-t pt-4 flex-shrink-0 bg-page px-6 pb-6">
               <div className="flex gap-3">
                 <Textarea placeholder={selectedDocuments && selectedDocuments.length > 0 ? "Ask anything about your selected documents..." : "Ask anything..."} value={inputValue} onChange={e => setInputValue(e.target.value)} onKeyDown={handleKeyPress} className="flex-1 min-h-[60px] max-h-[120px] resize-none rounded-[12px] focus-visible:ring-[#0000c5] focus:border-[#0000c5]" rows={2} />
                 <Button onClick={handleSendQuestion} disabled={!inputValue.trim()} className="self-end px-6 bg-[#0000c5] text-white hover:bg-[#0000c5]/90 rounded">

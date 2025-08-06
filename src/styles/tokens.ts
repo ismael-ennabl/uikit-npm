@@ -44,6 +44,13 @@ export const METRICS = {
   secondaryButton: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
 } as const;
 
+// Page layout tokens
+export const PAGE = {
+  background: "bg-page",
+  container: "min-h-screen bg-page",
+  content: "flex flex-col min-h-screen",
+} as const;
+
 // CTA component tokens
 export const CTA = {
   // CTA Primary - Blue background

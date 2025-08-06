@@ -13,7 +13,7 @@ const Tables = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background p-6 space-y-8">
+    <div className="p-6 space-y-8">
       <div className="max-w-7xl mx-auto">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-foreground mb-2">Tables</h1>

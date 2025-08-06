@@ -90,9 +90,7 @@ const DocumentComparisonInterface = () => {
       setExpandedCategories(new Set(availableSections));
     }
   };
-  return <div className="w-full" style={{
-    backgroundColor: '#F5F8FD'
-  }}>
+  return <div className="w-full bg-page">
       <div className="px-8 py-0">
         {/* Metrics Overview */}
         <MetricsOverview packageData={currentPackageData} onAddMoreFiles={handleAddMoreFiles} />

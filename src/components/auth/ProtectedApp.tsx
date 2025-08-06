@@ -11,7 +11,7 @@ const ProtectedApp: React.FC<ProtectedAppProps> = ({ children }) => {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-[#F5F8FD] flex items-center justify-center">
+      <div className="min-h-screen bg-page flex items-center justify-center">
         <PasswordPrompt />
       </div>
     );

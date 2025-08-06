@@ -86,7 +86,7 @@ const PackageFiles = () => {
   };
 
   return (
-    <div className="p-8 bg-[#F5F8FD] min-h-screen">
+    <div className="p-8">
       {/* Header */}
       <div className="mb-8">
         <h1 className={TYPOGRAPHY.h1}>Files in Package</h1>

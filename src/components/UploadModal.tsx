@@ -158,7 +158,7 @@ const UploadModal = ({ open, onClose, packageId, packageName, onComplete }: Uplo
                 value={groupName}
                 onChange={(e) => setGroupName(e.target.value)}
                 placeholder="Name"
-                className="bg-[#F5F8FD] border-0"
+                className="bg-page border-0"
               />
             </div>
           )}
