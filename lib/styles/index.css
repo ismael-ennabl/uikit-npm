@@ -1,0 +1,28 @@
+/**
+ * Main CSS bundle for ennabl-ui-kit-beta
+ * Import this file in your application to use the component styles
+ */
+
+/* Component styles */
+@import './section.css';
+
+/* Global reset for component library - only affects our components */
+.ennabl-ui * {
+  box-sizing: border-box;
+}
+
+/* Base component container */
+.ennabl-ui {
+  /* Ensure our components don't inherit unwanted styles */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utility class for isolating components */
+.ennabl-isolate {
+  all: initial;
+  font-family: inherit;
+  color: inherit;
+}

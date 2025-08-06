@@ -1,70 +1,6 @@
 # Ennabl UI Kit Beta
 
-A comprehensive React component library built for modern web applications. This library provides a set of high-quality, accessible, and customizable components built on top of Radix UI and Tailwind CSS.
-
-## Features
-
-✨ **Modern Design System** - Consistent design tokens and theming
-🎯 **Fully Typed** - Complete TypeScript support
-♿ **Accessible** - Built with accessibility in mind using Radix UI
-🎨 **Customizable** - Easy to theme and customize
-📱 **Responsive** - Mobile-first responsive design
-⚡ **Tree Shakeable** - Import only what you need
-
-## Components
-
-### SelectionToolbar
-A powerful multi-selection interface component for handling bulk actions.
-
-```tsx
-import { SelectionToolbar } from 'ennabl-ui-kit-beta';
-
-const actions = [
-  {
-    icon: Share2,
-    label: 'Share',
-    onClick: handleShare
-  },
-  {
-    icon: Download,
-    label: 'Download',
-    dropdownItems: [
-      { icon: Table2, label: 'Export as Excel', onClick: handleExportExcel },
-      { icon: FileType, label: 'Export as PDF', onClick: handleExportPDF }
-    ]
-  }
-];
-
-<SelectionToolbar
-  selectedCount={5}
-  onClearSelection={handleClear}
-  actions={actions}
-/>
-```
-
-### MetricItem
-A flexible metric display component with optional tooltip support.
-
-```tsx
-import { MetricItem } from 'ennabl-ui-kit-beta';
-
-<MetricItem
-  value="1,234"
-  label="Total Documents"
-  onClick={handleClick}
-  tooltip={{
-    content: "Total number of processed documents",
-    variant: "info"
-  }}
-  isExternal
-/>
-```
-
-### PackageSelectionToolbar
-Pre-configured selection toolbar for package management.
-
-### DocumentSelectionToolbar
-Pre-configured selection toolbar for document management.
+A React component library with reusable UI components for document management applications.
 
 ## Installation
 
@@ -72,73 +8,154 @@ Pre-configured selection toolbar for document management.
 npm install ennabl-ui-kit-beta
 ```
 
-## Peer Dependencies
+## CSS Import (Required)
 
-Make sure you have these installed in your project:
-
-```bash
-npm install react react-dom lucide-react @radix-ui/react-dropdown-menu @radix-ui/react-tooltip
-```
-
-## Setup
-
-The components expect Tailwind CSS to be configured in your project. Make sure you have the necessary design tokens in your CSS:
+**Important**: You must import the component styles in your application for the components to display correctly:
 
 ```css
-:root {
-  --foreground: 222.2 84% 4.9%;
-  --muted-foreground: 215.4 16.3% 46.9%;
-  --brand-blue: 217 91% 60%;
-  /* ... other design tokens */
+/* In your main CSS file (e.g., src/index.css or src/App.css) */
+@import 'ennabl-ui-kit-beta/dist/index.css';
+```
+
+Or in your JavaScript/TypeScript entry file:
+
+```typescript
+// In your main entry file (e.g., src/main.tsx or src/index.tsx)
+import 'ennabl-ui-kit-beta/dist/index.css';
+```
+
+## Style Protection
+
+This component library uses protected CSS classes to prevent style conflicts with your host application. The components are designed to maintain their appearance regardless of your project's existing styles.
+
+### How it works:
+
+1. **Scoped CSS Classes**: All components use prefixed class names (e.g., `ennabl-section__title`)
+2. **CSS Custom Properties**: Components define their own CSS variables with fallback values
+3. **High Specificity**: Important styles use `!important` to prevent overrides
+4. **Style Isolation**: Components are wrapped in isolation containers
+
+### Customization
+
+If you need to override component styles, you can do so by targeting the specific CSS custom properties:
+
+```css
+.ennabl-section {
+  --ennabl-section-title-color: #your-color;
+  --ennabl-section-title-size: 1.5rem;
+  --ennabl-section-content-bg: #your-background;
 }
 ```
 
-## Usage
+## Available Components
+
+### Section
+
+A collapsible section component with drag handle, title, and content area.
 
 ```tsx
-import { 
-  SelectionToolbar, 
-  MetricItem, 
-  TYPOGRAPHY,
-  METRICS 
-} from 'ennabl-ui-kit-beta';
+import { Section } from 'ennabl-ui-kit-beta';
 
 function MyComponent() {
   return (
-    <div>
-      <MetricItem value="42" label="Active Users" />
-      <SelectionToolbar 
-        selectedCount={3}
-        onClearSelection={() => {}}
-        actions={[]}
-      />
-    </div>
+    <Section
+      id="my-section"
+      title="Section Title"
+      badges={[{ text: "New", variant: "new" }]}
+      showDragHandle={true}
+      defaultOpen={false}
+    >
+      <p>Your content here</p>
+    </Section>
   );
 }
 ```
 
-## Design Tokens
+### MetricItem
 
-The library exports design tokens that you can use in your application:
+A metric display component with value, label, and optional tooltip.
 
 ```tsx
-import { TYPOGRAPHY, METRICS, SELECTION_TOOLBAR } from 'ennabl-ui-kit-beta';
+import { MetricItem } from 'ennabl-ui-kit-beta';
 
-// Use in your components
-<h1 className={TYPOGRAPHY.h1}>My Title</h1>
-<div className={METRICS.container}>...</div>
+function MyComponent() {
+  return (
+    <MetricItem
+      value="123"
+      label="Total Items"
+      onClick={() => console.log('Clicked')}
+      tooltip={{
+        content: "Additional information",
+        variant: "info"
+      }}
+    />
+  );
+}
 ```
 
-## TypeScript Support
+### SelectionToolbar
 
-Full TypeScript support with exported types:
+A toolbar component for handling multiple selections.
 
 ```tsx
-import type { 
-  ToolbarAction, 
-  MetricItemProps, 
-  TooltipConfig 
-} from 'ennabl-ui-kit-beta';
+import { SelectionToolbar } from 'ennabl-ui-kit-beta';
+
+function MyComponent() {
+  return (
+    <SelectionToolbar
+      selectedCount={5}
+      onClear={() => console.log('Clear')}
+      actions={[
+        {
+          label: "Export",
+          onClick: () => console.log('Export'),
+          icon: ExportIcon
+        }
+      ]}
+    />
+  );
+}
+```
+
+## Peer Dependencies
+
+Make sure you have these dependencies installed in your project:
+
+- react >= 16.8.0
+- react-dom >= 16.8.0
+- @radix-ui/react-dropdown-menu ^2.1.1
+- @radix-ui/react-tooltip ^1.1.4
+- class-variance-authority ^0.7.1
+- clsx ^2.1.1
+- lucide-react ^0.462.0
+
+## Troubleshooting
+
+### Styles not appearing correctly
+
+1. Make sure you've imported the CSS file
+2. Check that the CSS file is being bundled correctly
+3. Verify there are no CSS conflicts in your application
+
+### Component styles being overridden
+
+The components are designed to be style-protected, but if you're still experiencing issues:
+
+1. Check browser developer tools for conflicting CSS rules
+2. Ensure the component CSS is loaded after your global styles
+3. Use CSS custom properties for customization instead of direct class overrides
+
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Build the library
+npm run build
+
+# Watch for changes during development
+npm run dev
 ```
 
 ## License

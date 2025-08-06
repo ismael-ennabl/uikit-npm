@@ -1,0 +1,107 @@
+/**
+ * Protected styles for Section component
+ * Uses scoped CSS with high specificity to prevent overrides
+ */
+
+/* Component variables - fallback values if host project doesn't provide them */
+.ennabl-section {
+  --ennabl-section-title-color: #111827;
+  --ennabl-section-title-size: 1.25rem;
+  --ennabl-section-title-weight: 600;
+  --ennabl-section-title-line-height: 1.75rem;
+  --ennabl-section-title-margin: 0.75rem 0;
+  
+  --ennabl-section-icon-color: #000000;
+  --ennabl-section-icon-size: 1rem;
+  
+  --ennabl-section-content-bg: #ffffff;
+  --ennabl-section-content-border: #e5e7eb;
+  --ennabl-section-content-border-radius: 0.5rem;
+  --ennabl-section-content-padding: 1.5rem;
+  --ennabl-section-content-margin: 0.5rem 0 0 0;
+  --ennabl-section-content-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  
+  --ennabl-section-badge-color: #374151;
+  --ennabl-section-badge-border: #d1d5db;
+}
+
+/* Container */
+.ennabl-section__container {
+  scroll-margin-top: 1rem !important;
+}
+
+/* Header */
+.ennabl-section__header {
+  padding: 0.5rem 0 !important;
+  cursor: pointer !important;
+  width: 100% !important;
+}
+
+.ennabl-section__header-content {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.ennabl-section__header-left {
+  display: flex !important;
+  align-items: baseline !important;
+  gap: 0.75rem !important;
+}
+
+/* Title */
+.ennabl-section__title {
+  color: var(--ennabl-section-title-color) !important;
+  font-size: var(--ennabl-section-title-size) !important;
+  font-weight: var(--ennabl-section-title-weight) !important;
+  line-height: var(--ennabl-section-title-line-height) !important;
+  margin: var(--ennabl-section-title-margin) !important;
+}
+
+/* Icons */
+.ennabl-section__drag-icon,
+.ennabl-section__chevron-icon {
+  height: var(--ennabl-section-icon-size) !important;
+  width: var(--ennabl-section-icon-size) !important;
+  color: var(--ennabl-section-icon-color) !important;
+  flex-shrink: 0 !important;
+}
+
+/* Badges */
+.ennabl-section__badges-container {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+
+.ennabl-section__badge {
+  color: var(--ennabl-section-badge-color) !important;
+  border-color: var(--ennabl-section-badge-border) !important;
+}
+
+/* Content area */
+.ennabl-section__content {
+  background-color: var(--ennabl-section-content-bg) !important;
+  border: 1px solid var(--ennabl-section-content-border) !important;
+  border-radius: var(--ennabl-section-content-border-radius) !important;
+  padding: var(--ennabl-section-content-padding) !important;
+  margin: var(--ennabl-section-content-margin) !important;
+  box-shadow: var(--ennabl-section-content-shadow) !important;
+}
+
+/* Reset any inherited styles that might interfere */
+.ennabl-section * {
+  box-sizing: border-box;
+}
+
+.ennabl-section__title,
+.ennabl-section__drag-icon,
+.ennabl-section__chevron-icon {
+  font-family: inherit;
+  font-style: normal;
+  font-variant: normal;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+}

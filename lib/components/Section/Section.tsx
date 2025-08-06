@@ -8,7 +8,7 @@ import React from 'react';
 import { Badge } from '../ui/badge';
 import { ChevronDown, ChevronRight, GripVertical } from 'lucide-react';
 import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '../ui/collapsible';
-import { SECTION } from '../../tokens';
+import { SECTION_PROTECTED, ENNABL_BASE } from '../../tokens/protected';
 import { cn } from '../../utils/cn';
 
 export interface SectionBadge {
@@ -63,46 +63,48 @@ const Section = ({
   };
 
   return (
-    <Collapsible open={isOpen} onOpenChange={handleOpenChange}>
-      <div id={id} className={cn(SECTION.container, className)}>
-        <CollapsibleTrigger asChild>
-          <div className={SECTION.header}>
-            <div className={SECTION.headerContent}>
-              <div className={SECTION.headerLeft}>
-                {showDragHandle && (
-                  <GripVertical className={SECTION.dragIcon} />
-                )}
-                {isOpen ? (
-                  <ChevronDown className={SECTION.chevronIcon} />
-                ) : (
-                  <ChevronRight className={SECTION.chevronIcon} />
-                )}
-                <span className={SECTION.title}>{title}</span>
-                {badges.length > 0 && (
-                  <div className={SECTION.badgesContainer}>
-                    {badges.map((badge, index) => (
-                      <Badge
-                        key={index}
-                        variant={badge.variant || 'outline'}
-                        className={SECTION.badge}
-                      >
-                        {badge.text}
-                      </Badge>
-                    ))}
-                  </div>
-                )}
+    <div className={ENNABL_BASE.wrapper}>
+      <Collapsible open={isOpen} onOpenChange={handleOpenChange}>
+        <div id={id} className={cn("ennabl-section", SECTION_PROTECTED.container, className)}>
+          <CollapsibleTrigger asChild>
+            <div className={SECTION_PROTECTED.header}>
+              <div className={SECTION_PROTECTED.headerContent}>
+                <div className={SECTION_PROTECTED.headerLeft}>
+                  {showDragHandle && (
+                    <GripVertical className={SECTION_PROTECTED.dragIcon} />
+                  )}
+                  {isOpen ? (
+                    <ChevronDown className={SECTION_PROTECTED.chevronIcon} />
+                  ) : (
+                    <ChevronRight className={SECTION_PROTECTED.chevronIcon} />
+                  )}
+                  <span className={SECTION_PROTECTED.title}>{title}</span>
+                  {badges.length > 0 && (
+                    <div className={SECTION_PROTECTED.badgesContainer}>
+                      {badges.map((badge, index) => (
+                        <Badge
+                          key={index}
+                          variant={badge.variant || 'outline'}
+                          className={SECTION_PROTECTED.badge}
+                        >
+                          {badge.text}
+                        </Badge>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-        </CollapsibleTrigger>
-        
-        <CollapsibleContent>
-          <div className={cn(SECTION.content, contentClassName)}>
-            {children}
-          </div>
-        </CollapsibleContent>
-      </div>
-    </Collapsible>
+          </CollapsibleTrigger>
+          
+          <CollapsibleContent>
+            <div className={cn(SECTION_PROTECTED.content, contentClassName)}>
+              {children}
+            </div>
+          </CollapsibleContent>
+        </div>
+      </Collapsible>
+    </div>
   );
 };
 
