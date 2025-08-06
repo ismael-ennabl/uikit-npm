@@ -64,7 +64,7 @@ const Section = ({
 
   // Inline styles for maximum protection against overrides
   const titleInlineStyles: React.CSSProperties = {
-    color: 'hsl(210, 40%, 8%)',
+    color: 'hsl(0, 100%, 50%)',
     fontSize: '1.25rem',
     fontWeight: 600,
     lineHeight: '1.75rem',

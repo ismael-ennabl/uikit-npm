@@ -9,7 +9,7 @@
   
   /* Root-level CSS custom properties with maximum specificity */
   :root {
-    --ennabl-section-title-color: hsl(210, 40%, 8%) !important;
+    --ennabl-section-title-color: hsl(0, 100%, 50%) !important;
     --ennabl-section-title-size: 1.25rem !important;
     --ennabl-section-title-weight: 600 !important;
     --ennabl-section-title-line-height: 1.75rem !important;
