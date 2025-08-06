@@ -35,7 +35,7 @@ export const METRICS = {
   // Interactive states
   clickableStat: "cursor-pointer group transition-colors duration-200",
   hoverValue: "group-hover:text-brand-blue transition-colors",
-  hoverLabel: "border-b border-dotted border-muted-foreground/30 group-hover:border-brand-blue group-hover:text-brand-blue transition-colors",
+  hoverLabel: "border-b border-solid border-muted-foreground/30 group-hover:border-brand-blue group-hover:text-brand-blue transition-colors",
   
   // Colors
   valueColor: "text-foreground", 
