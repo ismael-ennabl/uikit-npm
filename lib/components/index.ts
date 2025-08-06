@@ -7,3 +7,6 @@ export type { MetricItemProps } from './MetricItem';
 
 export { default as PackageSelectionToolbar } from './PackageSelectionToolbar';
 export { default as DocumentSelectionToolbar } from './DocumentSelectionToolbar';
+
+export { default as Footer } from './Footer';
+export type { FooterProps } from './Footer';
