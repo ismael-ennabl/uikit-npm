@@ -2,47 +2,47 @@
   "components": {
     "MetricItem": {
       "createdAt": "2025-01-08T00:00:00Z",
-      "lastModified": "2025-08-06T09:41:59.238Z",
-      "publishedAt": "2025-08-06T09:41:59.238Z",
-      "version": "0.1.4"
+      "lastModified": "2025-08-06T10:18:13.323Z",
+      "publishedAt": "2025-08-06T10:18:13.323Z",
+      "version": "0.1.5"
     },
     "SelectionToolbar": {
       "createdAt": "2025-01-08T00:00:00Z",
-      "lastModified": "2025-08-06T09:41:59.238Z",
-      "publishedAt": "2025-08-06T09:41:59.238Z",
-      "version": "0.1.4"
+      "lastModified": "2025-08-06T10:18:13.323Z",
+      "publishedAt": "2025-08-06T10:18:13.323Z",
+      "version": "0.1.5"
     },
     "DocumentSelectionToolbar": {
       "createdAt": "2025-01-08T00:00:00Z",
-      "lastModified": "2025-08-06T09:41:59.238Z",
-      "publishedAt": "2025-08-06T09:41:59.238Z",
-      "version": "0.1.4"
+      "lastModified": "2025-08-06T10:18:13.323Z",
+      "publishedAt": "2025-08-06T10:18:13.323Z",
+      "version": "0.1.5"
     },
     "PackageSelectionToolbar": {
       "createdAt": "2025-01-08T00:00:00Z",
-      "lastModified": "2025-08-06T09:41:59.238Z",
-      "publishedAt": "2025-08-06T09:41:59.238Z",
-      "version": "0.1.4"
+      "lastModified": "2025-08-06T10:18:13.323Z",
+      "publishedAt": "2025-08-06T10:18:13.323Z",
+      "version": "0.1.5"
     },
     "Footer": {
       "createdAt": "2025-01-08T00:00:00Z",
-      "lastModified": "2025-08-06T09:41:59.238Z",
-      "publishedAt": "2025-08-06T09:41:59.238Z",
-      "version": "0.1.4"
+      "lastModified": "2025-08-06T10:18:13.323Z",
+      "publishedAt": "2025-08-06T10:18:13.323Z",
+      "version": "0.1.5"
     },
     "Section": {
       "createdAt": "2025-08-06T05:36:34.994Z",
-      "lastModified": "2025-08-06T09:41:59.238Z",
-      "publishedAt": "2025-08-06T09:41:59.238Z",
-      "version": "0.1.4"
+      "lastModified": "2025-08-06T10:18:13.323Z",
+      "publishedAt": "2025-08-06T10:18:13.323Z",
+      "version": "0.1.5"
     },
     "ui": {
       "createdAt": "2025-08-06T05:36:34.994Z",
-      "lastModified": "2025-08-06T09:41:59.238Z",
-      "publishedAt": "2025-08-06T09:41:59.238Z",
-      "version": "0.1.4"
+      "lastModified": "2025-08-06T10:18:13.323Z",
+      "publishedAt": "2025-08-06T10:18:13.323Z",
+      "version": "0.1.5"
     }
   },
-  "lastUpdated": "2025-08-06T09:41:59.238Z",
-  "libraryVersion": "0.1.4"
+  "lastUpdated": "2025-08-06T10:18:13.323Z",
+  "libraryVersion": "0.1.5"
 }
