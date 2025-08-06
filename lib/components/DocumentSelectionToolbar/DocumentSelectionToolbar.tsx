@@ -1,3 +1,9 @@
+/**
+ * DocumentSelectionToolbar Component
+ * Created: 2025-01-08
+ * Last Modified: 2025-01-08
+ * @version 0.1.0
+ */
 import { Share2, Download, Zap, GitCompare, FolderOpen, Trash2, Sparkles, Table2, FileType } from 'lucide-react';
 import SelectionToolbar, { type ToolbarAction } from '../SelectionToolbar';
 

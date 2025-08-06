@@ -1,3 +1,9 @@
+/**
+ * MetricItem Component
+ * Created: 2025-01-08
+ * Last Modified: 2025-01-08
+ * @version 0.1.0
+ */
 import React from 'react';
 import { cn } from '../../utils/cn';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip';
