@@ -6,6 +6,7 @@ on:
     paths: 
       - 'lib/components/**'
       - 'lib/package.json'
+      - '.github/workflows/component-tracking.yml'
   workflow_dispatch:
     inputs:
       version:
@@ -17,17 +18,86 @@ on:
           - patch
           - minor
           - major
+      sync_mode:
+        description: 'Sync mode for handling changes'
+        required: false
+        default: 'auto'
+        type: choice
+        options:
+          - auto
+          - force_local
+          - force_remote
+  schedule:
+    # Run every 30 minutes to check for external changes
+    - cron: '*/30 * * * *'
 
 jobs:
-  track-components:
+  detect-changes:
     runs-on: ubuntu-latest
+    outputs:
+      has_local_changes: ${{ steps.local_changes.outputs.has_changes }}
+      has_remote_changes: ${{ steps.remote_changes.outputs.has_changes }}
+      change_source: ${{ steps.change_analysis.outputs.source }}
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Check for local changes (last 2 commits)
+      id: local_changes
+      run: |
+        LOCAL_CHANGES=$(git diff --name-only HEAD~2 HEAD | grep -E "(lib/components/|lib/package.json)" | wc -l)
+        if [ "$LOCAL_CHANGES" -gt 0 ]; then
+          echo "has_changes=true" >> $GITHUB_OUTPUT
+          echo "Local changes detected: $LOCAL_CHANGES files"
+        else
+          echo "has_changes=false" >> $GITHUB_OUTPUT
+          echo "No local changes detected"
+        fi
+
+    - name: Check for remote changes (last 24 hours)
+      id: remote_changes
+      run: |
+        # Get commits from last 24 hours that weren't from this workflow
+        REMOTE_CHANGES=$(git log --since="24 hours ago" --oneline --grep="feat:" --grep="fix:" --grep="refactor:" --grep="docs:" | grep -v "workflow" | wc -l)
+        if [ "$REMOTE_CHANGES" -gt 0 ]; then
+          echo "has_changes=true" >> $GITHUB_OUTPUT
+          echo "Remote changes detected: $REMOTE_CHANGES commits"
+        else
+          echo "has_changes=false" >> $GITHUB_OUTPUT
+          echo "No remote changes detected"
+        fi
+
+    - name: Analyze change source
+      id: change_analysis
+      run: |
+        if [ "${{ steps.local_changes.outputs.has_changes }}" == "true" ] && [ "${{ steps.remote_changes.outputs.has_changes }}" == "true" ]; then
+          echo "source=both" >> $GITHUB_OUTPUT
+          echo "⚠️ Changes detected from both sources"
+        elif [ "${{ steps.local_changes.outputs.has_changes }}" == "true" ]; then
+          echo "source=local" >> $GITHUB_OUTPUT
+          echo "📝 Changes detected from local development"
+        elif [ "${{ steps.remote_changes.outputs.has_changes }}" == "true" ]; then
+          echo "source=remote" >> $GITHUB_OUTPUT
+          echo "🤖 Changes detected from external AI/remote"
+        else
+          echo "source=none" >> $GITHUB_OUTPUT
+          echo "✅ No changes detected"
+        fi
+
+  track-components:
+    needs: detect-changes
+    runs-on: ubuntu-latest
+    if: needs.detect-changes.outputs.has_local_changes == 'true' || needs.detect-changes.outputs.has_remote_changes == 'true' || github.event_name == 'workflow_dispatch'
     outputs:
       new-components: ${{ steps.track.outputs.new-components }}
       component-count: ${{ steps.track.outputs.component-count }}
     steps:
     - uses: actions/checkout@v4
       with:
-        fetch-depth: 2
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Setup Node.js
       uses: actions/setup-node@v4
@@ -41,11 +111,20 @@ jobs:
       working-directory: ./lib
       run: npm ci
 
-    - name: Detect changed components
-      id: changes
+    - name: Sync strategy decision
       run: |
-        git diff --name-only HEAD~1 HEAD | grep "^lib/components/" | grep -E "\.(tsx?|ts)$" || echo "No component changes"
-        echo "changed_files=$(git diff --name-only HEAD~1 HEAD | grep "^lib/components/" | grep -E "\.(tsx?|ts)$" | xargs)" >> $GITHUB_OUTPUT
+        echo "🔄 Sync Strategy Analysis:"
+        echo "Change source: ${{ needs.detect-changes.outputs.change_source }}"
+        echo "Sync mode: ${{ github.event.inputs.sync_mode || 'auto' }}"
+        
+        if [ "${{ needs.detect-changes.outputs.change_source }}" == "both" ]; then
+          echo "⚠️  Conflict detected - changes from both sources"
+          echo "Will attempt automatic merge, manual review may be needed"
+        elif [ "${{ needs.detect-changes.outputs.change_source }}" == "remote" ]; then
+          echo "🤖 Processing external AI changes"
+        elif [ "${{ needs.detect-changes.outputs.change_source }}" == "local" ]; then
+          echo "📝 Processing local development changes"
+        fi
 
     - name: Track components and generate metadata
       id: track
@@ -58,10 +137,12 @@ jobs:
         echo "📊 Component Summary:"
         echo "Total components: ${{ steps.track.outputs.component-count }}"
         echo "New components: ${{ steps.track.outputs.new-components }}"
+        echo "Change source: ${{ needs.detect-changes.outputs.change_source }}"
 
     - name: Create component report
       run: |
         echo "## Component Tracking Report" >> $GITHUB_STEP_SUMMARY
+        echo "**Change Source:** ${{ needs.detect-changes.outputs.change_source }}" >> $GITHUB_STEP_SUMMARY
         echo "**Total Components:** ${{ steps.track.outputs.component-count }}" >> $GITHUB_STEP_SUMMARY
         echo "**New Components:** ${{ steps.track.outputs.new-components }}" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
@@ -69,13 +150,11 @@ jobs:
         cat lib/component-metadata.json | jq -r '.components[] | select(.lastModified > (now - 86400 | strftime("%Y-%m-%d"))) | "- \(.name) (\(.lastModified))"' >> $GITHUB_STEP_SUMMARY
 
     - name: Update component metadata
-      if: steps.changes.outputs.changed_files != '' || github.event_name == 'workflow_dispatch'
       run: |
         cd lib
         npm run update-metadata
 
     - name: Auto-increment version
-      if: steps.changes.outputs.changed_files != '' || github.event_name == 'workflow_dispatch'
       working-directory: ./lib
       run: |
         if [ "${{ github.event.inputs.version }}" != "" ]; then
@@ -86,19 +165,16 @@ jobs:
         echo "NEW_VERSION=$(node -p "require('./package.json').version")" >> $GITHUB_ENV
 
     - name: Build library
-      if: steps.changes.outputs.changed_files != '' || github.event_name == 'workflow_dispatch'
       working-directory: ./lib
       run: rollup -c --bundleConfigAsCjs
 
     - name: Publish to NPM
-      if: steps.changes.outputs.changed_files != '' || github.event_name == 'workflow_dispatch'
       working-directory: ./lib
       run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
     - name: Create Git tag
-      if: steps.changes.outputs.changed_files != '' || github.event_name == 'workflow_dispatch'
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
@@ -106,21 +182,35 @@ jobs:
         git push origin "v${{ env.NEW_VERSION }}"
 
     - name: Commit metadata changes
-      if: steps.changes.outputs.changed_files != '' || github.event_name == 'workflow_dispatch'
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add lib/components/metadata.json lib/package.json
-        git commit -m "Update component metadata and version to ${{ env.NEW_VERSION }}" || exit 0
+        git commit -m "Update component metadata and version to ${{ env.NEW_VERSION }} (Source: ${{ needs.detect-changes.outputs.change_source }})" || exit 0
         git push
 
     - name: Create release notes
-      if: steps.changes.outputs.changed_files != '' || github.event_name == 'workflow_dispatch'
       run: |
         VERSION=$(cd lib && node -p "require('./package.json').version")
         echo "## Release v$VERSION" >> $GITHUB_STEP_SUMMARY
+        echo "**Change Source:** ${{ needs.detect-changes.outputs.change_source }}" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "### New Components:" >> $GITHUB_STEP_SUMMARY
         cat lib/component-metadata.json | jq -r '.components[] | select(.lastModified > (now - 86400 | strftime("%Y-%m-%d"))) | "- \(.name)"' >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "Published to NPM: https://www.npmjs.com/package/ennabl-ui-kit-beta" >> $GITHUB_STEP_SUMMARY
+
+  notify-sync:
+    needs: [detect-changes, track-components]
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+    - name: Sync Summary
+      run: |
+        echo "🔄 **Sync Summary**" >> $GITHUB_STEP_SUMMARY
+        echo "**Change Source:** ${{ needs.detect-changes.outputs.change_source }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Status:** ${{ needs.track-components.result }}" >> $GITHUB_STEP_SUMMARY
+        
+        if [ "${{ needs.detect-changes.outputs.change_source }}" == "both" ]; then
+          echo "⚠️ **Note:** Changes detected from both local and remote sources. Review may be needed." >> $GITHUB_STEP_SUMMARY
+        fi
