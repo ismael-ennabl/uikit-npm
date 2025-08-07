@@ -40,7 +40,6 @@ export {
   DashboardHeader,
   DetailHeader,
   RootHeader,
-  AnchorNavBar,
 };
 
 // Re-export types
