@@ -2,71 +2,71 @@
   "components": {
     "MetricItem": {
       "createdAt": "2025-01-08T00:00:00Z",
-      "lastModified": "2025-08-07T10:58:34.477Z",
-      "publishedAt": "2025-08-07T10:58:34.477Z",
-      "version": "0.1.19"
+      "lastModified": "2025-08-07T11:19:46.580Z",
+      "publishedAt": "2025-08-07T11:19:46.580Z",
+      "version": "0.1.20"
     },
     "SelectionToolbar": {
       "createdAt": "2025-01-08T00:00:00Z",
-      "lastModified": "2025-08-07T10:58:34.477Z",
-      "publishedAt": "2025-08-07T10:58:34.477Z",
-      "version": "0.1.19"
+      "lastModified": "2025-08-07T11:19:46.580Z",
+      "publishedAt": "2025-08-07T11:19:46.580Z",
+      "version": "0.1.20"
     },
     "DocumentSelectionToolbar": {
       "createdAt": "2025-01-08T00:00:00Z",
-      "lastModified": "2025-08-07T10:58:34.477Z",
-      "publishedAt": "2025-08-07T10:58:34.477Z",
-      "version": "0.1.19"
+      "lastModified": "2025-08-07T11:19:46.580Z",
+      "publishedAt": "2025-08-07T11:19:46.580Z",
+      "version": "0.1.20"
     },
     "PackageSelectionToolbar": {
       "createdAt": "2025-01-08T00:00:00Z",
-      "lastModified": "2025-08-07T10:58:34.477Z",
-      "publishedAt": "2025-08-07T10:58:34.477Z",
-      "version": "0.1.19"
+      "lastModified": "2025-08-07T11:19:46.580Z",
+      "publishedAt": "2025-08-07T11:19:46.580Z",
+      "version": "0.1.20"
     },
     "Footer": {
       "createdAt": "2025-01-08T00:00:00Z",
-      "lastModified": "2025-08-07T10:58:34.477Z",
-      "publishedAt": "2025-08-07T10:58:34.477Z",
-      "version": "0.1.19"
+      "lastModified": "2025-08-07T11:19:46.580Z",
+      "publishedAt": "2025-08-07T11:19:46.580Z",
+      "version": "0.1.20"
     },
     "Section": {
       "createdAt": "2025-08-06T05:36:34.994Z",
-      "lastModified": "2025-08-07T10:58:34.477Z",
-      "publishedAt": "2025-08-07T10:58:34.477Z",
-      "version": "0.1.19"
+      "lastModified": "2025-08-07T11:19:46.580Z",
+      "publishedAt": "2025-08-07T11:19:46.580Z",
+      "version": "0.1.20"
     },
     "ui": {
       "createdAt": "2025-08-06T05:36:34.994Z",
-      "lastModified": "2025-08-07T10:58:34.477Z",
-      "publishedAt": "2025-08-07T10:58:34.477Z",
-      "version": "0.1.19"
+      "lastModified": "2025-08-07T11:19:46.580Z",
+      "publishedAt": "2025-08-07T11:19:46.580Z",
+      "version": "0.1.20"
     },
     "ClientsTable": {
       "createdAt": "2025-08-06T11:32:10.167Z",
-      "lastModified": "2025-08-07T10:58:34.477Z",
-      "publishedAt": "2025-08-07T10:58:34.477Z",
-      "version": "0.1.19"
+      "lastModified": "2025-08-07T11:19:46.580Z",
+      "publishedAt": "2025-08-07T11:19:46.580Z",
+      "version": "0.1.20"
     },
     "ProductsTable": {
       "createdAt": "2025-08-06T11:32:10.167Z",
-      "lastModified": "2025-08-07T10:58:34.477Z",
-      "publishedAt": "2025-08-07T10:58:34.477Z",
-      "version": "0.1.19"
+      "lastModified": "2025-08-07T11:19:46.580Z",
+      "publishedAt": "2025-08-07T11:19:46.580Z",
+      "version": "0.1.20"
     },
     "Header": {
       "createdAt": "2025-08-07T05:29:43.355Z",
-      "lastModified": "2025-08-07T10:58:34.477Z",
-      "publishedAt": "2025-08-07T10:58:34.477Z",
-      "version": "0.1.19"
+      "lastModified": "2025-08-07T11:19:46.580Z",
+      "publishedAt": "2025-08-07T11:19:46.580Z",
+      "version": "0.1.20"
     },
     "AnchorNavBar": {
       "createdAt": "2025-08-07T10:25:02.140Z",
-      "lastModified": "2025-08-07T10:58:34.477Z",
-      "publishedAt": "2025-08-07T10:58:34.477Z",
-      "version": "0.1.19"
+      "lastModified": "2025-08-07T11:19:46.580Z",
+      "publishedAt": "2025-08-07T11:19:46.580Z",
+      "version": "0.1.20"
     }
   },
-  "lastUpdated": "2025-08-07T10:58:34.477Z",
-  "libraryVersion": "0.1.19"
+  "lastUpdated": "2025-08-07T11:19:46.580Z",
+  "libraryVersion": "0.1.20"
 }
