@@ -6,7 +6,7 @@
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Button } from '../ui/button';
-import { ChevronUp, ChevronDown } from 'lucide-react';
+import { ChevronDown, ChevronRight } from 'lucide-react';
 import { cn } from '../../utils/cn';
 
 export interface AnchorNavBarProps {
@@ -26,6 +26,8 @@ export interface AnchorNavBarProps {
   smoothScroll?: boolean;
   /** Offset for scroll position (default: 80) */
   activeOffset?: number;
+  /** Whether to make the bar sticky (default: false) */
+  sticky?: boolean;
   /** Callback when active section changes */
   onSectionChange?: (activeSection: string) => void;
   /** Callback when expand/collapse all is toggled */
@@ -47,6 +49,7 @@ const AnchorNavBar = ({
   className,
   smoothScroll = true,
   activeOffset = 80,
+  sticky = false,
   onSectionChange,
   onExpandToggle
 }: AnchorNavBarProps) => {
@@ -166,51 +169,42 @@ const AnchorNavBar = ({
 
   return (
     <div className={cn(
-      "sticky top-0 z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border",
+      "flex items-center gap-2 mb-4 overflow-x-auto",
+      sticky && "sticky top-0 z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border py-3 px-4",
       className
     )}>
-      <div className="container max-w-7xl mx-auto">
-        <div className="flex items-center justify-between py-3 px-4">
-          {/* Navigation Pills */}
-          <div className="flex items-center space-x-2 overflow-x-auto">
-            {sections.map((section) => (
-              <Button
-                key={section.id}
-                variant={activeSection === section.id ? "default" : "ghost"}
-                size="sm"
-                onClick={() => scrollToSection(section.id)}
-                className={cn(
-                  "whitespace-nowrap transition-all duration-200",
-                  activeSection === section.id 
-                    ? "bg-primary text-primary-foreground shadow-sm" 
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                )}
-              >
-                {section.title}
-              </Button>
-            ))}
-          </div>
-
-          {/* Expand/Collapse All */}
-          {showExpandAll && (
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={toggleAllSections}
-              className="ml-4 flex items-center space-x-1"
-            >
-              {allExpanded ? (
-                <ChevronUp className="h-4 w-4" />
-              ) : (
-                <ChevronDown className="h-4 w-4" />
-              )}
-              <span className="hidden sm:inline">
-                {allExpanded ? expandAllText.collapse : expandAllText.expand}
-              </span>
-            </Button>
+      {/* Expand/Collapse All - First item */}
+      {showExpandAll && (
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={toggleAllSections}
+          className="whitespace-nowrap text-muted-foreground hover:bg-accent hover:text-accent-foreground font-normal rounded"
+        >
+          {allExpanded ? (
+            <ChevronDown className="h-4 w-4 mr-0.5" />
+          ) : (
+            <ChevronRight className="h-4 w-4 mr-0.5" />
           )}
-        </div>
-      </div>
+          {allExpanded ? expandAllText.collapse : expandAllText.expand}
+        </Button>
+      )}
+
+      {/* Navigation Pills */}
+      {sections.map((section) => (
+        <Button
+          key={section.id}
+          variant="ghost"
+          size="sm"
+          onClick={() => scrollToSection(section.id)}
+          className={cn(
+            "whitespace-nowrap text-muted-foreground hover:bg-accent hover:text-accent-foreground font-normal rounded",
+            activeSection === section.id && "bg-accent text-accent-foreground"
+          )}
+        >
+          {section.title}
+        </Button>
+      ))}
     </div>
   );
 };

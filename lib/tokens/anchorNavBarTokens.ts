@@ -5,27 +5,20 @@
 
 export const ANCHOR_NAV_BAR = {
   // Container styles
-  container: "sticky top-0 z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border",
-  inner: "container max-w-7xl mx-auto",
-  content: "flex items-center justify-between py-3 px-4",
+  container: "flex items-center gap-2 mb-4 overflow-x-auto",
+  containerSticky: "sticky top-0 z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border py-3 px-4",
   
-  // Navigation section
-  navigation: "flex items-center space-x-2 overflow-x-auto",
-  navButton: "whitespace-nowrap transition-all duration-200",
-  navButtonActive: "bg-primary text-primary-foreground shadow-sm",
-  navButtonInactive: "text-muted-foreground hover:text-foreground hover:bg-muted",
+  // Navigation buttons
+  navButton: "whitespace-nowrap text-muted-foreground hover:bg-accent hover:text-accent-foreground font-normal rounded",
+  navButtonActive: "bg-accent text-accent-foreground",
   
   // Expand/collapse button
-  expandButton: "ml-4 flex items-center space-x-1",
-  expandIcon: "h-4 w-4",
-  expandText: "hidden sm:inline",
+  expandButton: "whitespace-nowrap text-muted-foreground hover:bg-accent hover:text-accent-foreground font-normal rounded",
+  expandIcon: "h-4 w-4 mr-0.5",
   
-  // Responsive overrides
-  mobile: {
-    container: "px-2",
-    navigation: "space-x-1",
-    expandText: "hidden"
-  }
+  // Button variant
+  buttonVariant: "ghost",
+  buttonSize: "sm"
 } as const;
 
 export const ANCHOR_NAV_BAR_ANIMATION = {
