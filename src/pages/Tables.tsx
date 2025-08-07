@@ -4,22 +4,25 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import 'ennabl-ui-kit-beta/dist/index.css';
 
 const Tables = () => {
-  // Sample data for custom table
-  const sampleData = [
-    { id: 1, name: "John Doe", department: "Engineering", salary: "$85,000", status: "Active" },
-    { id: 2, name: "Jane Smith", department: "Marketing", salary: "$72,000", status: "Active" },
-    { id: 3, name: "Bob Johnson", department: "Sales", salary: "$68,000", status: "On Leave" },
-    { id: 4, name: "Alice Brown", department: "HR", salary: "$75,000", status: "Active" },
-    { id: 5, name: "Charlie Wilson", department: "Finance", salary: "$82,000", status: "Active" }
+  // User Accounts data
+  const userAccountsData = [
+    { id: 1, username: "john.doe", email: "john@company.com", role: "Admin", status: "Active" },
+    { id: 2, username: "sarah.smith", email: "sarah@company.com", role: "Editor", status: "Active" },
+    { id: 3, username: "mike.jones", email: "mike@company.com", role: "Viewer", status: "Inactive" }
   ];
 
-  // Sample data for project tracking table
-  const projectData = [
-    { id: 1, project: "Website Redesign", client: "Acme Corp", progress: 85, budget: "$45,000", deadline: "2024-09-15" },
-    { id: 2, project: "Mobile App", client: "Tech Solutions", progress: 60, budget: "$120,000", deadline: "2024-10-30" },
-    { id: 3, project: "Database Migration", client: "Data Systems Inc", progress: 95, budget: "$25,000", deadline: "2024-08-20" },
-    { id: 4, project: "API Development", client: "Cloud Services", progress: 40, budget: "$80,000", deadline: "2024-11-15" },
-    { id: 5, project: "Security Audit", client: "Finance Corp", progress: 75, budget: "$15,000", deadline: "2024-09-30" }
+  // Sales Reports data
+  const salesData = [
+    { month: "January", revenue: "$45,230", orders: 156, growth: "+12%" },
+    { month: "February", revenue: "$52,100", orders: 187, growth: "+15%" },
+    { month: "March", revenue: "$48,750", orders: 173, growth: "-6%" }
+  ];
+
+  // Inventory Status data
+  const inventoryData = [
+    { product: "Laptop Pro", sku: "LTP-001", stock: 45, category: "Electronics" },
+    { product: "Office Chair", sku: "OCH-205", stock: 12, category: "Furniture" },
+    { product: "Wireless Mouse", sku: "WMS-102", stock: 88, category: "Accessories" }
   ];
 
   return (
@@ -32,70 +35,39 @@ const Tables = () => {
           <p className="text-muted-foreground">Examples of data tables using Ennabl UI Kit components</p>
         </div>
 
-        {/* Insurance Products Table */}
+        {/* User Accounts Table */}
         <Section 
-          id="insurance-products"
-          title="Insurance Products"
+          id="user-accounts"
+          title="User Accounts"
           className="mb-8"
           showDragHandle={true}
-          badges={[{ text: "Live Data", variant: "secondary" }]}
-        >
-          <ProductsTable 
-            rows={8}
-            showHeader={false}
-            className="mt-4"
-          />
-        </Section>
-
-        {/* Insurance Clients Table */}
-        <Section 
-          id="insurance-clients"
-          title="Insurance Clients"
-          className="mb-8"
-          showDragHandle={true}
-          badges={[{ text: "Contact Info", variant: "outline" }]}
-        >
-          <ClientsTable 
-            rows={6}
-            showHeader={false}
-            showContactInfo={true}
-            className="mt-4"
-          />
-        </Section>
-
-        {/* Custom Employee Table */}
-        <Section 
-          id="employee-directory"
-          title="Employee Directory"
-          className="mb-8"
-          showDragHandle={true}
-          badges={[{ text: "Static Data", variant: "destructive" }]}
+          badges={[{ text: "Active Users", variant: "secondary" }]}
         >
           <div className="mt-4 rounded-lg border">
             <Table>
               <TableHeader>
                 <TableRow>
                   <TableHead>ID</TableHead>
-                  <TableHead>Name</TableHead>
-                  <TableHead>Department</TableHead>
-                  <TableHead>Salary</TableHead>
+                  <TableHead>Username</TableHead>
+                  <TableHead>Email</TableHead>
+                  <TableHead>Role</TableHead>
                   <TableHead>Status</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {sampleData.map((employee) => (
-                  <TableRow key={employee.id}>
-                    <TableCell className="font-medium">{employee.id}</TableCell>
-                    <TableCell>{employee.name}</TableCell>
-                    <TableCell>{employee.department}</TableCell>
-                    <TableCell className="font-mono">{employee.salary}</TableCell>
+                {userAccountsData.map((user) => (
+                  <TableRow key={user.id}>
+                    <TableCell className="font-medium">{user.id}</TableCell>
+                    <TableCell className="font-mono">{user.username}</TableCell>
+                    <TableCell>{user.email}</TableCell>
+                    <TableCell>{user.role}</TableCell>
                     <TableCell>
                       <span className={`inline-flex items-center rounded-full px-2 py-1 text-xs font-medium ${
-                        employee.status === 'Active' 
+                        user.status === 'Active' 
                           ? 'bg-green-50 text-green-700 ring-1 ring-green-600/20'
-                          : 'bg-yellow-50 text-yellow-700 ring-1 ring-yellow-600/20'
+                          : 'bg-gray-50 text-gray-700 ring-1 ring-gray-600/20'
                       }`}>
-                        {employee.status}
+                        {user.status}
                       </span>
                     </TableCell>
                   </TableRow>
@@ -105,45 +77,78 @@ const Tables = () => {
           </div>
         </Section>
 
-        {/* Project Tracking Table */}
+        {/* Sales Reports Table */}
         <Section 
-          id="project-tracking"
-          title="Project Tracking"
+          id="sales-reports"
+          title="Sales Reports"
           className="mb-8"
           showDragHandle={true}
-          badges={[{ text: "Progress", variant: "default" }]}
+          badges={[{ text: "Monthly Data", variant: "outline" }]}
         >
           <div className="mt-4 rounded-lg border">
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>ID</TableHead>
-                  <TableHead>Project</TableHead>
-                  <TableHead>Client</TableHead>
-                  <TableHead>Progress</TableHead>
-                  <TableHead>Budget</TableHead>
-                  <TableHead>Deadline</TableHead>
+                  <TableHead>Month</TableHead>
+                  <TableHead>Revenue</TableHead>
+                  <TableHead>Orders</TableHead>
+                  <TableHead>Growth</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {projectData.map((project) => (
-                  <TableRow key={project.id}>
-                    <TableCell className="font-medium">{project.id}</TableCell>
-                    <TableCell className="font-medium">{project.project}</TableCell>
-                    <TableCell>{project.client}</TableCell>
+                {salesData.map((sale, index) => (
+                  <TableRow key={index}>
+                    <TableCell className="font-medium">{sale.month}</TableCell>
+                    <TableCell className="font-mono">{sale.revenue}</TableCell>
+                    <TableCell>{sale.orders}</TableCell>
                     <TableCell>
-                      <div className="flex items-center gap-2">
-                        <div className="w-20 bg-muted rounded-full h-2">
-                          <div 
-                            className="bg-primary h-2 rounded-full transition-all duration-300"
-                            style={{ width: `${project.progress}%` }}
-                          />
-                        </div>
-                        <span className="text-sm font-mono">{project.progress}%</span>
-                      </div>
+                      <span className={`font-medium ${
+                        sale.growth.startsWith('+') 
+                          ? 'text-green-600'
+                          : 'text-red-600'
+                      }`}>
+                        {sale.growth}
+                      </span>
                     </TableCell>
-                    <TableCell className="font-mono">{project.budget}</TableCell>
-                    <TableCell className="text-muted-foreground">{project.deadline}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+        </Section>
+
+        {/* Inventory Status Table */}
+        <Section 
+          id="inventory-status"
+          title="Inventory Status"
+          className="mb-8"
+          showDragHandle={true}
+          badges={[{ text: "Stock Levels", variant: "default" }]}
+        >
+          <div className="mt-4 rounded-lg border">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Product</TableHead>
+                  <TableHead>SKU</TableHead>
+                  <TableHead>Stock</TableHead>
+                  <TableHead>Category</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {inventoryData.map((item, index) => (
+                  <TableRow key={index}>
+                    <TableCell className="font-medium">{item.product}</TableCell>
+                    <TableCell className="font-mono">{item.sku}</TableCell>
+                    <TableCell>
+                      <span className={`font-medium ${
+                        item.stock > 50 ? 'text-green-600' : 
+                        item.stock > 20 ? 'text-yellow-600' : 'text-red-600'
+                      }`}>
+                        {item.stock}
+                      </span>
+                    </TableCell>
+                    <TableCell>{item.category}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
