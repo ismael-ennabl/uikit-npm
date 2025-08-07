@@ -1,5 +1,6 @@
 import React from 'react';
 import { cn } from '../../utils/cn';
+import { HEADER_TOKENS } from '../../tokens/headerTokens';
 
 export interface HeaderProps {
   left?: React.ReactNode;
@@ -8,20 +9,6 @@ export interface HeaderProps {
   className?: string;
   children?: React.ReactNode;
 }
-
-const HEADER_TOKENS = {
-  // Base header container
-  container: "flex items-center justify-between px-6 py-4 bg-background border-b border-border",
-  
-  // Layout sections
-  leftSection: "flex items-center gap-4",
-  rightSection: "flex items-center gap-3",
-  centerSection: "flex-1 flex justify-center",
-  
-  // Responsive spacing
-  mobileContainer: "px-4 py-3",
-  desktopContainer: "px-6 py-4",
-} as const;
 
 const Header = ({ left, center, right, className, children }: HeaderProps) => {
   if (children) {

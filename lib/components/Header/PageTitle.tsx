@@ -1,26 +1,13 @@
 import React from 'react';
 import { cn } from '../../utils/cn';
+import { PAGE_TITLE_TOKENS } from '../../tokens/headerTokens';
 
 export interface PageTitleProps {
   title: string;
   subtitle?: string;
-  variant?: 'h1' | 'h2' | 'h3';
+  variant?: 'h1' | 'h2' | 'h3' | 'titlePage';
   className?: string;
 }
-
-const PAGE_TITLE_TOKENS = {
-  // Title variants
-  h1: "text-2xl font-bold text-foreground",
-  h2: "text-xl font-semibold text-foreground", 
-  h3: "text-lg font-medium text-foreground",
-  
-  // Subtitle
-  subtitle: "text-sm text-muted-foreground mt-1",
-  
-  // Container
-  container: "flex flex-col",
-  titleRow: "flex items-center gap-3",
-} as const;
 
 const PageTitle = ({ 
   title, 

@@ -17,6 +17,9 @@ export type { SectionProps, SectionBadge } from './Section';
 // Header components
 export * from './Header';
 
+// UI components
+export * from './ui';
+
 // Insurance domain components
 export { ProductsTable } from './ProductsTable';
 export type { ProductsTableProps } from './ProductsTable';

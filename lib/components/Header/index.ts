@@ -16,3 +16,9 @@ export type { TopAIProps } from './TopAI';
 
 export { default as Dropdown } from './Dropdown';
 export type { DropdownProps, DropdownItem } from './Dropdown';
+
+export { default as OverviewSection } from './OverviewSection';
+export type { OverviewSectionProps, MetricData, ActionButton } from './OverviewSection';
+
+// Header layout components
+export * from './layouts';
