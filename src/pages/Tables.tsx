@@ -43,7 +43,7 @@ const Tables = () => {
           title="User Accounts"
           className="mb-8"
           showDragHandle={true}
-          badges={[{ text: "Active Users", variant: "secondary" }]}
+          badges={[{ text: "Active Users" }]}
         >
           <div className="mt-4 rounded-lg border">
             <Table>
@@ -85,7 +85,7 @@ const Tables = () => {
           title="Sales Reports"
           className="mb-8"
           showDragHandle={true}
-          badges={[{ text: "Monthly Data", variant: "outline" }]}
+          badges={[{ text: "Monthly Data" }]}
         >
           <div className="mt-4 rounded-lg border">
             <Table>
@@ -125,7 +125,7 @@ const Tables = () => {
           title="Inventory Status"
           className="mb-8"
           showDragHandle={true}
-          badges={[{ text: "Stock Levels", variant: "default" }]}
+          badges={[{ text: "Stock Levels" }]}
         >
           <div className="mt-4 rounded-lg border">
             <Table>
