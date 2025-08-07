@@ -197,7 +197,7 @@ const AnchorNavBar = ({
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center space-x-2 overflow-x-auto py-3 bg-page">
           {/* Expand/Collapse All - First item */}
-          {showExpandAll && <Button variant="ghost" size="sm" onClick={toggleAllSections} className="flex items-center -space-x-0 shrink-0 font-normal text-sm border-0 bg-secondary">
+          {showExpandAll && <Button variant="ghost" size="sm" onClick={toggleAllSections} className="flex items-center -space-x-0 shrink-0 font-normal text-sm border-0">
               {allExpanded ? <ChevronDown className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
               <span className="hidden sm:inline">
                 {allExpanded ? expandAllText.collapse : expandAllText.expand}
