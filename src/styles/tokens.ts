@@ -84,6 +84,30 @@ export const SELECTION_TOOLBAR = {
   chevronIcon: "h-3 w-3 ml-1"
 } as const;
 
+// Section header tokens
+export const SECTION_HEADER = {
+  // Container and layout
+  container: "flex items-center cursor-pointer select-none",
+  content: "flex items-center gap-3 w-full",
+  leftSection: "flex items-center gap-3",
+  
+  // Icons
+  dragIcon: "h-4 w-4 text-muted-foreground hover:text-foreground transition-colors",
+  chevronIcon: "h-4 w-4 text-muted-foreground transition-transform duration-200",
+  
+  // Title styling
+  title: "text-xl font-semibold text-foreground",
+  titleHover: "hover:text-primary transition-colors",
+  
+  // Badges
+  badgesContainer: "flex items-center gap-2 ml-auto",
+  badge: "text-xs font-medium px-2 py-1 rounded-full bg-muted text-muted-foreground",
+  
+  // Interactive states
+  headerHover: "hover:bg-muted/50 transition-colors duration-200 rounded-md p-2 -m-2",
+  focusVisible: "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md",
+} as const;
+
 // Tooltip style tokens
 export const TOOLTIP_STYLES = {
   dark: "bg-black text-white",
