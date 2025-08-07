@@ -52,8 +52,10 @@ const AnchorNavBar = ({
   const [sections, setSections] = useState<DetectedSection[]>([]);
   const [activeSection, setActiveSection] = useState<string>('');
   const [allExpanded, setAllExpanded] = useState<boolean>(false);
+  const [isSticky, setIsSticky] = useState<boolean>(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
   const sectionsRef = useRef<Map<string, HTMLElement>>(new Map());
+  const navRef = useRef<HTMLDivElement>(null);
 
   // Detect sections on mount and DOM changes
   const detectSections = useCallback(() => {
@@ -116,6 +118,29 @@ const AnchorNavBar = ({
     };
   }, [sections, rootMargin, threshold, onSectionChange]);
 
+  // Detect sticky state
+  useEffect(() => {
+    if (!navRef.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsSticky(!entry.isIntersecting);
+      },
+      {
+        root: null,
+        threshold: 0,
+        rootMargin: '-1px 0px 0px 0px'
+      }
+    );
+
+    const target = navRef.current;
+    observer.observe(target);
+
+    return () => {
+      observer.unobserve(target);
+    };
+  }, []);
+
   // Detect sections on mount and when DOM changes
   useEffect(() => {
     // Initial detection
@@ -175,10 +200,14 @@ const AnchorNavBar = ({
   }
 
   return (
-    <div className={cn(
-      "sticky top-0 z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border",
-      className
-    )}>
+    <div 
+      ref={navRef}
+      className={cn(
+        "sticky top-0 z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60",
+        isSticky && "border-b border-border",
+        className
+      )}
+    >
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center space-x-2 overflow-x-auto py-3 px-4 bg-page">
           {/* Expand/Collapse All - First item */}
