@@ -205,9 +205,9 @@ const AnchorNavBar = ({
               size="sm"
               onClick={() => scrollToSection(section.id)}
               className={cn(
-                "whitespace-nowrap transition-all duration-200 min-w-fit",
+                "whitespace-nowrap transition-all duration-200 min-w-fit rounded-lg",
                 activeSection === section.id 
-                  ? "bg-primary text-primary-foreground shadow-sm" 
+                  ? "bg-[#0000c5]/[0.08] text-foreground" 
                   : "text-muted-foreground hover:text-foreground hover:bg-muted"
               )}
             >
