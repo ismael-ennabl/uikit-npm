@@ -62,21 +62,19 @@ const DetailHeader = ({
           </div>
           
           {/* Bottom Row - Page Title & Overview with Rounded Background */}
-          <div className="flex items-center justify-between w-full p-6 rounded-2xl bg-background">
-            <div className="flex flex-col gap-4 flex-1">
-              <PageTitle 
-                title={title} 
-                subtitle={subtitle}
-                variant="h1" 
+          <div className="flex flex-col gap-4 w-full p-6 rounded-2xl bg-background">
+            <PageTitle 
+              title={title} 
+              subtitle={subtitle}
+              variant="h1" 
+            />
+            
+            {(metrics.length > 0 || actions.length > 0) && (
+              <OverviewSection 
+                metrics={metrics}
+                actions={actions}
               />
-              
-              {(metrics.length > 0 || actions.length > 0) && (
-                <OverviewSection 
-                  metrics={metrics}
-                  actions={actions}
-                />
-              )}
-            </div>
+            )}
           </div>
         </div>
       </Header>
