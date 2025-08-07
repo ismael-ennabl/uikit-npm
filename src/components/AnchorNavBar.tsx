@@ -176,7 +176,7 @@ const AnchorNavBar = ({
 
   return (
     <div className={cn(className)}>
-      <div className="container max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="flex items-center space-x-2 overflow-x-auto">
           {/* Expand/Collapse All - First item */}
           {showExpandAll && (
