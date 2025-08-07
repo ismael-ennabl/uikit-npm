@@ -174,22 +174,78 @@ const AnchorNavBar = ({
     }
   }, [smoothScroll, activeOffset]);
 
+  // Check current state of all sections
+  const checkAllSectionsState = useCallback(() => {
+    let expandedCount = 0;
+    let totalCount = 0;
+
+    sectionsRef.current.forEach(element => {
+      const collapsible = element.querySelector('[data-radix-collapsible-root]');
+      if (collapsible) {
+        totalCount++;
+        const isOpen = collapsible.getAttribute('data-state') === 'open';
+        if (isOpen) {
+          expandedCount++;
+        }
+      }
+    });
+
+    // Update state based on current sections
+    const newExpanded = expandedCount === totalCount && totalCount > 0;
+    if (newExpanded !== allExpanded) {
+      setAllExpanded(newExpanded);
+    }
+  }, [allExpanded]);
+
   // Toggle all sections expanded/collapsed
   const toggleAllSections = useCallback(() => {
     const newExpanded = !allExpanded;
     setAllExpanded(newExpanded);
 
-    // Find all collapsible triggers and click them
+    // Find all Section components and toggle them correctly
     sectionsRef.current.forEach(element => {
-      const collapsible = element.closest('[data-state]');
-      const trigger = element.querySelector('[role="button"]') as HTMLElement;
-      const isCurrentlyOpen = collapsible?.getAttribute('data-state') === 'open';
-      if (trigger && (newExpanded && !isCurrentlyOpen || !newExpanded && isCurrentlyOpen)) {
-        trigger.click();
+      // Look for the Radix Collapsible root within the section
+      const collapsible = element.querySelector('[data-radix-collapsible-root]');
+      if (collapsible) {
+        const isCurrentlyOpen = collapsible.getAttribute('data-state') === 'open';
+        
+        // Only toggle if the current state doesn't match the desired state
+        if ((newExpanded && !isCurrentlyOpen) || (!newExpanded && isCurrentlyOpen)) {
+          // Find the CollapsibleTrigger within this section
+          const trigger = element.querySelector('[data-radix-collapsible-trigger]') as HTMLElement;
+          if (trigger) {
+            trigger.click();
+          }
+        }
       }
     });
+    
     onExpandToggle?.(newExpanded);
   }, [allExpanded, onExpandToggle]);
+
+  // Check state periodically to keep button in sync
+  useEffect(() => {
+    if (sections.length > 0) {
+      checkAllSectionsState();
+      
+      // Set up a mutation observer to watch for state changes
+      const observer = new MutationObserver(() => {
+        setTimeout(checkAllSectionsState, 50);
+      });
+
+      sectionsRef.current.forEach(element => {
+        const collapsible = element.querySelector('[data-radix-collapsible-root]');
+        if (collapsible) {
+          observer.observe(collapsible, {
+            attributes: true,
+            attributeFilter: ['data-state']
+          });
+        }
+      });
+
+      return () => observer.disconnect();
+    }
+  }, [sections, checkAllSectionsState]);
   if (sections.length === 0) {
     return null;
   }
