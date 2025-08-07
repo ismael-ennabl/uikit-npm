@@ -80,6 +80,7 @@ export const PAGE_TITLE_TOKENS = {
   h2: "text-xl font-semibold text-foreground", 
   h3: "text-lg font-medium text-foreground",
   titlePage: "text-3xl font-bold text-foreground",
+  subtitle: "text-sm text-muted-foreground mt-1",
   
   // Container
   container: "flex flex-col",
