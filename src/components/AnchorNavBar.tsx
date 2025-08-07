@@ -213,10 +213,10 @@ const AnchorNavBar = ({
           {/* Expand/Collapse All - First item */}
           {showExpandAll && (
             <Button
-              variant="outline"
+              variant="ghost"
               size="sm"
               onClick={toggleAllSections}
-              className="flex items-center space-x-1 shrink-0 font-normal text-sm"
+              className="flex items-center space-x-1 shrink-0 font-normal text-sm border-0 bg-transparent"
             >
               {allExpanded ? (
                 <ChevronUp className="h-4 w-4" />
