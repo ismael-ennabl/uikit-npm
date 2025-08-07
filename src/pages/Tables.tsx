@@ -1,4 +1,5 @@
-import { Section, ProductsTable, ClientsTable, AnchorNavBar } from 'ennabl-ui-kit-beta';
+import { Section, ProductsTable, ClientsTable } from 'ennabl-ui-kit-beta';
+import AnchorNavBar from '@/components/AnchorNavBar';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import 'ennabl-ui-kit-beta/dist/index.css';
 
@@ -41,7 +42,7 @@ const Tables = () => {
           id="user-accounts"
           title="User Accounts"
           className="mb-8"
-          showDragHandle={true}
+          showDragHandle={false}
           badges={[{ text: "Active Users" }]}
         >
           <div className="mt-4 rounded-lg border">
@@ -83,7 +84,7 @@ const Tables = () => {
           id="insurance-products"
           title="Insurance Products"
           className="mb-8"
-          showDragHandle={true}
+          showDragHandle={false}
           badges={[{ text: "Products Data" }]}
         >
           <ProductsTable rows={5} showHeader={false} />
@@ -94,7 +95,7 @@ const Tables = () => {
           id="sales-reports"
           title="Sales Reports"
           className="mb-8"
-          showDragHandle={true}
+          showDragHandle={false}
           badges={[{ text: "Monthly Data" }]}
         >
           <div className="mt-4 rounded-lg border">
@@ -134,7 +135,7 @@ const Tables = () => {
           id="insurance-clients"
           title="Insurance Clients"
           className="mb-8"
-          showDragHandle={true}
+          showDragHandle={false}
           badges={[{ text: "Client Data" }]}
         >
           <ClientsTable rows={4} showHeader={false} showContactInfo={true} />
@@ -145,7 +146,7 @@ const Tables = () => {
           id="inventory-status"
           title="Inventory Status"
           className="mb-8"
-          showDragHandle={true}
+          showDragHandle={false}
           badges={[{ text: "Stock Levels" }]}
         >
           <div className="mt-4 rounded-lg border">
