@@ -216,7 +216,7 @@ const AnchorNavBar = ({
               variant="outline"
               size="sm"
               onClick={toggleAllSections}
-              className="flex items-center space-x-1 shrink-0"
+              className="flex items-center space-x-1 shrink-0 font-normal text-xs"
             >
               {allExpanded ? (
                 <ChevronUp className="h-4 w-4" />
@@ -237,7 +237,7 @@ const AnchorNavBar = ({
               size="sm"
               onClick={() => scrollToSection(section.id)}
               className={cn(
-                "whitespace-nowrap transition-all duration-200 min-w-fit rounded-lg font-normal",
+                "whitespace-nowrap transition-all duration-200 min-w-fit rounded-lg font-normal text-xs",
                 activeSection === section.id 
                   ? "bg-[#0000c5]/[0.08] text-foreground hover:bg-[#0000c5]/[0.10]" 
                   : "text-muted-foreground hover:text-foreground hover:bg-[#0000c5]/[0.10]"
