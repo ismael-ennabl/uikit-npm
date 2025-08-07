@@ -1,4 +1,5 @@
-import { Section, ProductsTable, ClientsTable, AnchorNavBar } from 'ennabl-ui-kit-beta';
+import { Section, ProductsTable, ClientsTable } from 'ennabl-ui-kit-beta';
+import AnchorNavBar from "@/components/AnchorNavBar";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import 'ennabl-ui-kit-beta/dist/index.css';
 
