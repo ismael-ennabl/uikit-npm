@@ -79,9 +79,7 @@ export const PAGE_TITLE_TOKENS = {
   h1: "text-2xl font-bold text-foreground",
   h2: "text-xl font-semibold text-foreground", 
   h3: "text-lg font-medium text-foreground",
-  
-  // Subtitle
-  subtitle: "text-sm text-muted-foreground mt-1",
+  titlePage: "text-3xl font-bold text-foreground",
   
   // Container
   container: "flex flex-col",
@@ -90,8 +88,7 @@ export const PAGE_TITLE_TOKENS = {
 
 export const OVERVIEW_SECTION_TOKENS = {
   // Main container
-  container: "flex items-center justify-between w-full bg-background",
-  content: "flex items-center justify-between w-full p-6 rounded-2xl bg-background",
+  container: "flex items-center justify-between w-full",
   
   // Left section (metrics)
   metricsSection: "flex items-center gap-6",

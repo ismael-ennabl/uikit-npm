@@ -34,7 +34,6 @@ const Layout = () => {
       <div className={PAGE.container}>
         <DetailHeader
            title={packageInfo.name}
-          subtitle="Insurance policy comparison analysis"
           breadcrumbItems={breadcrumbItems}
           metrics={metrics}
           actions={actions}
