@@ -7,7 +7,6 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronUp, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
-
 export interface AnchorNavBarProps {
   /** CSS selector for sections to detect (default: '[data-ennabl-component="section"]') */
   sectionSelector?: string;
@@ -18,7 +17,10 @@ export interface AnchorNavBarProps {
   /** Show expand/collapse all functionality (default: true) */
   showExpandAll?: boolean;
   /** Text for expand/collapse all button */
-  expandAllText?: { expand: string; collapse: string };
+  expandAllText?: {
+    expand: string;
+    collapse: string;
+  };
   /** Additional CSS classes */
   className?: string;
   /** Enable smooth scrolling (default: true) */
@@ -30,19 +32,20 @@ export interface AnchorNavBarProps {
   /** Callback when expand/collapse all is toggled */
   onExpandToggle?: (expanded: boolean) => void;
 }
-
 export interface DetectedSection {
   id: string;
   title: string;
   element: HTMLElement;
 }
-
 const AnchorNavBar = ({
   sectionSelector = '[data-ennabl-component="section"]',
   rootMargin = '0px 0px -80% 0px',
   threshold = 0.1,
   showExpandAll = true,
-  expandAllText = { expand: 'Expand All', collapse: 'Collapse All' },
+  expandAllText = {
+    expand: 'Expand All',
+    collapse: 'Collapse All'
+  },
   className,
   smoothScroll = true,
   activeOffset = 80,
@@ -62,19 +65,20 @@ const AnchorNavBar = ({
     const sectionElements = document.querySelectorAll(sectionSelector);
     const detectedSections: DetectedSection[] = [];
     const newSectionsMap = new Map<string, HTMLElement>();
-
-    sectionElements.forEach((element) => {
+    sectionElements.forEach(element => {
       const htmlElement = element as HTMLElement;
       const id = htmlElement.id;
       const titleElement = htmlElement.querySelector('[data-ennabl-element="title"]');
       const title = titleElement?.textContent || `Section ${id}`;
-
       if (id) {
-        detectedSections.push({ id, title, element: htmlElement });
+        detectedSections.push({
+          id,
+          title,
+          element: htmlElement
+        });
         newSectionsMap.set(id, htmlElement);
       }
     });
-
     setSections(detectedSections);
     sectionsRef.current = newSectionsMap;
   }, [sectionSelector]);
@@ -82,37 +86,35 @@ const AnchorNavBar = ({
   // Setup IntersectionObserver
   useEffect(() => {
     if (sections.length === 0) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        // Find the most visible section
-        let mostVisible = { entry: null as IntersectionObserverEntry | null, ratio: 0 };
-        
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.intersectionRatio > mostVisible.ratio) {
-            mostVisible = { entry, ratio: entry.intersectionRatio };
-          }
-        });
-
-        if (mostVisible.entry) {
-          const id = mostVisible.entry.target.id;
-          setActiveSection(id);
-          onSectionChange?.(id);
+    const observer = new IntersectionObserver(entries => {
+      // Find the most visible section
+      let mostVisible = {
+        entry: null as IntersectionObserverEntry | null,
+        ratio: 0
+      };
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio > mostVisible.ratio) {
+          mostVisible = {
+            entry,
+            ratio: entry.intersectionRatio
+          };
         }
-      },
-      {
-        rootMargin,
-        threshold: [0, 0.1, 0.5, 1.0]
+      });
+      if (mostVisible.entry) {
+        const id = mostVisible.entry.target.id;
+        setActiveSection(id);
+        onSectionChange?.(id);
       }
-    );
-
+    }, {
+      rootMargin,
+      threshold: [0, 0.1, 0.5, 1.0]
+    });
     observerRef.current = observer;
 
     // Observe all sections
-    sectionsRef.current.forEach((element) => {
+    sectionsRef.current.forEach(element => {
       observer.observe(element);
     });
-
     return () => {
       observer.disconnect();
     };
@@ -121,21 +123,15 @@ const AnchorNavBar = ({
   // Detect sticky state
   useEffect(() => {
     if (!navRef.current) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsSticky(!entry.isIntersecting);
-      },
-      {
-        root: null,
-        threshold: 0,
-        rootMargin: '-1px 0px 0px 0px'
-      }
-    );
-
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsSticky(!entry.isIntersecting);
+    }, {
+      root: null,
+      threshold: 0,
+      rootMargin: '-1px 0px 0px 0px'
+    });
     const target = navRef.current;
     observer.observe(target);
-
     return () => {
       observer.unobserve(target);
     };
@@ -150,12 +146,10 @@ const AnchorNavBar = ({
     const mutationObserver = new MutationObserver(() => {
       setTimeout(detectSections, 100); // Small delay to ensure DOM is ready
     });
-
     mutationObserver.observe(document.body, {
       childList: true,
       subtree: true
     });
-
     return () => {
       mutationObserver.disconnect();
     };
@@ -167,11 +161,15 @@ const AnchorNavBar = ({
     if (element) {
       const yOffset = -activeOffset;
       const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      
       if (smoothScroll) {
-        window.scrollTo({ top: y, behavior: 'smooth' });
+        window.scrollTo({
+          top: y,
+          behavior: 'smooth'
+        });
       } else {
-        window.scrollTo({ top: y });
+        window.scrollTo({
+          top: y
+        });
       }
     }
   }, [smoothScroll, activeOffset]);
@@ -180,76 +178,38 @@ const AnchorNavBar = ({
   const toggleAllSections = useCallback(() => {
     const newExpanded = !allExpanded;
     setAllExpanded(newExpanded);
-    
+
     // Find all collapsible triggers and click them
-    sectionsRef.current.forEach((element) => {
+    sectionsRef.current.forEach(element => {
       const collapsible = element.closest('[data-state]');
       const trigger = element.querySelector('[role="button"]') as HTMLElement;
       const isCurrentlyOpen = collapsible?.getAttribute('data-state') === 'open';
-      
-      if (trigger && ((newExpanded && !isCurrentlyOpen) || (!newExpanded && isCurrentlyOpen))) {
+      if (trigger && (newExpanded && !isCurrentlyOpen || !newExpanded && isCurrentlyOpen)) {
         trigger.click();
       }
     });
-
     onExpandToggle?.(newExpanded);
   }, [allExpanded, onExpandToggle]);
-
   if (sections.length === 0) {
     return null;
   }
-
-  return (
-    <div 
-      ref={navRef}
-      className={cn(
-        "sticky top-0 z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60",
-        isSticky && "border-b border-border",
-        className
-      )}
-    >
+  return <div ref={navRef} className={cn("sticky top-0 z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60", isSticky && "border-b border-border", className)}>
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center space-x-2 overflow-x-auto py-3 bg-page">
           {/* Expand/Collapse All - First item */}
-          {showExpandAll && (
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={toggleAllSections}
-              className="flex items-center space-x-1 shrink-0"
-            >
-              {allExpanded ? (
-                <ChevronUp className="h-4 w-4" />
-              ) : (
-                <ChevronDown className="h-4 w-4" />
-              )}
-              <span className="hidden sm:inline">
+          {showExpandAll && <Button variant="outline" size="sm" onClick={toggleAllSections} className="flex items-center space-x-1 shrink-0">
+              {allExpanded ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+              <span className="hidden sm:inline text-sm font-normal">
                 {allExpanded ? expandAllText.collapse : expandAllText.expand}
               </span>
-            </Button>
-          )}
+            </Button>}
 
           {/* Navigation Pills */}
-          {sections.map((section) => (
-            <Button
-              key={section.id}
-              variant={activeSection === section.id ? "default" : "ghost"}
-              size="sm"
-              onClick={() => scrollToSection(section.id)}
-              className={cn(
-                "whitespace-nowrap transition-all duration-200 min-w-fit rounded-lg font-normal",
-                activeSection === section.id 
-                  ? "bg-[#0000c5]/[0.08] text-foreground hover:bg-[#0000c5]/[0.10]" 
-                  : "text-muted-foreground hover:text-foreground hover:bg-[#0000c5]/[0.10]"
-              )}
-            >
+          {sections.map(section => <Button key={section.id} variant={activeSection === section.id ? "default" : "ghost"} size="sm" onClick={() => scrollToSection(section.id)} className={cn("whitespace-nowrap transition-all duration-200 min-w-fit rounded-lg font-normal", activeSection === section.id ? "bg-[#0000c5]/[0.08] text-foreground hover:bg-[#0000c5]/[0.10]" : "text-muted-foreground hover:text-foreground hover:bg-[#0000c5]/[0.10]")}>
               {section.title}
-            </Button>
-          ))}
+            </Button>)}
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default AnchorNavBar;
