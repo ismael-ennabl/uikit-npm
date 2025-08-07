@@ -4,13 +4,17 @@
  */
 
 export const HEADER_TOKENS = {
-  // Base header container
-  container: "flex items-center justify-between px-6 py-4 bg-background border-b border-border",
+  // Base header container - no borders
+  container: "flex items-center justify-between px-6 py-4 bg-background",
   
   // Layout sections
   leftSection: "flex items-center gap-4",
   rightSection: "flex items-center gap-3",
   centerSection: "flex-1 flex justify-center",
+  
+  // Two-row layout support
+  transparentTopRow: "bg-transparent",
+  overviewMetrics: "flex items-center justify-between w-full p-6 rounded-2xl bg-background",
   
   // Responsive spacing
   mobileContainer: "px-4 py-3",
@@ -87,7 +91,7 @@ export const PAGE_TITLE_TOKENS = {
 export const OVERVIEW_SECTION_TOKENS = {
   // Main container
   container: "flex items-center justify-between w-full bg-background",
-  content: "flex items-center justify-between w-full p-6 rounded-2xl",
+  content: "flex items-center justify-between w-full p-6 rounded-2xl bg-background",
   
   // Left section (metrics)
   metricsSection: "flex items-center gap-6",

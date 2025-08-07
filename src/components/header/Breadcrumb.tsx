@@ -17,7 +17,7 @@ interface BreadcrumbProps {
 
 const Breadcrumb = ({ 
   items, 
-  showBackButton = true, 
+  showBackButton = false, 
   onBack,
   className 
 }: BreadcrumbProps) => {
@@ -31,6 +31,9 @@ const Breadcrumb = ({
     }
   };
 
+  // Filter out the last item (current page)
+  const navigationItems = items.slice(0, -1);
+
   return (
     <nav className={cn(BREADCRUMB_TOKENS.container, className)}>
       {showBackButton && (
@@ -43,30 +46,24 @@ const Breadcrumb = ({
             <span className={BREADCRUMB_TOKENS.backText}>Back</span>
           </button>
           
-          {items.length > 0 && (
+          {navigationItems.length > 0 && (
             <ChevronRight className={cn(BREADCRUMB_TOKENS.separatorIcon, BREADCRUMB_TOKENS.separator)} />
           )}
         </>
       )}
       
-      {items.map((item, index) => (
+      {navigationItems.map((item, index) => (
         <div key={index} className="flex items-center gap-2">
           {index > 0 && (
             <ChevronRight className={cn(BREADCRUMB_TOKENS.separatorIcon, BREADCRUMB_TOKENS.separator)} />
           )}
           
-          {item.path ? (
-            <button
-              onClick={() => navigate(item.path!)}
-              className={BREADCRUMB_TOKENS.backButton}
-            >
-              {item.label}
-            </button>
-          ) : (
-            <span className={BREADCRUMB_TOKENS.currentPage}>
-              {item.label}
-            </span>
-          )}
+          <button
+            onClick={() => navigate(item.path || '/')}
+            className={BREADCRUMB_TOKENS.backButton}
+          >
+            {item.label}
+          </button>
         </div>
       ))}
     </nav>

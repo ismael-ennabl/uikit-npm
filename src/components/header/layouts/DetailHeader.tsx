@@ -45,38 +45,41 @@ const DetailHeader = ({
 
   return (
     <div className="flex flex-col">
-      {/* Top Header Row */}
+      {/* Unified Header with Two Rows */}
       <Header className={className}>
-        <div className="flex items-center justify-between w-full">
-          <div className="flex items-center gap-4">
-            <Breadcrumb items={breadcrumbItems} />
+        <div className="flex flex-col w-full gap-4">
+          {/* Top Row - Transparent */}
+          <div className="flex items-center justify-between w-full bg-transparent">
+            <div className="flex items-center gap-4">
+              <Breadcrumb items={breadcrumbItems} showBackButton={false} />
+            </div>
+            
+            <div className="flex items-center gap-3">
+              <TopAI />
+              <TopSearch />
+              <Dropdown items={dropdownItems} />
+            </div>
           </div>
           
-          <div className="flex items-center gap-3">
-            <TopAI />
-            <TopSearch />
-            <Dropdown items={dropdownItems} />
+          {/* Bottom Row - Page Title & Overview with Rounded Background */}
+          <div className="flex items-center justify-between w-full p-6 rounded-2xl bg-background">
+            <div className="flex flex-col gap-4 flex-1">
+              <PageTitle 
+                title={title} 
+                subtitle={subtitle}
+                variant="h1" 
+              />
+              
+              {(metrics.length > 0 || actions.length > 0) && (
+                <OverviewSection 
+                  metrics={metrics}
+                  actions={actions}
+                />
+              )}
+            </div>
           </div>
         </div>
       </Header>
-      
-      {/* Page Title & Overview Section */}
-      <div className="px-6 py-4 border-b border-border">
-        <div className="flex flex-col gap-4">
-          <PageTitle 
-            title={title} 
-            subtitle={subtitle}
-            variant="h1" 
-          />
-          
-          {(metrics.length > 0 || actions.length > 0) && (
-            <OverviewSection 
-              metrics={metrics}
-              actions={actions}
-            />
-          )}
-        </div>
-      </div>
     </div>
   );
 };
