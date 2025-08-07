@@ -14,6 +14,9 @@ export type { FooterProps } from './Footer';
 export { default as Section } from './Section';
 export type { SectionProps, SectionBadge } from './Section';
 
+// Header components
+export * from './Header';
+
 // Insurance domain components
 export { ProductsTable } from './ProductsTable';
 export type { ProductsTableProps } from './ProductsTable';
