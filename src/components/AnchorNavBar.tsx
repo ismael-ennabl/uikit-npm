@@ -180,14 +180,21 @@ const AnchorNavBar = ({
     let totalCount = 0;
 
     sectionsRef.current.forEach(element => {
-      const collapsible = element.querySelector('[data-radix-collapsible-root]');
-      if (collapsible) {
-        totalCount++;
-        const isOpen = collapsible.getAttribute('data-state') === 'open';
-        if (isOpen) {
-          expandedCount++;
+      // Find Collapsible components using data-state attribute (Radix UI standard)
+      const collapsibles = element.querySelectorAll('[data-state]');
+      collapsibles.forEach(collapsible => {
+        // Check if this is actually a Collapsible root (not just any element with data-state)
+        const isCollapsibleRoot = collapsible.querySelector('[data-radix-collapsible-content]') || 
+                                 collapsible.hasAttribute('data-radix-collapsible-root');
+        
+        if (isCollapsibleRoot) {
+          totalCount++;
+          const isOpen = collapsible.getAttribute('data-state') === 'open';
+          if (isOpen) {
+            expandedCount++;
+          }
         }
-      }
+      });
     });
 
     // Update state based on current sections
@@ -204,20 +211,32 @@ const AnchorNavBar = ({
 
     // Find all Section components and toggle them correctly
     sectionsRef.current.forEach(element => {
-      // Look for the Radix Collapsible root within the section
-      const collapsible = element.querySelector('[data-radix-collapsible-root]');
-      if (collapsible) {
-        const isCurrentlyOpen = collapsible.getAttribute('data-state') === 'open';
+      // Look for any element with data-state (Radix Collapsible)
+      const collapsibles = element.querySelectorAll('[data-state]');
+      
+      collapsibles.forEach(collapsible => {
+        // Verify this is a Collapsible root
+        const isCollapsibleRoot = collapsible.querySelector('[data-radix-collapsible-content]') || 
+                                 collapsible.hasAttribute('data-radix-collapsible-root');
         
-        // Only toggle if the current state doesn't match the desired state
-        if ((newExpanded && !isCurrentlyOpen) || (!newExpanded && isCurrentlyOpen)) {
-          // Find the CollapsibleTrigger within this section
-          const trigger = element.querySelector('[data-radix-collapsible-trigger]') as HTMLElement;
-          if (trigger) {
-            trigger.click();
+        if (isCollapsibleRoot) {
+          const isCurrentlyOpen = collapsible.getAttribute('data-state') === 'open';
+          
+          // Only toggle if the current state doesn't match the desired state
+          if ((newExpanded && !isCurrentlyOpen) || (!newExpanded && isCurrentlyOpen)) {
+            // Find the trigger button within this collapsible
+            const trigger = collapsible.querySelector('button[data-radix-collapsible-trigger], button[type="button"]') as HTMLElement;
+            
+            if (trigger) {
+              try {
+                trigger.click();
+              } catch (error) {
+                console.warn('Failed to toggle section:', error);
+              }
+            }
           }
         }
-      }
+      });
     });
     
     onExpandToggle?.(newExpanded);
@@ -230,17 +249,19 @@ const AnchorNavBar = ({
       
       // Set up a mutation observer to watch for state changes
       const observer = new MutationObserver(() => {
-        setTimeout(checkAllSectionsState, 50);
+        setTimeout(checkAllSectionsState, 100);
       });
 
       sectionsRef.current.forEach(element => {
-        const collapsible = element.querySelector('[data-radix-collapsible-root]');
-        if (collapsible) {
+        // Watch all collapsible elements for state changes
+        const collapsibles = element.querySelectorAll('[data-state]');
+        collapsibles.forEach(collapsible => {
           observer.observe(collapsible, {
             attributes: true,
-            attributeFilter: ['data-state']
+            attributeFilter: ['data-state'],
+            subtree: true
           });
-        }
+        });
       });
 
       return () => observer.disconnect();
