@@ -1,9 +1,8 @@
-import { Section, ProductsTable, ClientsTable } from 'ennabl-ui-kit-beta';
-import AnchorNavBar from '@/components/AnchorNavBar';
+import { Section, ProductsTable, ClientsTable, AnchorNavBar } from 'ennabl-ui-kit-beta';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import 'ennabl-ui-kit-beta/dist/index.css';
 
-// Force refresh to clear Vite cache
+// Refreshed components to use latest library version 0.1.20
 
 const Tables = () => {
   // User Accounts data
@@ -37,7 +36,7 @@ const Tables = () => {
           <p className="text-muted-foreground">Examples of data tables using Ennabl UI Kit components</p>
         </div>
 
-        {/* User Accounts Table */}
+        {/* User Accounts Table - Using Latest Library Components */}
         <Section 
           id="user-accounts"
           title="User Accounts"
@@ -79,6 +78,17 @@ const Tables = () => {
           </div>
         </Section>
 
+        {/* Insurance Products Table - Using Library Component */}
+        <Section 
+          id="insurance-products"
+          title="Insurance Products"
+          className="mb-8"
+          showDragHandle={true}
+          badges={[{ text: "Products Data" }]}
+        >
+          <ProductsTable rows={5} showHeader={false} />
+        </Section>
+
         {/* Sales Reports Table */}
         <Section 
           id="sales-reports"
@@ -117,6 +127,17 @@ const Tables = () => {
               </TableBody>
             </Table>
           </div>
+        </Section>
+
+        {/* Insurance Clients Table - Using Library Component */}
+        <Section 
+          id="insurance-clients"
+          title="Insurance Clients"
+          className="mb-8"
+          showDragHandle={true}
+          badges={[{ text: "Client Data" }]}
+        >
+          <ClientsTable rows={4} showHeader={false} showContactInfo={true} />
         </Section>
 
         {/* Inventory Status Table */}
