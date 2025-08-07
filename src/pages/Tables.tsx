@@ -13,6 +13,15 @@ const Tables = () => {
     { id: 5, name: "Charlie Wilson", department: "Finance", salary: "$82,000", status: "Active" }
   ];
 
+  // Sample data for project tracking table
+  const projectData = [
+    { id: 1, project: "Website Redesign", client: "Acme Corp", progress: 85, budget: "$45,000", deadline: "2024-09-15" },
+    { id: 2, project: "Mobile App", client: "Tech Solutions", progress: 60, budget: "$120,000", deadline: "2024-10-30" },
+    { id: 3, project: "Database Migration", client: "Data Systems Inc", progress: 95, budget: "$25,000", deadline: "2024-08-20" },
+    { id: 4, project: "API Development", client: "Cloud Services", progress: 40, budget: "$80,000", deadline: "2024-11-15" },
+    { id: 5, project: "Security Audit", client: "Finance Corp", progress: 75, budget: "$15,000", deadline: "2024-09-30" }
+  ];
+
   return (
     <div className="relative">
       <AnchorNavBar />
@@ -89,6 +98,52 @@ const Tables = () => {
                         {employee.status}
                       </span>
                     </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+        </Section>
+
+        {/* Project Tracking Table */}
+        <Section 
+          id="project-tracking"
+          title="Project Tracking"
+          className="mb-8"
+          showDragHandle={true}
+          badges={[{ text: "Progress", variant: "default" }]}
+        >
+          <div className="mt-4 rounded-lg border">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>ID</TableHead>
+                  <TableHead>Project</TableHead>
+                  <TableHead>Client</TableHead>
+                  <TableHead>Progress</TableHead>
+                  <TableHead>Budget</TableHead>
+                  <TableHead>Deadline</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {projectData.map((project) => (
+                  <TableRow key={project.id}>
+                    <TableCell className="font-medium">{project.id}</TableCell>
+                    <TableCell className="font-medium">{project.project}</TableCell>
+                    <TableCell>{project.client}</TableCell>
+                    <TableCell>
+                      <div className="flex items-center gap-2">
+                        <div className="w-20 bg-muted rounded-full h-2">
+                          <div 
+                            className="bg-primary h-2 rounded-full transition-all duration-300"
+                            style={{ width: `${project.progress}%` }}
+                          />
+                        </div>
+                        <span className="text-sm font-mono">{project.progress}%</span>
+                      </div>
+                    </TableCell>
+                    <TableCell className="font-mono">{project.budget}</TableCell>
+                    <TableCell className="text-muted-foreground">{project.deadline}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
