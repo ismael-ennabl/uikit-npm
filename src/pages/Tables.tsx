@@ -3,6 +3,8 @@ import AnchorNavBar from '@/components/AnchorNavBar';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import 'ennabl-ui-kit-beta/dist/index.css';
 
+// Force refresh to clear Vite cache
+
 const Tables = () => {
   // User Accounts data
   const userAccountsData = [
