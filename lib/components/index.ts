@@ -14,8 +14,42 @@ export type { FooterProps } from './Footer';
 export { default as Section } from './Section';
 export type { SectionProps, SectionBadge } from './Section';
 
-// Header components
-export * from './Header';
+// Header components - force import to prevent tree-shaking
+import Header from './Header/Header';
+import Breadcrumb from './Header/Breadcrumb';
+import PageTitle from './Header/PageTitle';
+import TopSearch from './Header/TopSearch';
+import TopAI from './Header/TopAI';
+import Dropdown from './Header/Dropdown';
+import OverviewSection from './Header/OverviewSection';
+import DashboardHeader from './Header/layouts/DashboardHeader';
+import DetailHeader from './Header/layouts/DetailHeader';
+import RootHeader from './Header/layouts/RootHeader';
+
+export {
+  Header,
+  Breadcrumb,
+  PageTitle,
+  TopSearch,
+  TopAI,
+  Dropdown,
+  OverviewSection,
+  DashboardHeader,
+  DetailHeader,
+  RootHeader,
+};
+
+// Re-export types
+export type { HeaderProps } from './Header/Header';
+export type { BreadcrumbProps, BreadcrumbItem } from './Header/Breadcrumb';
+export type { PageTitleProps } from './Header/PageTitle';
+export type { TopSearchProps } from './Header/TopSearch';
+export type { TopAIProps } from './Header/TopAI';
+export type { DropdownProps, DropdownItem as HeaderDropdownItem } from './Header/Dropdown';
+export type { OverviewSectionProps, MetricData, ActionButton } from './Header/OverviewSection';
+export type { DashboardHeaderProps } from './Header/layouts/DashboardHeader';
+export type { DetailHeaderProps } from './Header/layouts/DetailHeader';
+export type { RootHeaderProps } from './Header/layouts/RootHeader';
 
 // UI components
 export * from './ui';
