@@ -4,8 +4,8 @@
  */
 
 export const HEADER_TOKENS = {
-  // Base header container - no borders
-  container: "flex items-center justify-between px-6 py-4 bg-background",
+  // Base header container - no borders, transparent bg
+  container: "flex items-center justify-between px-6 py-4",
   
   // Layout sections
   leftSection: "flex items-center gap-4",
