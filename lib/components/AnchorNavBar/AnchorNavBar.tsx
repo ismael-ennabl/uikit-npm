@@ -1,6 +1,6 @@
 /**
  * @component AnchorNavBar
- * @description Horizontal navigation bar that automatically detects sections and provides smooth scrolling navigation
+ * @description Horizontal navigation bar that automatically detects sections and provides smooth scrolling navigation with automatic sticky behavior
  * @created 2025-08-07
  */
 
@@ -12,10 +12,10 @@ import { cn } from '../../utils/cn';
 export interface AnchorNavBarProps {
   /** CSS selector for sections to detect (default: '[data-ennabl-component="section"]') */
   sectionSelector?: string;
-  /** IntersectionObserver rootMargin (default: '0px 0px -80% 0px') */
+  /** IntersectionObserver rootMargin (default: '0px 0px -50% 0px') */
   rootMargin?: string;
-  /** IntersectionObserver threshold (default: 0.1) */
-  threshold?: number;
+  /** IntersectionObserver threshold (default: [0, 0.1, 0.5, 1]) */
+  threshold?: number | number[];
   /** Show expand/collapse all functionality (default: true) */
   showExpandAll?: boolean;
   /** Text for expand/collapse all button */
@@ -26,8 +26,6 @@ export interface AnchorNavBarProps {
   smoothScroll?: boolean;
   /** Offset for scroll position (default: 80) */
   activeOffset?: number;
-  /** Whether to make the bar sticky (default: false) */
-  sticky?: boolean;
   /** Callback when active section changes */
   onSectionChange?: (activeSection: string) => void;
   /** Callback when expand/collapse all is toggled */
@@ -42,22 +40,25 @@ export interface DetectedSection {
 
 const AnchorNavBar = ({
   sectionSelector = '[data-ennabl-component="section"]',
-  rootMargin = '0px 0px -80% 0px',
-  threshold = 0.1,
+  rootMargin = '0px 0px -50% 0px',
+  threshold = [0, 0.1, 0.5, 1],
   showExpandAll = true,
   expandAllText = { expand: 'Expand All', collapse: 'Collapse All' },
   className,
   smoothScroll = true,
   activeOffset = 80,
-  sticky = false,
   onSectionChange,
   onExpandToggle
 }: AnchorNavBarProps) => {
   const [sections, setSections] = useState<DetectedSection[]>([]);
   const [activeSection, setActiveSection] = useState<string>('');
   const [allExpanded, setAllExpanded] = useState<boolean>(false);
+  const [isSticky, setIsSticky] = useState<boolean>(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
+  const stickyObserverRef = useRef<IntersectionObserver | null>(null);
   const sectionsRef = useRef<Map<string, HTMLElement>>(new Map());
+  const anchorNavRef = useRef<HTMLDivElement>(null);
+  const visibilityMapRef = useRef<Map<string, number>>(new Map());
 
   // Detect sections on mount and DOM changes
   const detectSections = useCallback(() => {
@@ -81,17 +82,30 @@ const AnchorNavBar = ({
     sectionsRef.current = newSectionsMap;
   }, [sectionSelector]);
 
-  // Setup IntersectionObserver
+  // Setup IntersectionObserver for section visibility
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const id = entry.target.id;
-            setActiveSection(id);
-            onSectionChange?.(id);
+          const id = entry.target.id;
+          visibilityMapRef.current.set(id, entry.intersectionRatio);
+        });
+
+        // Find the section with the highest visibility ratio
+        let maxVisibility = 0;
+        let mostVisibleSection = '';
+        
+        visibilityMapRef.current.forEach((ratio, sectionId) => {
+          if (ratio > maxVisibility) {
+            maxVisibility = ratio;
+            mostVisibleSection = sectionId;
           }
         });
+
+        if (mostVisibleSection && mostVisibleSection !== activeSection) {
+          setActiveSection(mostVisibleSection);
+          onSectionChange?.(mostVisibleSection);
+        }
       },
       {
         rootMargin,
@@ -109,7 +123,43 @@ const AnchorNavBar = ({
     return () => {
       observer.disconnect();
     };
-  }, [sections, rootMargin, threshold, onSectionChange]);
+  }, [sections, rootMargin, threshold, onSectionChange, activeSection]);
+
+  // Setup sticky behavior detection
+  useEffect(() => {
+    if (!anchorNavRef.current) return;
+
+    const stickyObserver = new IntersectionObserver(
+      ([entry]) => {
+        setIsSticky(!entry.isIntersecting);
+      },
+      {
+        rootMargin: '-1px 0px 0px 0px',
+        threshold: [0, 1]
+      }
+    );
+
+    const sentinel = document.createElement('div');
+    sentinel.style.height = '1px';
+    sentinel.style.position = 'absolute';
+    sentinel.style.top = '0';
+    sentinel.style.left = '0';
+    sentinel.style.pointerEvents = 'none';
+    
+    if (anchorNavRef.current.parentElement) {
+      anchorNavRef.current.parentElement.insertBefore(sentinel, anchorNavRef.current);
+      stickyObserver.observe(sentinel);
+    }
+
+    stickyObserverRef.current = stickyObserver;
+
+    return () => {
+      stickyObserver.disconnect();
+      if (sentinel.parentElement) {
+        sentinel.parentElement.removeChild(sentinel);
+      }
+    };
+  }, []);
 
   // Detect sections on mount and when DOM changes
   useEffect(() => {
@@ -168,43 +218,43 @@ const AnchorNavBar = ({
   }
 
   return (
-    <div className={cn(
-      "flex items-center gap-2 mb-4 overflow-x-auto",
-      sticky && "sticky top-0 z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border py-3 px-4",
-      className
-    )}>
-      {/* Expand/Collapse All - First item */}
-      {showExpandAll && (
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={toggleAllSections}
-          className="whitespace-nowrap text-muted-foreground hover:bg-accent hover:text-accent-foreground font-normal rounded"
-        >
-          {allExpanded ? (
-            <ChevronDown className="h-4 w-4 mr-0.5" />
-          ) : (
-            <ChevronRight className="h-4 w-4 mr-0.5" />
-          )}
-          {allExpanded ? expandAllText.collapse : expandAllText.expand}
-        </Button>
+    <div 
+      ref={anchorNavRef}
+      className={cn(
+        "top-0 z-40 transition-all duration-300 ease-in-out",
+        isSticky && "sticky bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border shadow-sm",
+        className
       )}
+    >
+      <div className="max-w-7xl mx-auto">
+        <div className="flex items-center space-x-2 overflow-x-auto py-3 bg-page">
+          {/* Expand/Collapse All - First item */}
+          {showExpandAll && <Button variant="ghost" size="sm" onClick={toggleAllSections} className="flex items-center space-x-0.5 shrink-0 font-normal text-sm border-0">
+              {allExpanded ? <ChevronDown className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
+              <span className="hidden sm:inline">
+                {allExpanded ? expandAllText.collapse : expandAllText.expand}
+              </span>
+            </Button>}
 
-      {/* Navigation Pills */}
-      {sections.map((section) => (
-        <Button
-          key={section.id}
-          variant="ghost"
-          size="sm"
-          onClick={() => scrollToSection(section.id)}
-          className={cn(
-            "whitespace-nowrap text-muted-foreground hover:bg-accent hover:text-accent-foreground font-normal rounded",
-            activeSection === section.id && "bg-accent text-accent-foreground"
-          )}
-        >
-          {section.title}
-        </Button>
-      ))}
+          {/* Navigation Pills */}
+          {sections.map((section) => (
+            <Button
+              key={section.id}
+              variant="ghost"
+              size="sm"
+              onClick={() => scrollToSection(section.id)}
+              className={cn(
+                "shrink-0 font-normal text-sm border-0 transition-all duration-200",
+                activeSection === section.id 
+                  ? "bg-[#0000c5]/[0.08] text-[#0000c5] hover:bg-[#0000c5]/[0.12]" 
+                  : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+              )}
+            >
+              {section.title}
+            </Button>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
