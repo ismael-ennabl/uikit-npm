@@ -211,32 +211,30 @@ const AnchorNavBar = ({
 
     // Find all Section components and toggle them correctly
     sectionsRef.current.forEach(element => {
-      // Look for any element with data-state (Radix Collapsible)
-      const collapsibles = element.querySelectorAll('[data-state]');
+      // Find the Collapsible root element (has data-radix-collapsible-root attribute)
+      const collapsibleRoot = element.querySelector('[data-radix-collapsible-root]') as HTMLElement;
       
-      collapsibles.forEach(collapsible => {
-        // Verify this is a Collapsible root
-        const isCollapsibleRoot = collapsible.querySelector('[data-radix-collapsible-content]') || 
-                                 collapsible.hasAttribute('data-radix-collapsible-root');
+      if (collapsibleRoot) {
+        const isCurrentlyOpen = collapsibleRoot.getAttribute('data-state') === 'open';
         
-        if (isCollapsibleRoot) {
-          const isCurrentlyOpen = collapsible.getAttribute('data-state') === 'open';
+        // Only toggle if the current state doesn't match the desired state
+        if ((newExpanded && !isCurrentlyOpen) || (!newExpanded && isCurrentlyOpen)) {
+          // Find the trigger element - it's a div with data-radix-collapsible-trigger
+          const trigger = collapsibleRoot.querySelector('[data-radix-collapsible-trigger]') as HTMLElement;
           
-          // Only toggle if the current state doesn't match the desired state
-          if ((newExpanded && !isCurrentlyOpen) || (!newExpanded && isCurrentlyOpen)) {
-            // Find the trigger button within this collapsible
-            const trigger = collapsible.querySelector('button[data-radix-collapsible-trigger], button[type="button"]') as HTMLElement;
-            
-            if (trigger) {
-              try {
-                trigger.click();
-              } catch (error) {
-                console.warn('Failed to toggle section:', error);
-              }
+          if (trigger) {
+            try {
+              // Simulate a click event on the trigger
+              trigger.click();
+              console.log(`Toggled section: ${isCurrentlyOpen ? 'closing' : 'opening'}`);
+            } catch (error) {
+              console.warn('Failed to toggle section:', error);
             }
+          } else {
+            console.warn('Could not find trigger element for section');
           }
         }
-      });
+      }
     });
     
     onExpandToggle?.(newExpanded);
