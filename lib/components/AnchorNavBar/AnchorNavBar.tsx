@@ -195,18 +195,62 @@ const AnchorNavBar = ({
     }
   }, [smoothScroll, activeOffset]);
 
+  // Check state of all sections to determine if all are expanded
+  const checkAllSectionsState = useCallback(() => {
+    let expandedCount = 0;
+    let totalCount = 0;
+
+    sectionsRef.current.forEach(element => {
+      // Look for Section components - they have data-ennabl-component="section"
+      const sectionElement = element.querySelector('[data-ennabl-component="section"]') || element;
+      
+      // Find the Collapsible root within the section (it will have data-state)
+      const collapsibleRoot = sectionElement.querySelector('[data-state="open"], [data-state="closed"]') as HTMLElement;
+      
+      if (collapsibleRoot) {
+        totalCount++;
+        const isOpen = collapsibleRoot.getAttribute('data-state') === 'open';
+        if (isOpen) {
+          expandedCount++;
+        }
+      }
+    });
+
+    // Update state based on current sections
+    const newExpanded = expandedCount === totalCount && totalCount > 0;
+    setAllExpanded(newExpanded);
+  }, []);
+
   // Toggle all sections expanded/collapsed
   const toggleAllSections = useCallback(() => {
     const newExpanded = !allExpanded;
     setAllExpanded(newExpanded);
-    
-    // Find all collapsible triggers and click them
-    sectionsRef.current.forEach((element) => {
-      const trigger = element.querySelector('[data-radix-collection-item]') as HTMLElement;
-      const isCurrentlyOpen = element.getAttribute('data-state') === 'open';
+
+    // Find all Section components and toggle them correctly
+    sectionsRef.current.forEach(element => {
+      // Look for Section components - they have data-ennabl-component="section"
+      const sectionElement = element.querySelector('[data-ennabl-component="section"]') || element;
       
-      if (trigger && ((newExpanded && !isCurrentlyOpen) || (!newExpanded && isCurrentlyOpen))) {
-        trigger.click();
+      // Find the Collapsible root within the section (it will have data-state)
+      const collapsibleRoot = sectionElement.querySelector('[data-state="open"], [data-state="closed"]') as HTMLElement;
+      
+      if (collapsibleRoot) {
+        const isCurrentlyOpen = collapsibleRoot.getAttribute('data-state') === 'open';
+        
+        // Only toggle if the current state doesn't match the desired state
+        if ((newExpanded && !isCurrentlyOpen) || (!newExpanded && isCurrentlyOpen)) {
+          // Find the trigger element - it's the div with data-ennabl-element="header"
+          const trigger = sectionElement.querySelector('[data-ennabl-element="header"]') as HTMLElement;
+          
+          if (trigger) {
+            try {
+              // Simulate a click event on the trigger
+              trigger.click();
+            } catch (error) {
+              console.warn('Failed to toggle section:', error);
+            }
+          }
+        }
       }
     });
 
