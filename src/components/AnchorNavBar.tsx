@@ -5,7 +5,7 @@
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { ChevronUp, ChevronDown } from 'lucide-react';
+import { ChevronDown, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export interface AnchorNavBarProps {
@@ -219,9 +219,9 @@ const AnchorNavBar = ({
               className="flex items-center space-x-1 shrink-0 font-normal text-sm border-0 bg-transparent"
             >
               {allExpanded ? (
-                <ChevronUp className="h-4 w-4" />
-              ) : (
                 <ChevronDown className="h-4 w-4" />
+              ) : (
+                <ChevronRight className="h-4 w-4" />
               )}
               <span className="hidden sm:inline">
                 {allExpanded ? expandAllText.collapse : expandAllText.expand}
