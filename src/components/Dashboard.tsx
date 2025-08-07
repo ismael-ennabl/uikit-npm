@@ -11,6 +11,7 @@ import PackageFilters from '@/components/dashboard/PackageFilters';
 import PackageGrid from '@/components/dashboard/PackageGrid';
 import PackageTable from '@/components/dashboard/PackageTable';
 import { TYPOGRAPHY, COMPONENTS } from '@/styles/tokens';
+import { Section, AnchorNavBar } from '../../lib/components';
 
 interface StatusFilters {
   allGroups: boolean;
@@ -105,68 +106,72 @@ const Dashboard = () => {
         <h1 className={TYPOGRAPHY.h1}>Compare Docs</h1>
       </div>
 
-      {/* Statistics Card */}
-      <PackageStats
-        totalGroups={totalGroups}
-        totalDocuments={totalDocuments}
-        totalDifferences={totalDifferences}
-        onAddClick={() => setUploadModalOpen(true)}
-      />
+      {/* Navigation */}
+      <AnchorNavBar />
 
-      {/* Packages Title */}
-      <div className="mb-4">
-        <h2 className={COMPONENTS.cardTitle}>Groups</h2>
-      </div>
+      {/* Statistics Section */}
+      <Section id="statistics" title="Statistics" defaultOpen={true} className="mb-6">
+        <PackageStats
+          totalGroups={totalGroups}
+          totalDocuments={totalDocuments}
+          totalDifferences={totalDifferences}
+          onAddClick={() => setUploadModalOpen(true)}
+        />
+      </Section>
 
-      {/* Filters */}
-      <Card className="shadow-none border-none rounded-b-none">
-        <CardHeader>
-          <PackageFilters
-            viewMode={viewMode}
-            onViewModeChange={setViewMode}
-            searchQuery={searchQuery}
-            onSearchChange={setSearchQuery}
-            sortOption={sortOption}
-            onSortChange={setSortOption}
-            statusFilters={statusFilters}
-            onStatusFiltersChange={setStatusFilters}
-          />
-        </CardHeader>
-      </Card>
+      {/* Filters Section */}
+      <Section id="filters" title="Filters" defaultOpen={true} className="mb-6">
+        <Card className="shadow-none border-none">
+          <CardHeader>
+            <PackageFilters
+              viewMode={viewMode}
+              onViewModeChange={setViewMode}
+              searchQuery={searchQuery}
+              onSearchChange={setSearchQuery}
+              sortOption={sortOption}
+              onSortChange={setSortOption}
+              statusFilters={statusFilters}
+              onStatusFiltersChange={setStatusFilters}
+            />
+          </CardHeader>
+        </Card>
+      </Section>
 
-      {/* Content */}
-      <Card className="shadow-none border-none rounded-t-none">
-        <CardContent>
-          {selectedPackages.length > 0 && (
-            <div className="mb-6">
-              <PackageSelectionToolbar
-                selectedCount={selectedPackages.length}
-                onClearSelection={handleClearSelection}
-                onShare={handleShare}
-                onExportExcel={handleExportExcel}
-                onExportPDF={handleExportPDF}
-                onDelete={handleDelete}
+      {/* Groups Section */}
+      <Section id="groups" title="Groups" defaultOpen={true}>
+        <Card className="shadow-none border-none">
+          <CardContent>
+            {selectedPackages.length > 0 && (
+              <div className="mb-6">
+                <PackageSelectionToolbar
+                  selectedCount={selectedPackages.length}
+                  onClearSelection={handleClearSelection}
+                  onShare={handleShare}
+                  onExportExcel={handleExportExcel}
+                  onExportPDF={handleExportPDF}
+                  onDelete={handleDelete}
+                />
+              </div>
+            )}
+            {viewMode === 'cards' ? (
+              <PackageGrid
+                packages={filteredPackages}
+                onPackageClick={handleViewPackage}
+                selectedPackages={selectedPackages}
+                onPackageSelect={handlePackageSelect}
               />
-            </div>
-          )}
-          {viewMode === 'cards' ? (
-            <PackageGrid
-              packages={filteredPackages}
-              onPackageClick={handleViewPackage}
-              selectedPackages={selectedPackages}
-              onPackageSelect={handlePackageSelect}
-            />
-          ) : (
-            <PackageTable
-              packages={filteredPackages}
-              onPackageClick={handleViewPackage}
-              selectedPackages={selectedPackages}
-              onPackageSelect={handlePackageSelect}
-              onSelectAll={handleSelectAll}
-            />
-          )}
-        </CardContent>
-      </Card>
+            ) : (
+              <PackageTable
+                packages={filteredPackages}
+                onPackageClick={handleViewPackage}
+                selectedPackages={selectedPackages}
+                onPackageSelect={handlePackageSelect}
+                onSelectAll={handleSelectAll}
+              />
+            )}
+          </CardContent>
+        </Card>
+      </Section>
 
       <UploadModal
         open={uploadModalOpen}
