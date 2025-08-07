@@ -180,22 +180,22 @@ const AnchorNavBar = ({
     let totalCount = 0;
 
     sectionsRef.current.forEach(element => {
-      // Find Collapsible components using data-state attribute (Radix UI standard)
-      const collapsibles = element.querySelectorAll('[data-state]');
-      collapsibles.forEach(collapsible => {
-        // Check if this is actually a Collapsible root (not just any element with data-state)
-        const isCollapsibleRoot = collapsible.querySelector('[data-radix-collapsible-content]') || 
-                                 collapsible.hasAttribute('data-radix-collapsible-root');
-        
-        if (isCollapsibleRoot) {
-          totalCount++;
-          const isOpen = collapsible.getAttribute('data-state') === 'open';
-          if (isOpen) {
-            expandedCount++;
-          }
+      // Look for Section components - they have data-ennabl-component="section"
+      const sectionElement = element.querySelector('[data-ennabl-component="section"]') || element;
+      
+      // Find the Collapsible root within the section (it will have data-state)
+      const collapsibleRoot = sectionElement.querySelector('[data-state="open"], [data-state="closed"]') as HTMLElement;
+      
+      if (collapsibleRoot) {
+        totalCount++;
+        const isOpen = collapsibleRoot.getAttribute('data-state') === 'open';
+        if (isOpen) {
+          expandedCount++;
         }
-      });
+      }
     });
+
+    console.log(`State check: ${expandedCount}/${totalCount} sections expanded`);
 
     // Update state based on current sections
     const newExpanded = expandedCount === totalCount && totalCount > 0;
@@ -209,31 +209,40 @@ const AnchorNavBar = ({
     const newExpanded = !allExpanded;
     setAllExpanded(newExpanded);
 
+    console.log(`Toggling all sections to: ${newExpanded ? 'expanded' : 'collapsed'}`);
+
     // Find all Section components and toggle them correctly
     sectionsRef.current.forEach(element => {
-      // Find the Collapsible root element (has data-radix-collapsible-root attribute)
-      const collapsibleRoot = element.querySelector('[data-radix-collapsible-root]') as HTMLElement;
+      // Look for Section components - they have data-ennabl-component="section"
+      const sectionElement = element.querySelector('[data-ennabl-component="section"]') || element;
+      
+      // Find the Collapsible root within the section (it will have data-state)
+      const collapsibleRoot = sectionElement.querySelector('[data-state="open"], [data-state="closed"]') as HTMLElement;
       
       if (collapsibleRoot) {
         const isCurrentlyOpen = collapsibleRoot.getAttribute('data-state') === 'open';
         
+        console.log(`Section ${element.id}: currently ${isCurrentlyOpen ? 'open' : 'closed'}, want ${newExpanded ? 'open' : 'closed'}`);
+        
         // Only toggle if the current state doesn't match the desired state
         if ((newExpanded && !isCurrentlyOpen) || (!newExpanded && isCurrentlyOpen)) {
-          // Find the trigger element - it's a div with data-radix-collapsible-trigger
-          const trigger = collapsibleRoot.querySelector('[data-radix-collapsible-trigger]') as HTMLElement;
+          // Find the trigger element - it's the div with data-ennabl-element="header"
+          const trigger = sectionElement.querySelector('[data-ennabl-element="header"]') as HTMLElement;
           
           if (trigger) {
             try {
               // Simulate a click event on the trigger
               trigger.click();
-              console.log(`Toggled section: ${isCurrentlyOpen ? 'closing' : 'opening'}`);
+              console.log(`Toggled section ${element.id}: ${isCurrentlyOpen ? 'closing' : 'opening'}`);
             } catch (error) {
               console.warn('Failed to toggle section:', error);
             }
           } else {
-            console.warn('Could not find trigger element for section');
+            console.warn(`Could not find trigger element for section ${element.id}`);
           }
         }
+      } else {
+        console.warn(`Could not find collapsible root for section ${element.id}`);
       }
     });
     
