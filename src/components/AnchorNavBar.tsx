@@ -207,7 +207,7 @@ const AnchorNavBar = ({
               className={cn(
                 "whitespace-nowrap transition-all duration-200 min-w-fit rounded-lg font-normal",
                 activeSection === section.id 
-                  ? "bg-[#0000c5]/[0.08] text-foreground" 
+                  ? "bg-[#0000c5]/[0.08] text-foreground hover:bg-[#0000c5]/[0.10]" 
                   : "text-muted-foreground hover:text-foreground hover:bg-[#0000c5]/[0.10]"
               )}
             >
