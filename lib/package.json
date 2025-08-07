@@ -1,6 +1,6 @@
 {
   "name": "ennabl-ui-kit-beta",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "type": "module",
   "description": "A React component library with reusable UI components for document management and insurance applications",
   "main": "dist/index.js",
