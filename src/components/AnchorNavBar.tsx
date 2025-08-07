@@ -209,7 +209,7 @@ const AnchorNavBar = ({
       )}
     >
       <div className="max-w-7xl mx-auto">
-        <div className="flex items-center space-x-2 overflow-x-auto py-3 px-4 bg-page">
+        <div className="flex items-center space-x-2 overflow-x-auto py-3 bg-page">
           {/* Expand/Collapse All - First item */}
           {showExpandAll && (
             <Button
