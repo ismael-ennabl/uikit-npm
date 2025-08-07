@@ -180,34 +180,14 @@ const AnchorNavBar = ({
       className
     )}>
       <div className="container max-w-7xl mx-auto">
-        <div className="flex items-center justify-between py-3 px-4">
-          {/* Navigation Pills */}
-          <div className="flex items-center space-x-2 overflow-x-auto">
-            {sections.map((section) => (
-              <Button
-                key={section.id}
-                variant={activeSection === section.id ? "default" : "ghost"}
-                size="sm"
-                onClick={() => scrollToSection(section.id)}
-                className={cn(
-                  "whitespace-nowrap transition-all duration-200 min-w-fit",
-                  activeSection === section.id 
-                    ? "bg-primary text-primary-foreground shadow-sm" 
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                )}
-              >
-                {section.title}
-              </Button>
-            ))}
-          </div>
-
-          {/* Expand/Collapse All */}
+        <div className="flex items-center space-x-2 py-3 px-4 overflow-x-auto">
+          {/* Expand/Collapse All - First item */}
           {showExpandAll && (
             <Button
               variant="outline"
               size="sm"
               onClick={toggleAllSections}
-              className="ml-4 flex items-center space-x-1 shrink-0"
+              className="flex items-center space-x-1 shrink-0"
             >
               {allExpanded ? (
                 <ChevronUp className="h-4 w-4" />
@@ -219,6 +199,24 @@ const AnchorNavBar = ({
               </span>
             </Button>
           )}
+
+          {/* Navigation Pills */}
+          {sections.map((section) => (
+            <Button
+              key={section.id}
+              variant={activeSection === section.id ? "default" : "ghost"}
+              size="sm"
+              onClick={() => scrollToSection(section.id)}
+              className={cn(
+                "whitespace-nowrap transition-all duration-200 min-w-fit",
+                activeSection === section.id 
+                  ? "bg-primary text-primary-foreground shadow-sm" 
+                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
+              )}
+            >
+              {section.title}
+            </Button>
+          ))}
         </div>
       </div>
     </div>
