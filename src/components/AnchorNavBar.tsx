@@ -175,12 +175,9 @@ const AnchorNavBar = ({
   }
 
   return (
-    <div className={cn(
-      "sticky top-0 z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border",
-      className
-    )}>
+    <div className={cn(className)}>
       <div className="container max-w-7xl mx-auto">
-        <div className="flex items-center space-x-2 py-3 px-4 overflow-x-auto">
+        <div className="flex items-center space-x-2 overflow-x-auto">
           {/* Expand/Collapse All - First item */}
           {showExpandAll && (
             <Button
