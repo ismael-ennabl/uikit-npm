@@ -87,7 +87,7 @@ export const PAGE_TITLE_TOKENS = {
 export const OVERVIEW_SECTION_TOKENS = {
   // Main container
   container: "flex items-center justify-between w-full bg-background",
-  content: "flex items-center justify-between w-full",
+  content: "flex items-center justify-between w-full p-6 rounded-2xl",
   
   // Left section (metrics)
   metricsSection: "flex items-center gap-6",
