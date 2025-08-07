@@ -14,8 +14,8 @@ export type { FooterProps } from './Footer';
 export { default as Section } from './Section';
 export type { SectionProps, SectionBadge } from './Section';
 
-import AnchorNavBar from './AnchorNavBar/AnchorNavBar';
-export type { AnchorNavBarProps, DetectedSection } from './AnchorNavBar/AnchorNavBar';
+export { default as AnchorNavBar } from './AnchorNavBar';
+export type { AnchorNavBarProps, DetectedSection } from './AnchorNavBar';
 
 // Header components - force import to prevent tree-shaking
 import Header from './Header/Header';
@@ -40,7 +40,6 @@ export {
   DashboardHeader,
   DetailHeader,
   RootHeader,
-  AnchorNavBar,
 };
 
 // Re-export types

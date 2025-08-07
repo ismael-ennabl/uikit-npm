@@ -221,6 +221,34 @@ const AnchorNavBar = ({
     setAllExpanded(newExpanded);
   }, []);
 
+  // Add periodic state detection to ensure synchronization
+  useEffect(() => {
+    checkAllSectionsState();
+    
+    // Set up periodic check for state synchronization
+    const interval = setInterval(checkAllSectionsState, 1000);
+    
+    // Also setup MutationObserver to watch for data-state changes
+    const stateObserver = new MutationObserver(() => {
+      checkAllSectionsState();
+    });
+    
+    sectionsRef.current.forEach(element => {
+      const collapsibleRoot = element.querySelector('[data-state]');
+      if (collapsibleRoot) {
+        stateObserver.observe(collapsibleRoot, {
+          attributes: true,
+          attributeFilter: ['data-state']
+        });
+      }
+    });
+
+    return () => {
+      clearInterval(interval);
+      stateObserver.disconnect();
+    };
+  }, [checkAllSectionsState, sections]);
+
   // Toggle all sections expanded/collapsed
   const toggleAllSections = useCallback(() => {
     const newExpanded = !allExpanded;
