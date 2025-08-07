@@ -1,6 +1,7 @@
 // Design system tokens for the component library
 export * from './protected';
 export * from './headerTokens';
+export * from './anchorNavBarTokens';
 
 // Typography tokens
 export const TYPOGRAPHY = {

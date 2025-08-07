@@ -1,4 +1,5 @@
 import { Section, ProductsTable, ClientsTable } from 'ennabl-ui-kit-beta';
+import AnchorNavBar from '@/components/AnchorNavBar';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import 'ennabl-ui-kit-beta/dist/index.css';
 
@@ -13,8 +14,10 @@ const Tables = () => {
   ];
 
   return (
-    <div className="p-6 space-y-8">
-      <div className="max-w-7xl mx-auto">
+    <div className="relative">
+      <AnchorNavBar />
+      <div className="p-6 space-y-8">
+        <div className="max-w-7xl mx-auto">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-foreground mb-2">Tables</h1>
           <p className="text-muted-foreground">Examples of data tables using Ennabl UI Kit components</p>
@@ -92,6 +95,7 @@ const Tables = () => {
             </Table>
           </div>
         </Section>
+        </div>
       </div>
     </div>
   );
