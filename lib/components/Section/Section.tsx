@@ -117,22 +117,19 @@ const Section = ({
                 >
                   {showDragHandle && (
                     <GripVertical 
-                      className={SECTION_PROTECTED.dragIcon}
+                      className="h-4 w-4 text-black"
                       data-ennabl-element="drag-icon"
-                      style={{ height: '1rem', width: '1rem', color: 'hsl(0, 0%, 0%)', flexShrink: 0 }}
                     />
                   )}
                   {isOpen ? (
                     <ChevronDown 
-                      className={SECTION_PROTECTED.chevronIcon}
+                      className="h-4 w-4 text-black"
                       data-ennabl-element="chevron-icon"
-                      style={{ height: '1rem', width: '1rem', color: 'hsl(0, 0%, 0%)', flexShrink: 0 }}
                     />
                   ) : (
                     <ChevronRight 
-                      className={SECTION_PROTECTED.chevronIcon}
+                      className="h-4 w-4 text-black"
                       data-ennabl-element="chevron-icon"
-                      style={{ height: '1rem', width: '1rem', color: 'hsl(0, 0%, 0%)', flexShrink: 0 }}
                     />
                   )}
                   <span 
@@ -150,8 +147,8 @@ const Section = ({
                       {badges.map((badge, index) => (
                         <Badge
                           key={index}
-                          variant={badge.variant || 'outline'}
-                          className={SECTION_PROTECTED.badge}
+                          variant="outline"
+                          className="text-gray-700 border-gray-300"
                           data-ennabl-element="badge"
                         >
                           {badge.text}
