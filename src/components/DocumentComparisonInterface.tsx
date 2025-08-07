@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import AnchorNavBar from '@/components/AnchorNavBar';
 import MetricsOverview from './comparison/MetricsOverview';
 import DiscrepancyList from './comparison/DiscrepancyList';
 
@@ -94,6 +95,12 @@ const DocumentComparisonInterface = () => {
       <div className="px-8 py-0">
         {/* Metrics Overview */}
         <MetricsOverview packageData={currentPackageData} onAddMoreFiles={handleAddMoreFiles} />
+
+        {/* Anchor Navigation Bar */}
+        <AnchorNavBar 
+          sectionSelector='[data-section]'
+          onSectionChange={(section) => console.log('Active section:', section)}
+        />
 
         {/* Section Navigation List */}
         <SectionNavigationList
