@@ -37,7 +37,7 @@ const OverviewSection = ({ metrics, actions, className }: OverviewSectionProps) 
       isMobile && OVERVIEW_SECTION_TOKENS.mobileContainer,
       className
     )}>
-      <div className="flex items-center justify-between w-full">
+      <div className="flex items-center justify-between w-full p-6 rounded-2xl bg-background">
         {/* Metrics Section */}
         <div className={cn(
           OVERVIEW_SECTION_TOKENS.metricsSection,

@@ -62,7 +62,7 @@ const DetailHeader = ({
           {/* Middle Row - Page Title */}
           <PageTitle 
             title={title} 
-            variant="titlePage" 
+            variant="h1" 
           />
           
           {/* Bottom Row - Overview Metrics */}
