@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Command } from '../../lib';
+import { Command } from '../../../lib';
 
 const meta: Meta<typeof Command> = {
   title: 'Auto/UI/Command',

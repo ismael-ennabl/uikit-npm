@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Menubar } from '../../lib';
+import { Menubar } from '../../../lib';
 
 const meta: Meta<typeof Menubar> = {
   title: 'Auto/UI/Menubar',

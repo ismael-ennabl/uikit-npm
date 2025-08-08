@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Toaster } from '../../lib';
+import { Toaster } from '../../../lib';
 
 const meta: Meta<typeof Toaster> = {
   title: 'Auto/UI/Toaster',

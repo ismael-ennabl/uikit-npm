@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Carousel } from '../../lib';
+import { Carousel } from '../../../lib';
 
 const meta: Meta<typeof Carousel> = {
   title: 'Auto/UI/Carousel',

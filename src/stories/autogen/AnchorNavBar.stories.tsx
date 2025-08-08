@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AnchorNavBar } from '../../lib';
+import { AnchorNavBar } from '../../../lib';
 
 const meta: Meta<typeof AnchorNavBar> = {
   title: 'Auto/Components/AnchorNavBar',

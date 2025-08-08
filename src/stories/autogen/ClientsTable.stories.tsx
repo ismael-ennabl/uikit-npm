@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ClientsTable } from '../../lib';
+import { ClientsTable } from '../../../lib';
 
 const meta: Meta<typeof ClientsTable> = {
   title: 'Auto/Components/ClientsTable',

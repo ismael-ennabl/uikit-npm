@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { RadioGroup } from '../../lib';
+import { RadioGroup } from '../../../lib';
 
 const meta: Meta<typeof RadioGroup> = {
   title: 'Auto/UI/RadioGroup',

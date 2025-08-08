@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Table } from '../../lib';
+import { Table } from '../../../lib';
 
 const meta: Meta<typeof Table> = {
   title: 'Auto/UI/Table',

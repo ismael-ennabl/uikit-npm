@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Select } from '../../lib';
+import { Select } from '../../../lib';
 
 const meta: Meta<typeof Select> = {
   title: 'Auto/UI/Select',

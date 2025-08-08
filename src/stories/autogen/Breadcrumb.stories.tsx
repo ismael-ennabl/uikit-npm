@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Breadcrumb } from '../../lib';
+import { Breadcrumb } from '../../../lib';
 
 const meta: Meta<typeof Breadcrumb> = {
   title: 'Auto/UI/Breadcrumb',

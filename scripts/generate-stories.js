@@ -13,6 +13,11 @@ const repoRoot = process.cwd();
 const libComponentsIndex = path.join(repoRoot, 'lib', 'components', 'index.ts');
 const libUiDir = path.join(repoRoot, 'lib', 'components', 'ui');
 const outDir = path.join(repoRoot, 'src', 'stories', 'autogen');
+const libDir = path.join(repoRoot, 'lib');
+const libImportPath = path
+  .relative(outDir, libDir)
+  .split(path.sep)
+  .join('/');
 
 function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
@@ -104,7 +109,7 @@ function collectUiComponentNames(uiDir) {
 function storyContent(componentName, group) {
   // Use render with @ts-ignore to avoid prop requirement friction
   return `import type { Meta, StoryObj } from '@storybook/react';
-import { ${componentName} } from '../../lib';
+import { ${componentName} } from '${libImportPath}';
 
 const meta: Meta<typeof ${componentName}> = {
   title: 'Auto/${group}/${componentName}',

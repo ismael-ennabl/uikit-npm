@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { MetricItem } from '../../lib';
+import { MetricItem } from '../../../lib';
 
 const meta: Meta<typeof MetricItem> = {
   title: 'Auto/Components/MetricItem',

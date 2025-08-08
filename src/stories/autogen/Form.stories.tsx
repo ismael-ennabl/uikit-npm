@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Form } from '../../lib';
+import { Form } from '../../../lib';
 
 const meta: Meta<typeof Form> = {
   title: 'Auto/UI/Form',

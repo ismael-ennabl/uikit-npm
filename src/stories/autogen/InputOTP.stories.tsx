@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { InputOTP } from '../../lib';
+import { InputOTP } from '../../../lib';
 
 const meta: Meta<typeof InputOTP> = {
   title: 'Auto/UI/InputOTP',

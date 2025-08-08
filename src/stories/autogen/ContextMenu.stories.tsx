@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ContextMenu } from '../../lib';
+import { ContextMenu } from '../../../lib';
 
 const meta: Meta<typeof ContextMenu> = {
   title: 'Auto/UI/ContextMenu',

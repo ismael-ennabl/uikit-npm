@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { NavigationMenu } from '../../lib';
+import { NavigationMenu } from '../../../lib';
 
 const meta: Meta<typeof NavigationMenu> = {
   title: 'Auto/UI/NavigationMenu',

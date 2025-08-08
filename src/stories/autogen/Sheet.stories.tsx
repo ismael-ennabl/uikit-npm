@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Sheet } from '../../lib';
+import { Sheet } from '../../../lib';
 
 const meta: Meta<typeof Sheet> = {
   title: 'Auto/UI/Sheet',

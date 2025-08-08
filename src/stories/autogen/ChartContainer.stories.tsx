@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ChartContainer } from '../../lib';
+import { ChartContainer } from '../../../lib';
 
 const meta: Meta<typeof ChartContainer> = {
   title: 'Auto/UI/ChartContainer',

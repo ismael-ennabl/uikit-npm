@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ResizablePanelGroup } from '../../lib';
+import { ResizablePanelGroup } from '../../../lib';
 
 const meta: Meta<typeof ResizablePanelGroup> = {
   title: 'Auto/UI/ResizablePanelGroup',

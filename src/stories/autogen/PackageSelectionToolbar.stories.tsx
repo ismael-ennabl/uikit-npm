@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { PackageSelectionToolbar } from '../../lib';
+import { PackageSelectionToolbar } from '../../../lib';
 
 const meta: Meta<typeof PackageSelectionToolbar> = {
   title: 'Auto/Components/PackageSelectionToolbar',
