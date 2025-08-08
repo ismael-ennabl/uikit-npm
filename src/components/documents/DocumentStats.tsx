@@ -71,7 +71,8 @@ const DocumentStats = ({
           
           <div className={METRICS.actionsGroup}>
             <Button 
-              variant="ctaSecondary"
+              variant="ctaPrimary"
+              className="dark:bg-secondary dark:text-secondary-foreground dark:hover:bg-secondary/80"
               onClick={onAskQuestionsClick}
             >
               <Sparkles className="w-4 h-4" />
