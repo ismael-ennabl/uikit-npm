@@ -18,14 +18,14 @@ const CategoryHeader = ({
       <div className="py-2 cursor-pointer w-full">
         <div className="flex items-center justify-between">
           <div className="flex items-baseline space-x-3">
-            <GripVertical className="h-4 w-4 text-black" />
-            {isExpanded ? <ChevronDown className="h-4 w-4 text-black" /> : <ChevronRight className="h-4 w-4 text-black" />}
+            <GripVertical className="h-4 w-4 text-foreground" />
+            {isExpanded ? <ChevronDown className="h-4 w-4 text-foreground" /> : <ChevronRight className="h-4 w-4 text-foreground" />}
             <span className={TYPOGRAPHY.h2}>{categoryType}</span>
             <div className="flex items-center space-x-2">
-              <Badge variant="outline" className="text-gray-700 border-gray-300">
+              <Badge variant="outline" className="text-muted-foreground border-border">
                 {categoryCount === 1 ? '1 difference' : `${categoryCount} differences`}
               </Badge>
-              <Badge variant="outline" className="text-gray-700 border-gray-300">
+              <Badge variant="outline" className="text-muted-foreground border-border">
                 {documentCount === 1 ? '1 doc' : `${documentCount} docs`}
               </Badge>
             </div>

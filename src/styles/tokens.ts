@@ -1,117 +1,40 @@
-// Typography tokens
-export const TYPOGRAPHY = {
-  h1: "text-2xl font-bold text-gray-900 mb-4",
-  h2: "text-xl font-semibold text-gray-900 mb-3", 
-  h3: "text-lg font-semibold text-gray-900 mb-2",
-  sectionLabel: "text-sm font-medium text-gray-700",
-  cardHeading: "text-lg font-semibold text-gray-900",
-  dialogSubtitle: "text-lg font-medium text-gray-600",
-  statLabel: "text-sm font-medium text-foreground",
-} as const;
+// App tokens now source shared styles from the library to ensure consistency
+// Shared tokens from the component library
+import {
+  TYPOGRAPHY as LIB_TYPOGRAPHY,
+  COMPONENTS as LIB_COMPONENTS,
+  METRICS as LIB_METRICS,
+  SELECTION_TOOLBAR as LIB_SELECTION_TOOLBAR,
+  SECTION_HEADER as LIB_SECTION_HEADER,
+  TOOLTIP_STYLES as LIB_TOOLTIP_STYLES,
+} from '../../lib/tokens';
 
-// Component-specific tokens
-export const COMPONENTS = {
-  dialogTitle: "text-lg font-semibold leading-none tracking-tight",
-  cardTitle: "text-2xl font-semibold leading-none tracking-tight",
-  statValue: "text-2xl font-semibold text-foreground",
-  alertDialogTitle: "text-lg font-semibold",
-  sheetTitle: "text-lg font-semibold text-foreground",
-  drawerTitle: "text-lg font-semibold leading-none tracking-tight",
-} as const;
+export const TYPOGRAPHY = LIB_TYPOGRAPHY;
+export const COMPONENTS = LIB_COMPONENTS;
+export const METRICS = LIB_METRICS;
+export const SELECTION_TOOLBAR = LIB_SELECTION_TOOLBAR;
+export const SECTION_HEADER = LIB_SECTION_HEADER;
+export const TOOLTIP_STYLES = LIB_TOOLTIP_STYLES;
 
-// Metrics component tokens
-export const METRICS = {
-  // Typography
-  statValue: "text-2xl font-semibold text-foreground",
-  statLabel: "text-sm font-normal text-muted-foreground",
-  
-  // Layout
-  container: "shadow-none border-none bg-card",
-  content: "p-6",
-  statsGroup: "flex items-center gap-8",
-  statItem: "flex flex-col",
-  actionsGroup: "flex items-center gap-3",
-  
-  // Interactive states
-  clickableStat: "cursor-pointer group transition-colors duration-200",
-  hoverValue: "group-hover:text-brand-blue transition-colors",
-  hoverLabel: "border-b border-solid border-muted-foreground/30 group-hover:border-brand-blue group-hover:text-brand-blue transition-colors",
-  
-  // Colors
-  valueColor: "text-foreground", 
-  labelColor: "text-muted-foreground",
-  primaryButton: "bg-primary text-primary-foreground hover:bg-primary/90",
-  secondaryButton: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-} as const;
-
-// Page layout tokens
+// Page layout tokens (app-specific)
 export const PAGE = {
-  background: "bg-page",
-  container: "min-h-screen bg-page",
-  content: "flex flex-col min-h-screen",
+  background: 'bg-page',
+  container: 'min-h-screen bg-page',
+  content: 'flex flex-col min-h-screen',
 } as const;
 
-// CTA component tokens
+// CTA component tokens (app-specific)
 export const CTA = {
-  // CTA Primary - Blue background
-  primary: "bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 font-medium transition-colors duration-200",
-  
-  // CTA Secondary - Light background with blue text and blue hover
-  secondary: "bg-background text-brand-blue border border-input hover:bg-hover-brand-blue font-medium transition-colors duration-200",
-  
+  // CTA Primary - Brand blue background
+  primary:
+    'bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 font-medium transition-colors duration-200',
+
+  // CTA Secondary - Subtle background with brand blue accents
+  secondary:
+    'bg-background text-brand-blue border border-input hover:bg-hover-brand-blue font-medium transition-colors duration-200',
+
   // Shared CTA styles
-  base: "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
-  size: "h-10 px-4 py-2",
-} as const;
-
-// Selection toolbar tokens
-export const SELECTION_TOOLBAR = {
-  // Container
-  container: "flex items-center justify-between h-12 px-4 bg-brand-blue/5 rounded-lg",
-  
-  // Left section (selection info)
-  leftSection: "flex items-center gap-3",
-  clearButton: "h-8 w-8 p-0 text-foreground hover:bg-foreground/10",
-  selectionText: "text-foreground font-normal",
-  
-  // Right section (actions)
-  rightSection: "flex items-center gap-2",
-  actionButton: "h-8 px-3 text-foreground hover:bg-foreground/10 font-normal",
-  
-  // Icon sizes
-  clearIcon: "h-4 w-4",
-  actionIcon: "h-4 w-4 mr-1",
-  chevronIcon: "h-3 w-3 ml-1"
-} as const;
-
-// Section header tokens
-export const SECTION_HEADER = {
-  // Container and layout
-  container: "flex items-center cursor-pointer select-none",
-  content: "flex items-center gap-3 w-full",
-  leftSection: "flex items-center gap-3",
-  
-  // Icons
-  dragIcon: "h-4 w-4 text-muted-foreground hover:text-foreground transition-colors",
-  chevronIcon: "h-4 w-4 text-muted-foreground transition-transform duration-200",
-  
-  // Title styling
-  title: "text-xl font-semibold text-foreground",
-  titleHover: "hover:text-primary transition-colors",
-  
-  // Badges
-  badgesContainer: "flex items-center gap-2 ml-auto",
-  badge: "text-xs font-medium px-2 py-1 rounded-full bg-muted text-muted-foreground",
-  
-  // Interactive states
-  headerHover: "hover:bg-muted/50 transition-colors duration-200 rounded-md p-2 -m-2",
-  focusVisible: "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md",
-} as const;
-
-// Tooltip style tokens
-export const TOOLTIP_STYLES = {
-  dark: "bg-black text-white",
-  light: "bg-white text-black border",
-  restricted: "bg-black text-white",
-  info: "bg-gray-900 text-white",
+  base:
+    'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
+  size: 'h-10 px-4 py-2',
 } as const;
