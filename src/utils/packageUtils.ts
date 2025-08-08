@@ -9,9 +9,9 @@ export const formatDate = (dateString: string) => {
 };
 
 export const getSyncScoreColor = (score: number) => {
-  if (score >= 50) return 'text-green-600';
-  if (score >= 25) return 'text-yellow-600';
-  return 'text-red-600';
+  if (score >= 50) return 'text-success';
+  if (score >= 25) return 'text-warning';
+  return 'text-destructive';
 };
 
 export const getStatusPriority = (status: string) => {

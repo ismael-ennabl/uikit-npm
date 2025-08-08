@@ -17,17 +17,17 @@ const PackageCard = ({ package: pkg, onClick, isSelected, onSelect }: PackageCar
     <div
       className={`p-4 border rounded-lg transition-all cursor-pointer ${
         isSelected
-          ? 'bg-[#0000c5]/5 border-2 border-[#0000c5]'
+          ? 'bg-brand-blue/5 border-2 border-brand-blue'
           : pkg.status === 'in-progress'
-          ? 'bg-gray-100 border-gray-200 cursor-not-allowed'
-          : 'hover:bg-hover-primary hover:border-gray-300'
+          ? 'bg-muted border-border cursor-not-allowed'
+          : 'hover:bg-hover-primary hover:border-border'
       }`}
       onClick={pkg.status !== 'in-progress' ? onClick : undefined}
     >
       <div className="space-y-3">
         <div className="flex items-start justify-between">
           <div className="flex items-center space-x-2">
-            <GitCompare className="h-4 w-4 text-black" />
+            <GitCompare className="h-4 w-4 text-foreground" />
             {pkg.status === 'in-progress' && (
               <Badge variant="processing" className="flex-shrink-0">
                 Processing
@@ -49,12 +49,12 @@ const PackageCard = ({ package: pkg, onClick, isSelected, onSelect }: PackageCar
         </div>
         
         <div className="space-y-2">
-          <h3 className="font-normal text-gray-900 text-base leading-tight line-clamp-2 overflow-hidden text-ellipsis">
+          <h3 className="font-normal text-foreground text-base leading-tight line-clamp-2 overflow-hidden text-ellipsis">
             {getDisplayName(pkg.sourceDocument)}
           </h3>
         </div>
         
-        <div className="space-y-1 text-sm" style={{ color: '#8287b0cc' }}>
+        <div className="space-y-1 text-sm text-muted-foreground">
           {pkg.status === 'in-progress' ? (
             <>
               <div>{pkg.documents} docs</div>

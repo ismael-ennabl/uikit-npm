@@ -82,28 +82,26 @@ const PackageFilters = ({
             variant={viewMode === 'cards' ? 'default' : 'ghost'}
             size="sm"
             onClick={() => onViewModeChange('cards')}
-            className={`h-8 px-3 ${viewMode === 'cards' ? 'bg-[#3D3F40] text-white' : 'bg-transparent text-[#B9BED6]'}`}
-          >
+            className={`h-8 px-3 ${viewMode === 'cards' ? 'bg-foreground text-background' : 'bg-transparent text-muted-foreground'}`}>
             <LayoutGrid className="h-4 w-4" />
           </Button>
           <Button
             variant={viewMode === 'table' ? 'default' : 'ghost'}
             size="sm"
             onClick={() => onViewModeChange('table')}
-            className={`h-8 px-3 ${viewMode === 'table' ? 'bg-[#3D3F40] text-white' : 'bg-transparent text-[#B9BED6]'}`}
-          >
+            className={`h-8 px-3 ${viewMode === 'table' ? 'bg-foreground text-background' : 'bg-transparent text-muted-foreground'}`}>
             <TableIcon className="h-4 w-4" />
           </Button>
         </div>
         
         {/* Search */}
         <div className="relative flex-1 max-w-md">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input
             placeholder="Search documents..."
             value={searchQuery}
             onChange={e => onSearchChange(e.target.value)}
-            className="pl-10 w-full border-0 bg-[#F7F9FE]"
+            className="pl-10 w-full border-0 bg-secondary"
           />
         </div>
       </div>
@@ -114,8 +112,7 @@ const PackageFilters = ({
           <PopoverTrigger asChild>
             <Button 
               variant="outline" 
-              className={`${!statusFilters.allGroups ? 'border-2 border-[#0000c5] bg-[#0000c5]/5' : ''}`}
-            >
+              className={`${!statusFilters.allGroups ? 'border-2 border-brand-blue bg-brand-blue/5' : ''}`}>
               <Filter className="h-4 w-4 mr-2" />
               Filter
               <ChevronDown className="h-4 w-4 ml-auto" />
@@ -124,7 +121,7 @@ const PackageFilters = ({
           <PopoverContent className="w-fit p-0" align="end">
             <div className="py-2 space-y-0">
               <div className="text-sm text-muted-foreground font-normal px-4 py-4">Filter</div>
-              <div className="flex items-center space-x-3 hover:bg-[#0000c5]/5 transition-colors duration-150 px-4 py-4">
+              <div className="flex items-center space-x-3 hover:bg-brand-blue/5 transition-colors duration-150 px-4 py-4">
                 <Checkbox 
                   id="all-groups" 
                   checked={statusFilters.allGroups}
@@ -132,7 +129,7 @@ const PackageFilters = ({
                 />
                 <Label htmlFor="all-groups" className="cursor-pointer font-normal">All Groups</Label>
               </div>
-              <div className="flex items-center space-x-3 hover:bg-[#0000c5]/5 transition-colors duration-150 px-4 py-4">
+              <div className="flex items-center space-x-3 hover:bg-brand-blue/5 transition-colors duration-150 px-4 py-4">
                 <Checkbox 
                   id="processing" 
                   checked={statusFilters.processing}
@@ -140,7 +137,7 @@ const PackageFilters = ({
                 />
                 <Label htmlFor="processing" className="cursor-pointer font-normal">Processing</Label>
               </div>
-              <div className="flex items-center space-x-3 hover:bg-[#0000c5]/5 transition-colors duration-150 px-4 py-4">
+              <div className="flex items-center space-x-3 hover:bg-brand-blue/5 transition-colors duration-150 px-4 py-4">
                 <Checkbox 
                   id="new" 
                   checked={statusFilters.new}
@@ -148,7 +145,7 @@ const PackageFilters = ({
                 />
                 <Label htmlFor="new" className="cursor-pointer font-normal">New</Label>
               </div>
-              <div className="flex items-center space-x-3 hover:bg-[#0000c5]/5 transition-colors duration-150 px-4 py-4">
+              <div className="flex items-center space-x-3 hover:bg-brand-blue/5 transition-colors duration-150 px-4 py-4">
                 <Checkbox 
                   id="completed" 
                   checked={statusFilters.completed}
