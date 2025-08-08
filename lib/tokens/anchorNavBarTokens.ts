@@ -8,11 +8,11 @@ export const ANCHOR_NAV_BAR = {
   container: "top-0 z-40 transition-all duration-300 ease-in-out",
   containerSticky: "sticky bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border shadow-sm",
   innerContainer: "max-w-7xl mx-auto",
-  content: "flex items-center space-x-2 overflow-x-auto py-3 bg-page",
+  content: "flex items-center space-x-2 overflow-x-auto py-3 bg-background",
   
   // Navigation buttons
   navButton: "shrink-0 font-normal text-sm border-0 transition-all duration-200",
-  navButtonActive: "bg-[#0000c5]/[0.08] text-[#0000c5] hover:bg-[#0000c5]/[0.12]",
+  navButtonActive: "bg-primary/10 text-primary hover:bg-primary/15",
   navButtonInactive: "text-muted-foreground hover:bg-accent hover:text-accent-foreground",
   
   // Expand/collapse button
