@@ -5,12 +5,12 @@ export * from './anchorNavBarTokens';
 
 // Typography tokens
 export const TYPOGRAPHY = {
-  h1: "text-2xl font-bold text-gray-900 mb-4",
-  h2: "text-xl font-semibold text-gray-900 mb-3", 
-  h3: "text-lg font-semibold text-gray-900 mb-2",
-  sectionLabel: "text-sm font-medium text-gray-700",
-  cardHeading: "text-lg font-semibold text-gray-900",
-  dialogSubtitle: "text-lg font-medium text-gray-600",
+  h1: "text-2xl font-bold text-foreground mb-4",
+  h2: "text-xl font-semibold text-foreground mb-3", 
+  h3: "text-lg font-semibold text-foreground mb-2",
+  sectionLabel: "text-sm font-medium text-muted-foreground",
+  cardHeading: "text-lg font-semibold text-foreground",
+  dialogSubtitle: "text-lg font-medium text-muted-foreground",
   statLabel: "text-sm font-medium text-foreground",
 } as const;
 
@@ -79,17 +79,17 @@ export const SECTION = {
   headerContent: "flex items-center justify-between",
   headerLeft: "flex items-baseline space-x-3",
   
-  // Title and icons
-  title: "text-xl font-semibold text-gray-900 mb-3",
-  dragIcon: "h-4 w-4 text-black",
-  chevronIcon: "h-4 w-4 text-black",
+// Title and icons
+  title: "text-xl font-semibold text-foreground mb-3",
+  dragIcon: "h-4 w-4 text-foreground",
+  chevronIcon: "h-4 w-4 text-foreground",
   
   // Badges
   badgesContainer: "flex items-center space-x-2",
-  badge: "text-gray-700 border-gray-300",
+  badge: "text-muted-foreground border-border",
   
-  // Content area (white wrapper)
-  content: "bg-white rounded-lg p-6 mt-2 border border-gray-200 shadow-sm",
+  // Content area (card wrapper)
+  content: "bg-card rounded-lg p-6 mt-2 border border-border shadow-sm",
 } as const;
 
 // Section header tokens
@@ -118,8 +118,8 @@ export const SECTION_HEADER = {
 
 // Tooltip style tokens
 export const TOOLTIP_STYLES = {
-  dark: "bg-black text-white",
-  light: "bg-white text-black border",
-  restricted: "bg-black text-white",
-  info: "bg-gray-900 text-white",
+  dark: "bg-popover text-popover-foreground",
+  light: "bg-background text-foreground border",
+  restricted: "bg-popover text-popover-foreground",
+  info: "bg-popover text-popover-foreground",
 } as const;
