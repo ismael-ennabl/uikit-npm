@@ -73,6 +73,13 @@
     --hover-subtle: 210 40% 96.1% / 0.4;
     --hover-danger: 0 84.2% 60.2% / 0.08;
     --hover-brand-blue: 240 100% 39% / 0.08;
+
+    /* Gradients & Shadows */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--brand-blue)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.30);
+    --shadow-glow: 0 0 40px hsl(var(--brand-blue) / 0.35);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
@@ -133,6 +140,13 @@
     --hover-subtle: 210 40% 96.1% / 0.4;
     --hover-danger: 0 84.2% 60.2% / 0.08;
     --hover-brand-blue: 240 100% 39% / 0.08;
+
+    /* Gradients & Shadows */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--brand-blue)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.30);
+    --shadow-glow: 0 0 40px hsl(var(--brand-blue) / 0.35);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
@@ -147,6 +161,6 @@
 
   /* Custom radio button styling */
   input[type="radio"] {
-    accent-color: black;
+    accent-color: hsl(var(--foreground));
   }
 }
