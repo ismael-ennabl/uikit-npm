@@ -111,7 +111,7 @@ const CardViewMode = ({
   return (
     <>
       {/* Control Bar */}
-      <div className="flex items-center justify-between mb-6 p-4 bg-blue-50 rounded-lg">
+      <div className="flex items-center justify-between mb-6 p-4 bg-brand-blue/10 rounded-lg">
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-3">
             <Label htmlFor="pdf-view-toggle" className="text-sm font-medium text-gray-700">
@@ -129,7 +129,7 @@ const CardViewMode = ({
                   <SelectTrigger className="w-60">
                     <SelectValue placeholder="Select issue type" />
                   </SelectTrigger>
-                  <SelectContent className="bg-white z-50">
+                  <SelectContent className="bg-card z-50">
                     {issueTypes.map((issueType) => (
                       <SelectItem key={issueType} value={issueType}>
                         {issueType}
@@ -151,7 +151,7 @@ const CardViewMode = ({
                   <SelectTrigger className="w-80">
                     <SelectValue placeholder="Select mismatch" />
                   </SelectTrigger>
-                  <SelectContent className="bg-white z-50">
+                  <SelectContent className="bg-card z-50">
                       {filteredDiscrepancies.map((discrepancy, index) => (
                         <SelectItem key={discrepancy.id} value={index.toString()}>
                           {discrepancy.type} - {discrepancy.field}
@@ -167,7 +167,7 @@ const CardViewMode = ({
                   <SelectTrigger className="w-80">
                     <SelectValue placeholder="Select document" />
                   </SelectTrigger>
-                  <SelectContent className="bg-white z-50">
+                  <SelectContent className="bg-card z-50">
                       {getDocumentsWithIssueType(selectedIssueType).map((doc, index) => (
                         <SelectItem key={doc.id} value={doc.id}>
                           {doc.name}
@@ -199,7 +199,7 @@ const CardViewMode = ({
 
       <div className="grid grid-cols-2 gap-6">
         {/* Source Document Content */}
-        <div className="bg-white p-4 rounded-lg min-h-96 border">
+        <div className="bg-card p-4 rounded-lg min-h-96 border">
           {selectedDiscrepancy !== null && (
             <div className="space-y-4">
               <div className="p-3 bg-card border-l-4 border-success rounded">
@@ -218,7 +218,7 @@ const CardViewMode = ({
         </div>
 
         {/* Compare Document Content */}
-        <div className="bg-white p-4 rounded-lg min-h-96 border">
+        <div className="bg-card p-4 rounded-lg min-h-96 border">
           {selectedDiscrepancy !== null && (
             <div className="space-y-4">
               <div className="p-3 bg-card border-l-4 border-brand-blue rounded">

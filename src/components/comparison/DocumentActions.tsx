@@ -40,7 +40,7 @@ const DocumentActions = ({
               <ChevronDown className="h-4 w-4 ml-1" />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="bg-white border shadow-md z-50">
+          <DropdownMenuContent align="end" className="bg-card border shadow-md z-50">
             {Array.from({ length: index + 1 }, (_, i) => (
               <DropdownMenuItem
                 key={i + 1}
@@ -59,7 +59,7 @@ const DocumentActions = ({
             <MoreHorizontal className="h-4 w-4" />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="end" className="bg-white border shadow-md z-50">
+        <DropdownMenuContent align="end" className="bg-card border shadow-md z-50">
           <DropdownMenuItem
             onClick={() => onDownload(doc.id)}
             className="cursor-pointer hover:bg-gray-100"

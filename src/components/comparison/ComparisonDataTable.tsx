@@ -35,8 +35,8 @@ const ComparisonDataTable = ({
     <ScrollArea className="h-auto max-h-96">
       <Table className="table-fixed min-w-full" wrapperClassName="border rounded-lg overflow-hidden">
         <TableHeader>
-          <TableRow className="bg-gray-50 hover:bg-gray-50">
-            <TableHead className={`font-medium text-gray-700 ${getOptimalDifferencesColumnWidth()} sticky left-0 z-30 bg-gray-50 border-r shadow-lg`}>
+          <TableRow className="bg-secondary hover:bg-secondary">
+            <TableHead className={`font-medium text-secondary ${getOptimalDifferencesColumnWidth()} sticky left-0 z-30 bg-secondary border-r shadow-lg`}>
               Differences
             </TableHead>
             {uniqueDocuments.map((docId) => {
@@ -46,9 +46,9 @@ const ComparisonDataTable = ({
               return (
                 <TableHead 
                   key={docId} 
-                  className={`font-medium text-gray-900 ${widthClass} ${
+                  className={`font-medium text-foreground ${widthClass} ${
                     isPrimary 
-                      ? 'bg-gray-50 sticky left-72 z-20 border-r shadow-lg' 
+                      ? 'bg-secondary sticky left-72 z-20 border-r shadow-lg' 
                       : 'text-center'
                   }`}
                   title={docName}
@@ -65,8 +65,8 @@ const ComparisonDataTable = ({
           {uniqueFields.map(field => (
             <TableRow 
               key={field}
-              className={`hover:bg-gray-50 transition-colors border-b border-gray-100 cursor-pointer ${
-                selectedField === field ? 'bg-blue-50 border-blue-200' : ''
+              className={`hover:bg-hover-primary transition-colors border-b border-border cursor-pointer ${
+                selectedField === field ? 'bg-brand-blue/10 border-brand-blue/20' : ''
               }`}
               onClick={() => {
                 const discrepancy = categoryDiscrepancies.find(d => d.field === field);
@@ -79,7 +79,7 @@ const ComparisonDataTable = ({
                 }
               }}
             >
-              <TableCell className={`font-medium text-gray-900 py-3 sticky left-0 z-30 bg-white border-r shadow-lg ${getOptimalDifferencesColumnWidth()}`}>
+              <TableCell className={`font-medium text-foreground py-3 sticky left-0 z-30 bg-card border-r shadow-lg ${getOptimalDifferencesColumnWidth()}`}>
                 {field}
               </TableCell>
               {uniqueDocuments.map(docId => {
@@ -91,8 +91,8 @@ const ComparisonDataTable = ({
                     key={docId} 
                     className={`py-3 ${widthClass} ${
                       isPrimary 
-                        ? 'bg-white text-gray-900 sticky left-72 z-20 border-r shadow-lg' 
-                        : 'bg-white text-gray-900 text-center'
+                        ? 'bg-card text-foreground sticky left-72 z-20 border-r shadow-lg' 
+                        : 'bg-card text-foreground text-center'
                     }`}
                   >
                     <div className="truncate px-2">

@@ -42,7 +42,7 @@ const DocumentCard = ({
   };
 
   return (
-    <div className="p-4 bg-white border rounded-lg hover:border-gray-300 transition-colors">
+    <div className="p-4 bg-card border rounded-lg hover:border-border transition-colors">
       <div className="flex items-start justify-between">
         <div className="flex items-start space-x-3">
           <div className="flex-1">
@@ -51,11 +51,11 @@ const DocumentCard = ({
               <Badge variant="static" className="bg-gray-100 text-gray-700 border-gray-200 text-xs rounded-sm">
                 {getFileExtension(index)}
               </Badge>
-              <Badge variant="static" className="bg-[#E6EDF9] text-[#8287B0] border-[#E6EDF9] text-xs">
+              <Badge variant="static" className="bg-muted text-muted-foreground border-muted text-xs">
                 {index === 3 ? 'V4' : `V${index + 1}`}
               </Badge>
               {doc.isSourceOfTruth && (
-                <Badge variant="static" className="bg-green-100 text-green-800 border-green-200">
+                <Badge variant="static" className="bg-success/20 text-success border-success/20">
                   Primary Doc to Compare
                 </Badge>
               )}
@@ -63,14 +63,14 @@ const DocumentCard = ({
             <div className="flex items-center space-x-4 mt-2 text-xs text-gray-500">
               {doc.confidence && (
                 <>
-                  <span className="text-black">{getEditsCount(index)} changes</span>
-                  <span className="text-blue-600">5 differences</span>
+                  <span className="text-foreground">{getEditsCount(index)} changes</span>
+                  <span className="text-brand-blue">5 differences</span>
                 </>
               )}
               {index === 3 && (
                 <>
-                  <span className="text-black">{getEditsCount(index)} changes</span>
-                  <span className="text-green-600">100% Synced</span>
+                  <span className="text-foreground">{getEditsCount(index)} changes</span>
+                  <span className="text-success">100% Synced</span>
                 </>
               )}
               <span>{doc.size}</span>

@@ -249,8 +249,8 @@ const AskQuestionsModal = ({
                     variant="ghost"
                     className={`w-full justify-start gap-2 rounded-[12px] ${
                       selectedCategory === 'Trending' 
-                        ? 'bg-[#0000c5]/10 text-[#0000c5] font-medium' 
-                        : 'text-gray-600 hover:bg-hover-primary'
+                        ? 'bg-brand-blue/10 text-brand-blue font-medium' 
+                        : 'text-muted-foreground hover:bg-hover-primary'
                     }`}
                   >
                     <Flame className="h-4 w-4" />
@@ -261,8 +261,8 @@ const AskQuestionsModal = ({
                     variant="ghost"
                     className={`w-full justify-start gap-2 rounded-[12px] ${
                       selectedCategory === 'Saved' 
-                        ? 'bg-[#0000c5]/10 text-[#0000c5] font-medium' 
-                        : 'text-gray-600 hover:bg-hover-primary'
+                        ? 'bg-brand-blue/10 text-brand-blue font-medium' 
+                        : 'text-muted-foreground hover:bg-hover-primary'
                     }`}
                   >
                     <Bookmark className="h-4 w-4" />
@@ -272,7 +272,7 @@ const AskQuestionsModal = ({
 
                 {/* Middle Section: Title */}
                 <div className="py-2">
-                  <h3 className="text-sm font-medium px-3" style={{ color: '#999EBF' }}>Prompts by Category</h3>
+                  <h3 className="text-sm font-medium px-3 text-muted-foreground">Prompts by Category</h3>
                 </div>
 
                 {/* Bottom Section: Category buttons without icons */}
@@ -284,8 +284,8 @@ const AskQuestionsModal = ({
                       variant="ghost"
                       className={`w-full justify-start gap-2 rounded-[12px] ${
                         selectedCategory === category 
-                          ? 'bg-[#0000c5]/10 text-[#0000c5] font-medium' 
-                          : 'text-gray-600 hover:bg-hover-primary'
+                          ? 'bg-brand-blue/10 text-brand-blue font-medium' 
+                          : 'text-muted-foreground hover:bg-hover-primary'
                       }`}
                     >
                       {category}
@@ -375,7 +375,7 @@ const AskQuestionsModal = ({
               /* Prompts Library Content */
               <>
                 {/* Prompts Library Header */}
-                <div className="border-b p-4 bg-white rounded-tr-[12px] flex-shrink-0 sticky top-0 z-10">
+                <div className="border-b p-4 bg-card rounded-tr-[12px] flex-shrink-0 sticky top-0 z-10">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <Button
@@ -400,9 +400,9 @@ const AskQuestionsModal = ({
                 </div>
 
                 {/* Prompts Content */}
-                <div className="flex-1 bg-white overflow-hidden items-start p-2">
+                <div className="flex-1 bg-card overflow-hidden items-start p-2">
                   {/* Sort Controls */}
-                  <div className="px-4 py-2 border-b bg-white sticky top-0 z-10">
+                  <div className="px-4 py-2 border-b bg-card sticky top-0 z-10">
                     <div className="flex justify-between items-center">
                       <h2 className={TYPOGRAPHY.h3}>{selectedCategory}</h2>
                       <Select value={sortOption} onValueChange={setSortOption}>
@@ -457,7 +457,7 @@ const AskQuestionsModal = ({
                                 className="h-8 w-8 p-0 hover:bg-hover-secondary"
                               >
                                 {savedPrompts.has(prompt.id) ? (
-                                  <BookmarkCheck className="h-3 w-3 text-[#0000c5]" />
+                                  <BookmarkCheck className="h-3 w-3 text-brand-blue" />
                                 ) : (
                                   <Bookmark className="h-3 w-3" />
                                 )}
@@ -476,7 +476,7 @@ const AskQuestionsModal = ({
                 </div>
 
                 {/* Prompts Library Footer */}
-                <div className="border-t p-4 bg-white flex-shrink-0 sticky bottom-0">
+                <div className="border-t p-4 bg-card flex-shrink-0 sticky bottom-0">
                   <div className="flex justify-end gap-3">
                     <Button
                       onClick={handlePromptsLibraryClose}
@@ -487,7 +487,7 @@ const AskQuestionsModal = ({
                     </Button>
                     <Button
                       onClick={handlePromptsLibraryClose}
-                      className="bg-[#0000c5] text-white hover:bg-[#0000c5]/90 rounded-[8px]"
+                      className="bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 rounded-[8px]"
                     >
                       Apply
                     </Button>
@@ -519,7 +519,7 @@ const AskQuestionsModal = ({
                     <p className="text-muted-foreground mb-6">
                       {selectedDocuments && selectedDocuments.length > 0 ? `Ask me anything about your ${selectedDocuments.length} selected documents` : <>
                           Ask me anything about your {documentCount} documents{' '}
-                          <button onClick={onSelectFiles} className="text-[#0000c5] hover:font-normal">
+                          <button onClick={onSelectFiles} className="text-brand-blue hover:font-normal">
                             select files
                           </button>
                         </>}
@@ -529,20 +529,20 @@ const AskQuestionsModal = ({
                         <div className={`space-y-1 text-sm text-blue-700 ${selectedDocuments.length > 3 ? 'max-h-32' : ''}`}>
                           <ScrollArea className={selectedDocuments.length > 3 ? 'h-32' : 'h-auto'}>
                             {selectedDocuments.map(doc => <div key={doc.id} className="flex justify-between items-center py-1">
-                                <span className="truncate mr-2 text-gray-900">{doc.name}</span>
-                                <button onClick={() => onRemoveDocument?.(doc.id)} className="text-red-600 hover:text-red-800 text-sm font-medium transition-colors shrink-0">
-                                  remove
-                                </button>
+                            <span className="truncate mr-2 text-foreground">{doc.name}</span>
+                            <button onClick={() => onRemoveDocument?.(doc.id)} className="text-destructive hover:opacity-80 text-sm font-medium transition-colors shrink-0">
+                              remove
+                            </button>
                               </div>)}
                           </ScrollArea>
                         </div>
-                        <button onClick={onSelectFiles} className="text-[#0000c5] text-sm mt-2 block">
+                        <button onClick={onSelectFiles} className="text-brand-blue text-sm mt-2 block">
                           add more
                         </button>
                       </div>}
                   </div> : <div className="space-y-4 pb-4">
                     {chatHistory.map((item, index) => <div key={index} className={`flex ${item.type === 'question' ? 'justify-end' : 'justify-start'}`}>
-                        <div className={`max-w-[80%] rounded-[12px] p-4 ${item.type === 'question' ? 'bg-[#E6EDF9] text-[#1e1e1e]/87' : 'bg-muted text-foreground'}`}>
+                        <div className={`max-w-[80%] rounded-[12px] p-4 ${item.type === 'question' ? 'bg-brand-blue/10 text-foreground' : 'bg-muted text-foreground'}`}>
                           <p className="text-sm">{item.content}</p>
                           <span className="text-xs opacity-70 mt-2 block">
                             {item.timestamp.toLocaleTimeString()}
@@ -570,7 +570,7 @@ const AskQuestionsModal = ({
             {/* Input Area - Fixed at Bottom */}
             <div className="border-t pt-4 flex-shrink-0 bg-page px-6 pb-6">
               <div className="flex gap-3">
-                <Textarea placeholder={selectedDocuments && selectedDocuments.length > 0 ? "Ask anything about your selected documents..." : "Ask anything..."} value={inputValue} onChange={e => setInputValue(e.target.value)} onKeyDown={handleKeyPress} className="flex-1 min-h-[60px] max-h-[120px] resize-none rounded-[12px] focus-visible:ring-[#0000c5] focus:border-[#0000c5]" rows={2} />
+                <Textarea placeholder={selectedDocuments && selectedDocuments.length > 0 ? "Ask anything about your selected documents..." : "Ask anything..."} value={inputValue} onChange={e => setInputValue(e.target.value)} onKeyDown={handleKeyPress} className="flex-1 min-h-[60px] max-h-[120px] resize-none rounded-[12px] focus-visible:ring-brand-blue focus:border-brand-blue" rows={2} />
                 <Button onClick={handleSendQuestion} disabled={!inputValue.trim()} className="self-end px-6 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 rounded">
                   <Send className="h-4 w-4" />
                   Send

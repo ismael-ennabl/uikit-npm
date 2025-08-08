@@ -45,16 +45,16 @@ const SourceDocumentsTable = ({ packageDocuments, packageData, onPrimaryDocument
   };
 
   return (
-    <div className="bg-white p-6 rounded-xl border">
+    <div className="bg-card p-6 rounded-xl border">
       <Table wrapperClassName="border rounded-lg overflow-hidden">
         <TableHeader>
-          <TableRow className="bg-gray-50 hover:bg-gray-50">
-            <TableHead className="w-20 font-medium text-gray-700 bg-gray-50">Primary</TableHead>
-            <TableHead className="font-medium text-gray-700 bg-gray-50">Document Name</TableHead>
-            <TableHead className="font-medium text-gray-700 bg-gray-50">Pages</TableHead>
-            <TableHead className="font-medium text-gray-700 bg-gray-50">Upload Date</TableHead>
-            <TableHead className="font-medium text-gray-700 bg-gray-50">Confidence</TableHead>
-            <TableHead className="font-medium text-gray-700 bg-gray-50">Version</TableHead>
+          <TableRow className="bg-secondary hover:bg-secondary">
+            <TableHead className="w-20 font-medium text-secondary bg-secondary">Primary</TableHead>
+            <TableHead className="font-medium text-secondary bg-secondary">Document Name</TableHead>
+            <TableHead className="font-medium text-secondary bg-secondary">Pages</TableHead>
+            <TableHead className="font-medium text-secondary bg-secondary">Upload Date</TableHead>
+            <TableHead className="font-medium text-secondary bg-secondary">Confidence</TableHead>
+            <TableHead className="font-medium text-secondary bg-secondary">Version</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -68,7 +68,7 @@ const SourceDocumentsTable = ({ packageDocuments, packageData, onPrimaryDocument
                     value={doc.name}
                     checked={doc.name === selectedPrimary}
                     onChange={() => handlePrimaryChange(doc.name)}
-                    className="h-4 w-4 rounded-full border border-black text-black focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-pointer"
+                    className="h-4 w-4 rounded-full border border-border text-foreground focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-pointer"
                   />
                 </div>
               </TableCell>
@@ -85,7 +85,7 @@ const SourceDocumentsTable = ({ packageDocuments, packageData, onPrimaryDocument
               <TableCell>{doc.pages}</TableCell>
               <TableCell>{formatDate(doc.uploadDate)}</TableCell>
               <TableCell>
-                <span className={doc.confidence && doc.confidence >= 95 ? 'text-green-600' : 'text-gray-600'}>
+                <span className={doc.confidence && doc.confidence >= 95 ? 'text-success' : 'text-secondary'}>
                   {formatConfidence(doc.confidence)}
                 </span>
               </TableCell>

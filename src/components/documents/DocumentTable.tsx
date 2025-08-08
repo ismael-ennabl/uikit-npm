@@ -23,25 +23,25 @@ const DocumentTable = ({ documents, onDocumentClick, selectedDocuments, onDocume
   const allSelected = documents.length > 0 && selectedDocuments.length === documents.length;
   const someSelected = selectedDocuments.length > 0 && selectedDocuments.length < documents.length;
   return (
-    <div className="rounded-lg border bg-white">
+    <div className="rounded-lg border bg-card">
       <Table>
         <TableHeader>
-          <TableRow className="bg-gray-50 hover:bg-gray-50">
+          <TableRow className="bg-secondary hover:bg-secondary">
             <TableHead className="w-12">
               <Checkbox
                 checked={allSelected}
                 onCheckedChange={onSelectAll}
               />
             </TableHead>
-            <TableHead className="font-medium text-gray-700">Name</TableHead>
-            <TableHead className="font-medium text-gray-700">Upload Date</TableHead>
+            <TableHead className="font-medium text-secondary">Name</TableHead>
+            <TableHead className="font-medium text-secondary">Upload Date</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {documents.map(doc => (
             <TableRow 
               key={doc.id} 
-              className="cursor-pointer hover:bg-gray-50 transition-colors border-b border-gray-100"
+              className="cursor-pointer hover:bg-hover-primary transition-colors border-b border-border"
               onClick={() => onDocumentClick(doc.id)}
             >
               <TableCell className="w-12 py-4">
@@ -51,8 +51,8 @@ const DocumentTable = ({ documents, onDocumentClick, selectedDocuments, onDocume
                   onClick={(e) => e.stopPropagation()}
                 />
               </TableCell>
-              <TableCell className="font-medium text-gray-900 py-4">{doc.name}</TableCell>
-              <TableCell className="text-gray-600 py-4">{formatDate(doc.uploadDate)}</TableCell>
+              <TableCell className="font-medium text-foreground py-4">{doc.name}</TableCell>
+              <TableCell className="text-secondary py-4">{formatDate(doc.uploadDate)}</TableCell>
             </TableRow>
           ))}
         </TableBody>

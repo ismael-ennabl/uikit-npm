@@ -58,7 +58,7 @@ const DocumentHeaderSelector = ({
           <SelectTrigger className={`w-full ${isSourceDropdown && !isEditable ? 'opacity-60' : ''}`}>
             <SelectValue />
         </SelectTrigger>
-        <SelectContent className="bg-white z-50 w-full">
+        <SelectContent className="bg-card z-50 w-full">
           {organizedDocuments.map((doc, index) => {
             const isSOT = isCompareDropdown && selectedSourceDocument && doc.id === selectedSourceDocument;
             const isDisabled = isSOT;
@@ -90,11 +90,11 @@ const DocumentHeaderSelector = ({
                     {getDocumentNameWithoutExtension(doc.name)}
                   </span>
                   <div className="flex items-center space-x-1 flex-shrink-0">
-                    <Badge variant="static" className="bg-[#E6EDF9] text-[#8287B0] border-[#E6EDF9] text-xs">
+                    <Badge variant="static" className="bg-muted text-muted-foreground border-muted text-xs">
                       {getVersionForDocument(doc.name)}
                     </Badge>
                     {isSOT && (
-                      <Badge variant="static" className="bg-[#22C55E] text-white border-[#22C55E] text-xs">
+                      <Badge variant="static" className="bg-success/20 text-success border-success/20 text-xs">
                         Primary Doc
                       </Badge>
                     )}

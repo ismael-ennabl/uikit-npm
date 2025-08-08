@@ -182,7 +182,7 @@ const UploadModal = ({ open, onClose, packageId, packageName, onComplete }: Uplo
           <UploadDisclaimer hasFiles={files.length > 0} packageId={packageId} />
 
           {packageId && files.length > 0 && (
-            <div className="flex items-center space-x-2 text-base text-black mt-6">
+            <div className="flex items-center space-x-2 text-base text-foreground mt-6">
               <Info className="h-4 w-4" />
               <span>Since you're adding to an existing group, selecting a Primary Doc to Compare is optional.</span>
             </div>
@@ -208,8 +208,7 @@ const UploadModal = ({ open, onClose, packageId, packageName, onComplete }: Uplo
           <AlertDialogFooter>
             <AlertDialogAction 
               onClick={() => setShowValidationDialog(false)}
-              style={{ backgroundColor: '#0000C5' }}
-              className="hover:opacity-90"
+              className="bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90"
             >
               Got it
             </AlertDialogAction>

@@ -93,10 +93,10 @@ const PDFViewMode = ({
       
 
       {/* Control Bar */}
-      <div className="flex items-center justify-between mb-6 p-4 bg-blue-50 rounded-lg">
+      <div className="flex items-center justify-between mb-6 p-4 bg-brand-blue/10 rounded-lg">
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-3">
-            <Label htmlFor="pdf-view-toggle-2" className="text-sm font-medium text-gray-700">
+            <Label htmlFor="pdf-view-toggle-2" className="text-sm font-medium text-secondary">
               View on Docs
             </Label>
             <Switch id="pdf-view-toggle-2" checked={isPdfViewMode} onCheckedChange={onPdfViewModeChange} />
@@ -111,7 +111,7 @@ const PDFViewMode = ({
                   <SelectTrigger className="w-60">
                     <SelectValue placeholder="Select issue type" />
                   </SelectTrigger>
-                  <SelectContent className="bg-white z-50">
+                  <SelectContent className="bg-card z-50">
                     {issueTypes.map((issueType) => (
                       <SelectItem key={issueType} value={issueType}>
                         {issueType}
@@ -128,12 +128,12 @@ const PDFViewMode = ({
           <div className="flex items-center space-x-2">
             {viewMode === 'document' ? (
               <>
-                <Label className="text-sm font-medium text-gray-700">Issue</Label>
+                <Label className="text-sm font-medium text-secondary">Issue</Label>
                 <Select value={selectedDiscrepancy === null ? '0' : selectedDiscrepancy.toString()} onValueChange={onDiscrepancyChange}>
                   <SelectTrigger className="w-80">
                     <SelectValue placeholder="Select mismatch to highlight" />
                   </SelectTrigger>
-                  <SelectContent className="bg-white z-50">
+                   <SelectContent className="bg-card z-50">
                       {filteredDiscrepancies.map((discrepancy, index) => (
                         <SelectItem key={discrepancy.id} value={index.toString()}>
                           {discrepancy.type} - {discrepancy.field}
@@ -144,12 +144,12 @@ const PDFViewMode = ({
               </>
             ) : (
               <>
-                <Label className="text-sm font-medium text-gray-700">Doc</Label>
+                <Label className="text-sm font-medium text-secondary">Doc</Label>
                 <Select value={selectedDocument} onValueChange={onDocumentChange}>
                   <SelectTrigger className="w-80">
                     <SelectValue placeholder="Select document" />
                   </SelectTrigger>
-                  <SelectContent className="bg-white z-50">
+                  <SelectContent className="bg-card z-50">
                     {getDocumentsWithIssueType(selectedIssueType).map((doc, index) => (
                       <SelectItem key={doc.id} value={doc.id}>
                         {doc.name}
