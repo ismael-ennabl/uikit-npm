@@ -1,5 +1,13 @@
 # Ennabl UI Kit Beta
 
+🚨 **MANDATORY: Please read our [UI Kit Best Practices & Rules](../BEST_PRACTICES.md) before using or contributing!** 🚨
+
+> All UI must use the `ennabl-ui-kit-beta` package for components, tokens, colors, fonts, and spacing.  
+> No custom styles or unrelated UI libraries allowed.  
+> See full guidelines in the link above.
+
+---
+
 A React component library with reusable UI components for document management and insurance applications.
 
 ## 🚀 Quick Start
@@ -198,6 +206,8 @@ Full TypeScript support with generated `.d.ts` files for all components.
 4. Run `npm run track-components` to update metadata
 5. Test with `npm run verify-exports`
 6. Submit a pull request
+
+**Remember:** All contributions must follow the [Best Practices](../BEST_PRACTICES.md)!
 
 ## 📄 License
 

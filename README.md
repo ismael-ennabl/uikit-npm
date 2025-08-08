@@ -1,77 +1,220 @@
-# Welcome to your Lovable project
+# Ennabl UI Kit Beta
 
-## Project info
+🚨 **MANDATORY: Please read our [UI Kit Best Practices & Rules](./BEST_PRACTICES.md) before using or contributing!** 🚨
 
-**URL**: https://lovable.dev/projects/c600e9ef-bb72-450d-9ee0-95b142690e19
+> All UI must use the `ennabl-ui-kit-beta` package for components, tokens, colors, fonts, and spacing.  
+> No custom styles or unrelated UI libraries allowed.  
+> See full guidelines in the link above.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 📦 Installation
 
-**Use Lovable**
+Install the package via npm or yarn:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/c600e9ef-bb72-450d-9ee0-95b142690e19) and start prompting.
+```bash
+npm install ennabl-ui-kit-beta
+# or
+yarn add ennabl-ui-kit-beta
+```
 
-Changes made via Lovable will be committed automatically to this repo.
+**Important:** Don't forget to import the styles in your main entry file:
 
-**Use your preferred IDE**
+```tsx
+// In your main entry file (e.g., src/main.tsx or src/index.tsx)
+import 'ennabl-ui-kit-beta/dist/index.css';
+```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🎨 Storybook
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Explore the full component library and usage examples live:
+**[Storybook Demo](https://your-storybook-url.com)**
 
-Follow these steps:
+## 🚀 Quick Usage Example
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+```tsx
+import React from 'react';
+import { Header, Footer, Section, Button } from 'ennabl-ui-kit-beta';
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+export function App() {
+  return (
+    <>
+      <Header title="My Application" />
+      <main>
+        <Section title="Welcome" badges={[{ text: "New", variant: "new" }]}>
+          <Button variant="primary" aria-label="Get Started">
+            Get Started
+          </Button>
+        </Section>
+      </main>
+      <Footer />
+    </>
+  );
+}
+```
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 📚 Available Components
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### Core Components
+- `Header` - Main application header with navigation
+- `Footer` - Application footer
+- `Section` - Content sections with titles and badges
+- `AnchorNavBar` - Navigation bar with anchor links
+
+### Toolbars
+- `SelectionToolbar` - Generic selection toolbar
+- `PackageSelectionToolbar` - Package-specific toolbar
+- `DocumentSelectionToolbar` - Document-specific toolbar
+
+### Data Display
+- `MetricItem` - Metric display component
+- `ProductsTable` - Products data table with mock data
+- `ClientsTable` - Clients data table with mock data
+
+### Header Components
+- `Breadcrumb` - Navigation breadcrumbs
+- `PageTitle` - Page title component
+- `TopSearch` - Search functionality
+- `TopAI` - AI assistant integration
+- `Dropdown` - Dropdown menus
+- `OverviewSection` - Overview metrics section
+
+### Layout Headers
+- `DashboardHeader` - Dashboard layout header
+- `DetailHeader` - Detail page header
+- `RootHeader` - Root application header
+
+### UI Components
+All standard UI components are available: `Button`, `Input`, `Card`, `Modal`, `Table`, etc.
+
+## 🎯 Important Notes
+
+- **Always use components and tokens from this kit** - avoid creating local copies or using unapproved libraries
+- **Keep your project updated** with the latest `ennabl-ui-kit-beta` releases to benefit from improvements and fixes
+- **Follow the best practices** outlined in the [BEST_PRACTICES.md](./BEST_PRACTICES.md) document
+
+## 🛠️ Development
+
+### Prerequisites
+- Node.js 18+
+- npm or yarn
+
+### Setup
+```bash
+# Clone the repository
+git clone https://github.com/ismael-ennabl/uikit-npm.git
+cd uikit-npm
+
+# Install dependencies
+npm install
+
+# Start development
+cd lib
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Available Scripts
+```bash
+# Development
+npm run dev              # Start development build with watch mode
+npm run build            # Build for production
+npm run type-check       # TypeScript type checking
+npm run lint             # Code linting
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+# Component Management
+npm run track-components # Track component changes
+npm run check-status     # Check component status
+npm run verify-exports   # Verify component exports
 
-**Use GitHub Codespaces**
+# Release
+npm run release-checklist # Automated release checklist
+npm run pre-release      # Run all pre-release checks
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📋 Release Process
 
-## What technologies are used for this project?
+### Automated Release (Recommended)
+```bash
+cd lib
+npm run release-checklist
+npm version patch  # or minor/major
+git push origin main --tags
+```
 
-This project is built with:
+### Manual Release
+```bash
+cd lib
+npm run pre-release
+npm run verify-exports
+npm version patch
+npm publish --access public
+git push origin main --tags
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🔧 Configuration
 
-## How can I deploy this project?
+### NPM Token Setup
+For automated releases, add your npm token to GitHub Secrets:
+1. Go to your GitHub repository settings
+2. Navigate to Secrets and variables → Actions
+3. Add `NPM_TOKEN` with your npm access token
 
-Simply open [Lovable](https://lovable.dev/projects/c600e9ef-bb72-450d-9ee0-95b142690e19) and click on Share -> Publish.
+### Package Configuration
+The package is configured with:
+- **Main entry:** `dist/index.js` (CommonJS)
+- **Module entry:** `dist/index.esm.js` (ESM)
+- **Types:** `dist/index.d.ts` (TypeScript definitions)
+- **Files:** `dist/` and `README.md`
 
-## UI Kit migration and tokens
+## 📊 Component Tracking
 
-See MIGRATION.md for how this app re-exports Shadcn wrappers from the shared kit and the semantic token mapping used across components.
+The library includes automated component tracking:
 
-## Can I connect a custom domain to my Lovable project?
+```bash
+# Track all components
+npm run track-components
 
-Yes, you can!
+# Check component status
+npm run check-status
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+# View recent activity
+npm run check-recent
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+# View new components
+npm run check-new
+```
+
+## 🎨 Styling
+
+Components use Tailwind CSS with custom design tokens. Styles are automatically included in the build.
+
+## 📝 TypeScript
+
+Full TypeScript support with generated `.d.ts` files for all components.
+
+## 🤝 Contributing
+
+1. Create a feature branch
+2. Add your components to the `components/` directory
+3. Update exports in `components/index.ts`
+4. Run `npm run track-components` to update metadata
+5. Test with `npm run verify-exports`
+6. Submit a pull request
+
+**Remember:** All contributions must follow the [Best Practices](./BEST_PRACTICES.md)!
+
+## 📄 License
+
+MIT License - see LICENSE file for details.
+
+---
+
+## 🆘 Support
+
+- **📖 [Component Documentation](./lib/README.md)**
+- **🎨 [Storybook](https://your-storybook-url.com)** - Interactive examples
+- **📋 [Release Notes](./RELEASE_WORKFLOW.md)** - Version history
+- **🐛 [GitHub Issues](https://github.com/ismael-ennabl/uikit-npm/issues)** - Report bugs
+- **💬 [Discussions](https://github.com/ismael-ennabl/uikit-npm/discussions)** - Ask questions
+
+Thank you for following the UI Kit guidelines and helping keep our design system consistent! 🚀
