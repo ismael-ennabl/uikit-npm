@@ -101,9 +101,9 @@ const FileSelectionDialog = ({ open, onClose, packageName, packageId, onUpdatePa
         </DialogHeader>
         
         <div className="space-y-4">
-          <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
-            <h4 className="font-medium text-blue-900 mb-2">Source of Truth Selection</h4>
-            <p className="text-sm text-blue-700">
+          <div className="p-4 bg-brand-blue/10 rounded-lg border border-brand-blue">
+            <h4 className="font-medium text-brand-blue mb-2">Source of Truth Selection</h4>
+            <p className="text-sm text-brand-blue">
               Select which document should be considered the authoritative source for this package. 
               This will be used as the primary reference for comparisons and will update the package name.
             </p>
@@ -123,10 +123,10 @@ const FileSelectionDialog = ({ open, onClose, packageName, packageId, onUpdatePa
                 <CardContent className="p-4">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
-                      <FileText className="h-8 w-8 text-blue-600" />
+                      <FileText className="h-8 w-8 text-brand-blue" />
                       <div>
-                        <h4 className="font-medium text-gray-900">{file.name}</h4>
-                        <div className="flex items-center space-x-4 text-sm text-gray-600 mt-1">
+                        <h4 className="font-medium text-foreground">{file.name}</h4>
+                        <div className="flex items-center space-x-4 text-sm text-muted-foreground mt-1">
                           <span>{file.type}</span>
                           <span>{file.size}</span>
                           <span>Uploaded: {file.uploadDate}</span>
@@ -137,14 +137,14 @@ const FileSelectionDialog = ({ open, onClose, packageName, packageId, onUpdatePa
                     <div className="flex items-center space-x-2">
                       {selectedSourceOfTruth === file.id && (
                         <div className="flex items-center space-x-1">
-                          <CheckCircle className="h-5 w-5 text-green-600" />
-                          <Badge className="bg-green-100 text-green-800">
+                          <CheckCircle className="h-5 w-5 text-success" />
+                          <Badge className="bg-success/10 text-success">
                             Selected as Source of Truth
                           </Badge>
                         </div>
                       )}
                       {file.isSourceOfTruth && selectedSourceOfTruth !== file.id && (
-                        <Badge className="bg-blue-100 text-blue-800">
+                        <Badge className="bg-brand-blue/10 text-brand-blue">
                           Current Source of Truth
                         </Badge>
                       )}
@@ -155,11 +155,11 @@ const FileSelectionDialog = ({ open, onClose, packageName, packageId, onUpdatePa
             ))}
           </div>
 
-          <div className="flex justify-end space-x-3 pt-4 border-t">
+          <div className="flex justify-end space-x-3 pt-4 border-t border-border">
             <Button variant="outline" onClick={onClose}>
               Cancel
             </Button>
-            <Button onClick={handleSaveChanges} className="bg-blue-600 hover:bg-blue-700">
+            <Button onClick={handleSaveChanges} className="bg-brand-blue hover:bg-brand-blue/90 text-brand-blue-foreground">
               Save Changes
             </Button>
           </div>

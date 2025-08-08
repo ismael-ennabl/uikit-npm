@@ -24,7 +24,7 @@ const DiscrepancyNavigation = ({
 }: DiscrepancyNavigationProps) => {
 
   return (
-    <div className="bg-white p-4 rounded-lg border shadow-sm">
+    <div className="bg-card p-4 rounded-lg border border-border shadow-sm">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center space-x-3">
           <Badge variant="outline">
@@ -56,8 +56,8 @@ const DiscrepancyNavigation = ({
 
       <div className="mb-4">
         <h3 className="font-semibold text-lg mb-2">{currentDiscrepancy.type}</h3>
-        <p className="text-gray-600 text-sm mb-3">{currentDiscrepancy.description}</p>
-        <div className="text-sm text-gray-500">
+        <p className="text-muted-foreground text-sm mb-3">{currentDiscrepancy.description}</p>
+        <div className="text-sm text-muted-foreground">
           <span className="font-medium">Field:</span> {currentDiscrepancy.field} | 
           <span className="font-medium ml-2">Section:</span> {currentDiscrepancy.section}
         </div>
@@ -65,7 +65,7 @@ const DiscrepancyNavigation = ({
 
       <div className="flex space-x-3">
         <Button 
-          className="bg-green-600 hover:bg-green-700 flex-1"
+          className="bg-success text-success-foreground hover:bg-success/90 flex-1"
           onClick={onResolve}
         >
           <Check className="h-4 w-4 mr-2" />
@@ -73,7 +73,7 @@ const DiscrepancyNavigation = ({
         </Button>
         <Button 
           variant="outline" 
-          className="border-red-200 text-red-700 hover:bg-red-50 flex-1"
+          className="border-destructive text-destructive hover:bg-destructive/10 flex-1"
           onClick={onReject}
         >
           <X className="h-4 w-4 mr-2" />
