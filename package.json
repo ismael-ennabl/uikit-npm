@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "gen:stories": "node scripts/generate-stories.js"
   },
   "dependencies": {
     "@faker-js/faker": "^9.9.0",
