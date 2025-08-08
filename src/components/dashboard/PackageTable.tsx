@@ -20,7 +20,7 @@ const PackageTable = ({ packages, onPackageClick, selectedPackages, onPackageSel
 
   return (
     <Table wrapperClassName="border rounded-xl overflow-hidden">
-      <TableHeader className="bg-[#F6F9FD]">
+      <TableHeader className="bg-secondary">
         <TableRow>
           <TableHead className="w-12">
             <Checkbox
@@ -44,10 +44,10 @@ const PackageTable = ({ packages, onPackageClick, selectedPackages, onPackageSel
             key={pkg.id}
             className={`${
               selectedPackages.includes(pkg.id)
-                ? 'bg-[#0000c5]/5 border-[#0000c5]'
+                ? 'bg-brand-blue/5 border-brand-blue'
                 : pkg.status === 'in-progress'
                 ? 'cursor-not-allowed opacity-60'
-                : 'cursor-pointer hover:bg-gray-50'
+                : 'cursor-pointer hover:bg-hover-subtle'
             }`}
             onClick={pkg.status !== 'in-progress' ? () => onPackageClick(pkg.id) : undefined}
           >
@@ -62,35 +62,35 @@ const PackageTable = ({ packages, onPackageClick, selectedPackages, onPackageSel
             </TableCell>
             <TableCell>
               <div className="flex items-center space-x-2">
-                <GitCompare className="h-4 w-4 text-black" />
-                <span className="font-normal text-gray-900">{pkg.documents}</span>
+                <GitCompare className="h-4 w-4 text-foreground" />
+                <span className="font-normal text-foreground">{pkg.documents}</span>
               </div>
             </TableCell>
             <TableCell>
-              <span className="font-normal text-gray-900 max-w-xs truncate">
+              <span className="font-normal text-foreground max-w-xs truncate">
                 {getDisplayName(pkg.sourceDocument)}
               </span>
             </TableCell>
             <TableCell>
               {pkg.status === 'in-progress' ? (
-                <span className="text-gray-400">—</span>
+                <span className="text-muted-foreground">—</span>
               ) : (
                 <span className={getSyncScoreColor(pkg.syncScore)}>{pkg.syncScore}%</span>
               )}
             </TableCell>
             <TableCell>
               {pkg.status === 'in-progress' ? (
-                <span className="text-gray-400">—</span>
+                <span className="text-muted-foreground">—</span>
               ) : (
                 pkg.discrepancies
               )}
             </TableCell>
-            <TableCell className="text-sm" style={{ color: '#8287b0cc' }}>
+            <TableCell className="text-sm text-secondary">
               {formatDate(pkg.editedDate)}
             </TableCell>
-            <TableCell className="text-sm" style={{ color: '#8287b0cc' }}>
+            <TableCell className="text-sm text-secondary">
               {pkg.status === 'in-progress' ? (
-                <span className="text-gray-400">—</span>
+                <span className="text-muted-foreground">—</span>
               ) : (
                 formatDate(pkg.editedDate)
               )}

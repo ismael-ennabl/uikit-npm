@@ -77,7 +77,7 @@ const PackageFilters = ({
     <div className="flex items-center justify-between">
       <div className="flex items-center space-x-4">
         {/* View Toggle */}
-        <div className="flex items-center rounded-lg p-1 bg-[#E6EDF9] py-[2px] px-[2px]">
+        <div className="flex items-center rounded-lg p-1 bg-secondary py-[2px] px-[2px]">
           <Button
             variant={viewMode === 'cards' ? 'default' : 'ghost'}
             size="sm"
@@ -168,27 +168,27 @@ const PackageFilters = ({
             <div className="py-2 space-y-0">
               <div className="text-sm text-muted-foreground font-normal px-4 py-4">Sort by</div>
               <RadioGroup value={sortOption} onValueChange={onSortChange} className="space-y-0">
-                <div className="flex items-center space-x-3 hover:bg-[#0000c5]/5 transition-colors duration-150 px-4 py-4">
+                <div className="flex items-center space-x-3 hover:bg-brand-blue/5 transition-colors duration-150 px-4 py-4">
                   <RadioGroupItem value="date-newest" id="sort-date-newest" />
                   <Label htmlFor="sort-date-newest" className="cursor-pointer font-normal">Upload date: Newest to Oldest</Label>
                 </div>
-                <div className="flex items-center space-x-3 hover:bg-[#0000c5]/5 transition-colors duration-150 px-4 py-4">
+                <div className="flex items-center space-x-3 hover:bg-brand-blue/5 transition-colors duration-150 px-4 py-4">
                   <RadioGroupItem value="date-oldest" id="sort-date-oldest" />
                   <Label htmlFor="sort-date-oldest" className="cursor-pointer font-normal">Upload date: Oldest to Newest</Label>
                 </div>
-                <div className="flex items-center space-x-3 hover:bg-[#0000c5]/5 transition-colors duration-150 px-4 py-4">
+                <div className="flex items-center space-x-3 hover:bg-brand-blue/5 transition-colors duration-150 px-4 py-4">
                   <RadioGroupItem value="discrepancies-highest" id="sort-discrepancies-highest" />
                   <Label htmlFor="sort-discrepancies-highest" className="cursor-pointer font-normal">Differences: Highest to Lowest</Label>
                 </div>
-                <div className="flex items-center space-x-3 hover:bg-[#0000c5]/5 transition-colors duration-150 px-4 py-4">
+                <div className="flex items-center space-x-3 hover:bg-brand-blue/5 transition-colors duration-150 px-4 py-4">
                   <RadioGroupItem value="discrepancies-lowest" id="sort-discrepancies-lowest" />
                   <Label htmlFor="sort-discrepancies-lowest" className="cursor-pointer font-normal">Differences: Lowest to Highest</Label>
                 </div>
-                <div className="flex items-center space-x-3 hover:bg-[#0000c5]/5 transition-colors duration-150 px-4 py-4">
+                <div className="flex items-center space-x-3 hover:bg-brand-blue/5 transition-colors duration-150 px-4 py-4">
                   <RadioGroupItem value="sync-score-highest" id="sort-sync-score-highest" />
                   <Label htmlFor="sort-sync-score-highest" className="cursor-pointer font-normal">Sync Score: Highest to Lowest</Label>
                 </div>
-                <div className="flex items-center space-x-3 hover:bg-[#0000c5]/5 transition-colors duration-150 px-4 py-4">
+                <div className="flex items-center space-x-3 hover:bg-brand-blue/5 transition-colors duration-150 px-4 py-4">
                   <RadioGroupItem value="sync-score-lowest" id="sort-sync-score-lowest" />
                   <Label htmlFor="sort-sync-score-lowest" className="cursor-pointer font-normal">Sync Score: Lowest to Highest</Label>
                 </div>
