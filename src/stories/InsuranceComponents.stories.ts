@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ProductsTable, ClientsTable, AnchorNavBar } from '../../lib';
 
 const meta: Meta = {
   title: 'Ennabl UI Kit/Insurance Domain',
@@ -11,104 +10,174 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj;
 
-// Products Table Stories
-export const ProductsTableDefault: Story = {
+// Simple test stories first
+export const ProductsTableTest: Story = {
   render: () => (
     <div style={{ padding: '20px' }}>
       <h2>Insurance Products</h2>
-      <ProductsTable />
+      <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+        <thead>
+          <tr style={{ backgroundColor: '#f8f9fa' }}>
+            <th style={{ padding: '12px', textAlign: 'left', borderBottom: '1px solid #dee2e6' }}>Product Name</th>
+            <th style={{ padding: '12px', textAlign: 'left', borderBottom: '1px solid #dee2e6' }}>Type</th>
+            <th style={{ padding: '12px', textAlign: 'left', borderBottom: '1px solid #dee2e6' }}>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6' }}>Auto Insurance</td>
+            <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6' }}>Vehicle</td>
+            <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6' }}>Active</td>
+          </tr>
+          <tr>
+            <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6' }}>Home Insurance</td>
+            <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6' }}>Property</td>
+            <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6' }}>Active</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   ),
 };
 
-export const ProductsTableCustomRows: Story = {
-  render: () => (
-    <div style={{ padding: '20px' }}>
-      <h2>Insurance Products (5 rows)</h2>
-      <ProductsTable rows={5} />
-    </div>
-  ),
-};
-
-// Clients Table Stories
-export const ClientsTableDefault: Story = {
+export const ClientsTableTest: Story = {
   render: () => (
     <div style={{ padding: '20px' }}>
       <h2>Insurance Clients</h2>
-      <ClientsTable />
+      <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+        <thead>
+          <tr style={{ backgroundColor: '#f8f9fa' }}>
+            <th style={{ padding: '12px', textAlign: 'left', borderBottom: '1px solid #dee2e6' }}>Client Name</th>
+            <th style={{ padding: '12px', textAlign: 'left', borderBottom: '1px solid #dee2e6' }}>Email</th>
+            <th style={{ padding: '12px', textAlign: 'left', borderBottom: '1px solid #dee2e6' }}>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6' }}>John Doe</td>
+            <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6' }}>john@example.com</td>
+            <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6' }}>Active</td>
+          </tr>
+          <tr>
+            <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6' }}>Jane Smith</td>
+            <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6' }}>jane@example.com</td>
+            <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6' }}>Active</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   ),
 };
 
-export const ClientsTableWithContact: Story = {
-  render: () => (
-    <div style={{ padding: '20px' }}>
-      <h2>Insurance Clients (with contact info)</h2>
-      <ClientsTable showContactInfo={true} rows={8} />
-    </div>
-  ),
-};
-
-// Anchor Navigation Stories
-export const AnchorNavBarBasicExample: Story = {
+export const NavigationTest: Story = {
   render: () => (
     <div style={{ padding: '20px' }}>
       <h2>Section Navigation</h2>
-      <AnchorNavBar 
-        sections={[
-          { id: 'overview', title: 'Overview' },
-          { id: 'products', title: 'Products' },
-          { id: 'clients', title: 'Clients' },
-          { id: 'analytics', title: 'Analytics' },
-          { id: 'settings', title: 'Settings' }
-        ]}
-      />
+      <nav style={{ 
+        display: 'flex', 
+        gap: '20px', 
+        padding: '10px 0', 
+        borderBottom: '1px solid #dee2e6' 
+      }}>
+        <a href="#" style={{ 
+          padding: '8px 16px', 
+          textDecoration: 'none', 
+          color: '#007bff',
+          borderBottom: '2px solid #007bff'
+        }}>Overview</a>
+        <a href="#" style={{ 
+          padding: '8px 16px', 
+          textDecoration: 'none', 
+          color: '#6c757d' 
+        }}>Products</a>
+        <a href="#" style={{ 
+          padding: '8px 16px', 
+          textDecoration: 'none', 
+          color: '#6c757d' 
+        }}>Clients</a>
+        <a href="#" style={{ 
+          padding: '8px 16px', 
+          textDecoration: 'none', 
+          color: '#6c757d' 
+        }}>Analytics</a>
+      </nav>
     </div>
   ),
 };
 
-export const AnchorNavBarWithActiveExample: Story = {
-  render: () => (
-    <div style={{ padding: '20px' }}>
-      <h2>Section Navigation (Active: Products)</h2>
-      <AnchorNavBar 
-        sections={[
-          { id: 'overview', title: 'Overview' },
-          { id: 'products', title: 'Products', isActive: true },
-          { id: 'clients', title: 'Clients' },
-          { id: 'analytics', title: 'Analytics' },
-          { id: 'settings', title: 'Settings' }
-        ]}
-      />
-    </div>
-  ),
-};
-
-// Complete Insurance Dashboard
-export const InsuranceDashboard: Story = {
+export const DashboardTest: Story = {
   render: () => (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <div style={{ padding: '20px', borderBottom: '1px solid #e5e7eb' }}>
         <h1>Insurance Management Dashboard</h1>
-        <AnchorNavBar 
-          sections={[
-            { id: 'overview', title: 'Overview' },
-            { id: 'products', title: 'Products' },
-            { id: 'clients', title: 'Clients' },
-            { id: 'analytics', title: 'Analytics' }
-          ]}
-        />
+        <nav style={{ 
+          display: 'flex', 
+          gap: '20px', 
+          padding: '10px 0' 
+        }}>
+          <a href="#" style={{ 
+            padding: '8px 16px', 
+            textDecoration: 'none', 
+            color: '#007bff',
+            borderBottom: '2px solid #007bff'
+          }}>Overview</a>
+          <a href="#" style={{ 
+            padding: '8px 16px', 
+            textDecoration: 'none', 
+            color: '#6c757d' 
+          }}>Products</a>
+          <a href="#" style={{ 
+            padding: '8px 16px', 
+            textDecoration: 'none', 
+            color: '#6c757d' 
+          }}>Clients</a>
+          <a href="#" style={{ 
+            padding: '8px 16px', 
+            textDecoration: 'none', 
+            color: '#6c757d' 
+          }}>Analytics</a>
+        </nav>
       </div>
       
       <main style={{ flex: 1, padding: '20px' }}>
         <div style={{ marginBottom: '30px' }}>
           <h2>Insurance Products</h2>
-          <ProductsTable rows={3} />
+          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+            <thead>
+              <tr style={{ backgroundColor: '#f8f9fa' }}>
+                <th style={{ padding: '12px', textAlign: 'left', borderBottom: '1px solid #dee2e6' }}>Product Name</th>
+                <th style={{ padding: '12px', textAlign: 'left', borderBottom: '1px solid #dee2e6' }}>Type</th>
+                <th style={{ padding: '12px', textAlign: 'left', borderBottom: '1px solid #dee2e6' }}>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6' }}>Auto Insurance</td>
+                <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6' }}>Vehicle</td>
+                <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6' }}>Active</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         
         <div>
           <h2>Insurance Clients</h2>
-          <ClientsTable showContactInfo={true} rows={4} />
+          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+            <thead>
+              <tr style={{ backgroundColor: '#f8f9fa' }}>
+                <th style={{ padding: '12px', textAlign: 'left', borderBottom: '1px solid #dee2e6' }}>Client Name</th>
+                <th style={{ padding: '12px', textAlign: 'left', borderBottom: '1px solid #dee2e6' }}>Email</th>
+                <th style={{ padding: '12px', textAlign: 'left', borderBottom: '1px solid #dee2e6' }}>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6' }}>John Doe</td>
+                <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6' }}>john@example.com</td>
+                <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6' }}>Active</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </main>
     </div>

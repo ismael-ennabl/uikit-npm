@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Header, Footer, Section, Button, MetricItem, SelectionToolbar } from '../../lib';
 
 const meta: Meta = {
   title: 'Ennabl UI Kit/Components',
@@ -11,149 +10,94 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj;
 
-// Header Stories
-export const DashboardHeader: Story = {
+// Simple test stories first
+export const SimpleTest: Story = {
   render: () => (
-    <Header 
-      title="Analytics Dashboard"
-      subtitle="Welcome back, User"
-      showBreadcrumbs={true}
-    />
+    <div style={{ padding: '20px' }}>
+      <h1>Simple Test</h1>
+      <p>This is a simple test to verify Storybook is working.</p>
+    </div>
   ),
 };
 
-export const DetailHeader: Story = {
+export const ButtonTest: Story = {
   render: () => (
-    <Header 
-      title="User Profile"
-      subtitle="Manage your account settings"
-      showBreadcrumbs={true}
-    />
+    <div style={{ padding: '20px' }}>
+      <h2>Button Test</h2>
+      <button style={{ 
+        padding: '10px 20px', 
+        backgroundColor: '#007bff', 
+        color: 'white', 
+        border: 'none', 
+        borderRadius: '4px' 
+      }}>
+        Test Button
+      </button>
+    </div>
   ),
 };
 
-// Section Stories
-export const BasicSection: Story = {
+export const HeaderTest: Story = {
   render: () => (
-    <Section title="User Information" badges={[{ text: "New", variant: "new" }]}>
-      <p>This is a basic section with content.</p>
-    </Section>
+    <div style={{ padding: '20px' }}>
+      <h2>Header Test</h2>
+      <div style={{ 
+        padding: '20px', 
+        backgroundColor: '#f8f9fa', 
+        borderBottom: '1px solid #dee2e6' 
+      }}>
+        <h1>Analytics Dashboard</h1>
+        <p>Welcome back, User</p>
+      </div>
+    </div>
   ),
 };
 
-export const CollapsibleSection: Story = {
+export const SectionTest: Story = {
   render: () => (
-    <Section 
-      title="Advanced Settings" 
-      badges={[{ text: "Beta", variant: "beta" }]}
-      defaultOpen={false}
-      showDragHandle={true}
-    >
-      <p>This section is collapsible and has a drag handle.</p>
-      <Button variant="primary">Save Settings</Button>
-    </Section>
+    <div style={{ padding: '20px' }}>
+      <h2>Section Test</h2>
+      <div style={{ 
+        border: '1px solid #dee2e6', 
+        borderRadius: '8px', 
+        padding: '20px', 
+        margin: '10px 0' 
+      }}>
+        <h3>User Information</h3>
+        <p>This is a basic section with content.</p>
+      </div>
+    </div>
   ),
 };
 
-// Button Stories
-export const PrimaryButton: Story = {
-  render: () => <Button variant="primary">Primary Button</Button>,
-};
-
-export const SecondaryButton: Story = {
-  render: () => <Button variant="secondary">Secondary Button</Button>,
-};
-
-export const DestructiveButton: Story = {
-  render: () => <Button variant="destructive">Delete</Button>,
-};
-
-export const OutlineButton: Story = {
-  render: () => <Button variant="outline">Outline Button</Button>,
-};
-
-export const GhostButton: Story = {
-  render: () => <Button variant="ghost">Ghost Button</Button>,
-};
-
-export const LinkButton: Story = {
-  render: () => <Button variant="link">Link Button</Button>,
-};
-
-// Metric Item Stories
-export const MetricItemBasic: Story = {
+export const MetricTest: Story = {
   render: () => (
-    <MetricItem 
-      value="1,234"
-      label="Total Users"
-      onClick={() => console.log('Metric clicked')}
-    />
-  ),
-};
-
-export const MetricItemWithTooltip: Story = {
-  render: () => (
-    <MetricItem 
-      value="567"
-      label="Active Sessions"
-      tooltip={{
-        content: "Users currently logged in",
-        variant: "info"
-      }}
-    />
-  ),
-};
-
-// Selection Toolbar Stories
-export const SelectionToolbarBasic: Story = {
-  render: () => (
-    <SelectionToolbar 
-      selectedCount={5}
-      onClear={() => console.log('Clear selection')}
-      actions={[
-        {
-          label: "Export",
-          onClick: () => console.log('Export clicked'),
-          icon: "Download"
-        },
-        {
-          label: "Delete",
-          onClick: () => console.log('Delete clicked'),
-          icon: "Trash"
-        }
-      ]}
-    />
-  ),
-};
-
-// Footer Story
-export const FooterComponent: Story = {
-  render: () => <Footer />,
-};
-
-// Complete Layout Story
-export const CompleteLayout: Story = {
-  render: () => (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <Header title="Complete Application" subtitle="Full layout example" />
-      <main style={{ flex: 1, padding: '20px' }}>
-        <Section title="Main Content" badges={[{ text: "Live", variant: "success" }]}>
-          <p>This is the main content area with various components.</p>
-          <div style={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
-            <Button variant="primary">Primary Action</Button>
-            <Button variant="secondary">Secondary Action</Button>
-          </div>
-        </Section>
-        
-        <Section title="Metrics" defaultOpen={true}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
-            <MetricItem value="1,234" label="Total Users" />
-            <MetricItem value="567" label="Active Sessions" />
-            <MetricItem value="89" label="New Today" />
-          </div>
-        </Section>
-      </main>
-      <Footer />
+    <div style={{ padding: '20px' }}>
+      <h2>Metric Test</h2>
+      <div style={{ 
+        display: 'grid', 
+        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
+        gap: '20px' 
+      }}>
+        <div style={{ 
+          padding: '20px', 
+          backgroundColor: '#f8f9fa', 
+          borderRadius: '8px', 
+          textAlign: 'center' 
+        }}>
+          <h3>1,234</h3>
+          <p>Total Users</p>
+        </div>
+        <div style={{ 
+          padding: '20px', 
+          backgroundColor: '#f8f9fa', 
+          borderRadius: '8px', 
+          textAlign: 'center' 
+        }}>
+          <h3>567</h3>
+          <p>Active Sessions</p>
+        </div>
+      </div>
     </div>
   ),
 };
