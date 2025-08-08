@@ -127,7 +127,7 @@ export const SelectionToolbarBasic: Story = {
 };
 
 // Footer Story
-export const Footer: Story = {
+export const FooterComponent: Story = {
   render: () => <Footer />,
 };
 

@@ -50,7 +50,7 @@ export const ClientsTableWithContact: Story = {
 };
 
 // Anchor Navigation Stories
-export const AnchorNavBarBasic: Story = {
+export const AnchorNavBarBasicExample: Story = {
   render: () => (
     <div style={{ padding: '20px' }}>
       <h2>Section Navigation</h2>
@@ -67,7 +67,7 @@ export const AnchorNavBarBasic: Story = {
   ),
 };
 
-export const AnchorNavBarWithActive: Story = {
+export const AnchorNavBarWithActiveExample: Story = {
   render: () => (
     <div style={{ padding: '20px' }}>
       <h2>Section Navigation (Active: Products)</h2>
