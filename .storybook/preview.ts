@@ -1,4 +1,5 @@
 import type { Preview } from '@storybook/react-vite'
+import 'ennabl-ui-kit-beta/dist/index.css'
 
 const preview: Preview = {
   parameters: {
@@ -14,7 +15,16 @@ const preview: Preview = {
       // 'error' - fail CI on a11y violations
       // 'off' - skip a11y checks entirely
       test: 'todo'
-    }
+    },
+
+    docs: {
+      // Show the full source code in the docs
+      source: {
+        state: 'open'
+      }
+    },
+
+    layout: 'fullscreen',
   },
 };
 
