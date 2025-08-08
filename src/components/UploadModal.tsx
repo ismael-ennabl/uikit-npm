@@ -63,18 +63,8 @@ const UploadModal = ({ open, onClose, packageId, packageName, onComplete }: Uplo
     e.preventDefault();
     e.stopPropagation();
     setDragActive(false);
-    
     const droppedFiles = Array.from(e.dataTransfer.files);
-    const newFiles = droppedFiles.map((file, index) => ({
-      id: files.length + index + 1,
-      name: file.name,
-      size: file.size,
-      type: getDocumentType(file.name),
-      status: 'uploaded',
-      isSourceOfTruth: false
-    }));
-    
-    setFiles(prev => [...prev, ...newFiles]);
+    addFiles(droppedFiles);
   }, [files]);
 
   const getDocumentType = (filename: string) => {
@@ -84,6 +74,18 @@ const UploadModal = ({ open, onClose, packageId, packageName, onComplete }: Uplo
     if (filename.toLowerCase().includes('endorsement')) return 'Endorsement';
     return 'Document';
   };
+
+  const addFiles = useCallback((selected: File[]) => {
+    const newFiles = selected.map((file, index) => ({
+      id: files.length + index + 1,
+      name: file.name,
+      size: file.size,
+      type: getDocumentType(file.name),
+      status: 'uploaded',
+      isSourceOfTruth: false,
+    }));
+    setFiles((prev) => [...prev, ...newFiles]);
+  }, [files]);
 
   const removeFile = (fileId: number) => {
     setFiles(prev => prev.filter(f => f.id !== fileId));
@@ -169,6 +171,7 @@ const UploadModal = ({ open, onClose, packageId, packageName, onComplete }: Uplo
             onDragLeave={handleDrag}
             onDragOver={handleDrag}
             onDrop={handleDrop}
+            onFilesSelected={addFiles}
           />
 
           <FileRequirementsLink />

@@ -44,17 +44,8 @@ const SummarizeModal = ({ open, onClose, onComplete }: SummarizeModalProps) => {
     e.preventDefault();
     e.stopPropagation();
     setDragActive(false);
-    
     const droppedFiles = Array.from(e.dataTransfer.files);
-    const newFiles = droppedFiles.map((file, index) => ({
-      id: files.length + index + 1,
-      name: file.name,
-      size: file.size,
-      type: getDocumentType(file.name),
-      status: 'uploaded'
-    }));
-    
-    setFiles(prev => [...prev, ...newFiles]);
+    addFiles(droppedFiles);
   }, [files]);
 
   const getDocumentType = (filename: string) => {
@@ -64,6 +55,17 @@ const SummarizeModal = ({ open, onClose, onComplete }: SummarizeModalProps) => {
     if (filename.toLowerCase().includes('endorsement')) return 'Endorsement';
     return 'Document';
   };
+
+  const addFiles = useCallback((selected: File[]) => {
+    const newFiles = selected.map((file, index) => ({
+      id: files.length + index + 1,
+      name: file.name,
+      size: file.size,
+      type: getDocumentType(file.name),
+      status: 'uploaded',
+    }));
+    setFiles((prev) => [...prev, ...newFiles]);
+  }, [files]);
 
   const removeFile = (fileId: number) => {
     setFiles(prev => prev.filter(f => f.id !== fileId));
@@ -107,6 +109,7 @@ const SummarizeModal = ({ open, onClose, onComplete }: SummarizeModalProps) => {
             onDragLeave={handleDrag}
             onDragOver={handleDrag}
             onDrop={handleDrop}
+            onFilesSelected={addFiles}
           />
 
           <FileRequirementsLink />
