@@ -90,20 +90,20 @@ const PackageFiles = () => {
       {/* Header */}
       <div className="mb-8">
         <h1 className={TYPOGRAPHY.h1}>Files in Package</h1>
-        <p className="text-gray-600">{packageName}</p>
+        <p className="text-muted-foreground">{packageName}</p>
       </div>
 
       {/* Info Box */}
       {showInfoBox && (
-        <div className="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-200 relative">
+        <div className="mb-6 p-4 bg-brand-blue/10 rounded-lg border border-brand-blue/20 relative">
           <button
             onClick={() => setShowInfoBox(false)}
-            className="absolute top-2 right-2 p-1 hover:bg-blue-100 rounded-full transition-colors"
+            className="absolute top-2 right-2 p-1 hover:bg-brand-blue/15 rounded-full transition-colors"
           >
-            <X className="h-4 w-4 text-blue-600" />
+            <X className="h-4 w-4 text-brand-blue" />
           </button>
-          <h4 className="font-medium text-blue-900 mb-2">Source of Truth Selection</h4>
-          <p className="text-sm text-blue-700">
+          <h4 className="font-medium text-brand-blue mb-2">Source of Truth Selection</h4>
+          <p className="text-sm text-brand-blue">
             Select which document should be considered the authoritative source for this package. 
             This will be used as the primary reference for comparisons and will update the package name.
           </p>
@@ -112,7 +112,7 @@ const PackageFiles = () => {
 
       {/* Actions */}
       <div className="mb-6 flex justify-between items-center">
-        <Button onClick={handleAddMoreFiles} className="bg-blue-600 hover:bg-blue-700">
+        <Button onClick={handleAddMoreFiles} className="bg-brand-blue hover:bg-brand-blue/90">
           <Plus className="h-4 w-4 mr-2" />
           Add More Files
         </Button>
@@ -128,18 +128,18 @@ const PackageFiles = () => {
             key={file.id} 
             className={`cursor-pointer transition-all ${
               selectedSourceOfTruth === file.id 
-                ? 'border-blue-500 bg-blue-50' 
-                : 'hover:border-gray-300'
+                ? 'border-brand-blue bg-brand-blue/10' 
+                : 'hover:border-border'
             }`}
             onClick={() => handleSetSourceOfTruth(file.id)}
           >
             <CardContent className="p-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
-                  <FileText className="h-6 w-6" style={{ color: '#9B9FC0' }} />
+                  <FileText className="h-6 w-6 text-muted-foreground" />
                   <div>
-                    <h4 className="font-medium text-gray-900">{file.name}</h4>
-                    <div className="flex items-center space-x-4 text-sm text-gray-600 mt-1">
+                    <h4 className="font-medium text-foreground">{file.name}</h4>
+                    <div className="flex items-center space-x-4 text-sm text-muted-foreground mt-1">
                       <span>{file.type}</span>
                       <span>{file.size}</span>
                       <span>Uploaded: {file.uploadDate}</span>
@@ -168,7 +168,7 @@ const PackageFiles = () => {
                       e.stopPropagation();
                       handleRemoveFile(file.id);
                     }}
-                    className="text-red-600 hover:text-red-800 hover:bg-red-50"
+                    className="text-destructive hover:text-destructive hover:bg-destructive/10"
                   >
                     <Trash2 className="h-4 w-4" />
                   </Button>
@@ -184,7 +184,7 @@ const PackageFiles = () => {
         <Button variant="outline" onClick={() => navigate('/')}>
           Cancel
         </Button>
-        <Button onClick={handleSaveChanges} className="bg-blue-600 hover:bg-blue-700">
+        <Button onClick={handleSaveChanges} className="bg-brand-blue hover:bg-brand-blue/90">
           Save Changes
         </Button>
       </div>

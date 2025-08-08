@@ -306,13 +306,13 @@ const AskQuestionsModal = ({
               <Button 
                 onClick={handlePromptsLibraryOpen}
                 variant="ghost" 
-                className="w-full justify-start gap-2 text-gray-600 hover:bg-hover-primary rounded-[12px]"
+                  className="w-full justify-start gap-2 text-muted-foreground hover:bg-hover-primary rounded-[12px]"
               >
                 <Book className="h-4 w-4" />
                 Prompts Library
               </Button>
               
-              <Button variant="ghost" className="w-full justify-start gap-2 text-gray-600 hover:bg-hover-primary rounded-[12px]">
+              <Button variant="ghost" className="w-full justify-start gap-2 text-muted-foreground hover:bg-hover-primary rounded-[12px]">
                 <Bookmark className="h-4 w-4" />
                 Saved
               </Button>
@@ -361,7 +361,7 @@ const AskQuestionsModal = ({
             </div>
 
             {/* Clear All Button */}
-            <Button onClick={handleClearAllChats} variant="ghost" className="w-full justify-start gap-2 text-gray-500 hover:bg-hover-primary mt-auto rounded-[12px]">
+            <Button onClick={handleClearAllChats} variant="ghost" className="w-full justify-start gap-2 text-muted-foreground hover:bg-hover-primary mt-auto rounded-[12px]">
               <Trash2 className="h-4 w-4" />
               Clear all chats
             </Button>
@@ -425,7 +425,7 @@ const AskQuestionsModal = ({
                       {getFilteredPrompts().map(prompt => (
                         <div
                           key={prompt.id}
-                          className="group p-4 border rounded-[8px] hover:bg-hover-primary hover:border-gray-300 transition-all cursor-pointer"
+                          className="group p-4 border rounded-[8px] hover:bg-hover-primary hover:border-border transition-all cursor-pointer"
                           onClick={() => handleApplyPrompt(prompt.title)}
                         >
                           <div className="flex items-start justify-between">
@@ -433,7 +433,7 @@ const AskQuestionsModal = ({
                               <h3 className="text-sm font-medium text-foreground mb-1">
                                 {prompt.title}
                               </h3>
-                              <p className="text-sm text-secondary-text">{prompt.category}</p>
+                              <p className="text-sm text-muted-foreground">{prompt.category}</p>
                             </div>
                             <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                               <Button

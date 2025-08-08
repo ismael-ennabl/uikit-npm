@@ -64,6 +64,10 @@ This project is built with:
 
 Simply open [Lovable](https://lovable.dev/projects/c600e9ef-bb72-450d-9ee0-95b142690e19) and click on Share -> Publish.
 
+## UI Kit migration and tokens
+
+See MIGRATION.md for how this app re-exports Shadcn wrappers from the shared kit and the semantic token mapping used across components.
+
 ## Can I connect a custom domain to my Lovable project?
 
 Yes, you can!

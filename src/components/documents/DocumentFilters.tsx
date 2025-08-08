@@ -123,7 +123,7 @@ const DocumentFilters = ({
           <PopoverContent className="w-fit p-0" align="end">
             <div className="py-2 space-y-0">
               <div className="text-sm text-muted-foreground font-normal px-4 py-4">Filter</div>
-              <div className="flex items-center space-x-3 hover:bg-[#0000c5]/5 transition-colors duration-150 px-4 py-4">
+              <div className="flex items-center space-x-3 hover:bg-hover-primary transition-colors duration-150 px-4 py-4">
                 <Checkbox 
                   id="all-docs" 
                   checked={statusFilters.allDocs}
@@ -131,7 +131,7 @@ const DocumentFilters = ({
                 />
                 <Label htmlFor="all-docs" className="cursor-pointer font-normal">All Docs</Label>
               </div>
-              <div className="flex items-center space-x-3 hover:bg-[#0000c5]/5 transition-colors duration-150 px-4 py-4">
+              <div className="flex items-center space-x-3 hover:bg-hover-primary transition-colors duration-150 px-4 py-4">
                 <Checkbox 
                   id="processing" 
                   checked={statusFilters.processing}
@@ -139,7 +139,7 @@ const DocumentFilters = ({
                 />
                 <Label htmlFor="processing" className="cursor-pointer font-normal">Processing</Label>
               </div>
-              <div className="flex items-center space-x-3 hover:bg-[#0000c5]/5 transition-colors duration-150 px-4 py-4">
+              <div className="flex items-center space-x-3 hover:bg-hover-primary transition-colors duration-150 px-4 py-4">
                 <Checkbox 
                   id="new" 
                   checked={statusFilters.new}
@@ -147,7 +147,7 @@ const DocumentFilters = ({
                 />
                 <Label htmlFor="new" className="cursor-pointer font-normal">New</Label>
               </div>
-              <div className="flex items-center space-x-3 hover:bg-[#0000c5]/5 transition-colors duration-150 px-4 py-4">
+              <div className="flex items-center space-x-3 hover:bg-hover-primary transition-colors duration-150 px-4 py-4">
                 <Checkbox 
                   id="completed" 
                   checked={statusFilters.completed}
@@ -170,23 +170,23 @@ const DocumentFilters = ({
             <div className="py-2 space-y-0">
               <div className="text-sm text-muted-foreground font-normal px-4 py-4">Sort by</div>
               <RadioGroup value={sortOption} onValueChange={onSortChange} className="space-y-0">
-                <div className="flex items-center space-x-3 hover:bg-[#0000c5]/5 transition-colors duration-150 px-4 py-4">
+                <div className="flex items-center space-x-3 hover:bg-hover-primary transition-colors duration-150 px-4 py-4">
                   <RadioGroupItem value="date-newest" id="sort-date-newest-docs" />
                   <Label htmlFor="sort-date-newest-docs" className="cursor-pointer font-normal">Upload date: Newest to Oldest</Label>
                 </div>
-                <div className="flex items-center space-x-3 hover:bg-[#0000c5]/5 transition-colors duration-150 px-4 py-4">
+                <div className="flex items-center space-x-3 hover:bg-hover-primary transition-colors duration-150 px-4 py-4">
                   <RadioGroupItem value="date-oldest" id="sort-date-oldest-docs" />
                   <Label htmlFor="sort-date-oldest-docs" className="cursor-pointer font-normal">Upload date: Oldest to Newest</Label>
                 </div>
-                <div className="flex items-center space-x-3 hover:bg-[#0000c5]/5 transition-colors duration-150 px-4 py-4">
+                <div className="flex items-center space-x-3 hover:bg-hover-primary transition-colors duration-150 px-4 py-4">
                   <RadioGroupItem value="name-a-z" id="sort-name-a-z-docs" />
                   <Label htmlFor="sort-name-a-z-docs" className="cursor-pointer font-normal">Name: A to Z</Label>
                 </div>
-                <div className="flex items-center space-x-3 hover:bg-[#0000c5]/5 transition-colors duration-150 px-4 py-4">
+                <div className="flex items-center space-x-3 hover:bg-hover-primary transition-colors duration-150 px-4 py-4">
                   <RadioGroupItem value="name-z-a" id="sort-name-z-a-docs" />
                   <Label htmlFor="sort-name-z-a-docs" className="cursor-pointer font-normal">Name: Z to A</Label>
                 </div>
-                <div className="flex items-center space-x-3 hover:bg-[#0000c5]/5 transition-colors duration-150 px-4 py-4">
+                <div className="flex items-center space-x-3 hover:bg-hover-primary transition-colors duration-150 px-4 py-4">
                   <RadioGroupItem value="company-a-z" id="sort-company-a-z-docs" />
                   <Label htmlFor="sort-company-a-z-docs" className="cursor-pointer font-normal">Carrier: A to Z</Label>
                 </div>

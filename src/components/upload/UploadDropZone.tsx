@@ -21,8 +21,8 @@ const UploadDropZone = ({
     <div
       className={`bg-page rounded-lg p-12 text-center transition-colors mb-8 ${
         dragActive 
-          ? 'bg-[#E8F2FE]' 
-          : 'hover:bg-[#E8F2FE]'
+          ? 'bg-hover-primary' 
+          : 'hover:bg-hover-primary'
       }`}
       onDragEnter={onDragEnter}
       onDragLeave={onDragLeave}
@@ -36,7 +36,7 @@ const UploadDropZone = ({
         <Upload className="h-4 w-4 mr-2" />
         Select files
       </Button>
-      <p className="text-gray-600">
+      <p className="text-muted-foreground">
         or drag and drop here
       </p>
     </div>
