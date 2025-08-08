@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Header, Footer, Section, Button, MetricItem, SelectionToolbar } from 'ennabl-ui-kit-beta';
+import { Header, Footer, Section, Button, MetricItem, SelectionToolbar } from '../../lib';
 
 const meta: Meta = {
   title: 'Ennabl UI Kit/Components',

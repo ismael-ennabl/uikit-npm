@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ProductsTable, ClientsTable, AnchorNavBar } from 'ennabl-ui-kit-beta';
+import { ProductsTable, ClientsTable, AnchorNavBar } from '../../lib';
 
 const meta: Meta = {
   title: 'Ennabl UI Kit/Insurance Domain',

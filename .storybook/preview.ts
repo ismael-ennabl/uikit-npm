@@ -1,5 +1,5 @@
 import type { Preview } from '@storybook/react-vite'
-import 'ennabl-ui-kit-beta/dist/index.css'
+import '../lib/styles/index.css'
 
 const preview: Preview = {
   parameters: {
