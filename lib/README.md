@@ -1,271 +1,204 @@
 # Ennabl UI Kit Beta
 
-A comprehensive React component library built for modern web applications, with special focus on document management and insurance applications. This library provides a set of high-quality, accessible, and customizable components built on top of Radix UI and Tailwind CSS.
+A React component library with reusable UI components for document management and insurance applications.
 
-## Features
-
-✨ **Modern Design System** - Consistent design tokens and theming  
-🎯 **Fully Typed** - Complete TypeScript support  
-♿ **Accessible** - Built with accessibility in mind using Radix UI  
-🎨 **Customizable** - Easy to theme and customize  
-📱 **Responsive** - Mobile-first responsive design  
-⚡ **Tree Shakeable** - Import only what you need  
-🧠 **AI-Friendly** - Smart mock data generation for insurance domain  
-
-## Installation
+## 🚀 Quick Start
 
 ```bash
 npm install ennabl-ui-kit-beta
 ```
 
-## CSS Import (Required)
+```jsx
+import { Header, Footer, Section, AnchorNavBar } from 'ennabl-ui-kit-beta';
 
-**Important**: You must import the component styles in your application for the components to display correctly:
-
-```css
-/* In your main CSS file (e.g., src/index.css or src/App.css) */
-@import 'ennabl-ui-kit-beta/dist/index.css';
-```
-
-Or in your JavaScript/TypeScript entry file:
-
-```typescript
-// In your main entry file (e.g., src/main.tsx or src/index.tsx)
-import 'ennabl-ui-kit-beta/dist/index.css';
-```
-
-## Components
-
-### Core Components
-
-#### Section
-A collapsible section component with drag handle, title, and content area.
-
-```tsx
-import { Section } from 'ennabl-ui-kit-beta';
-
-function MyComponent() {
-  return (
-    <Section
-      id="my-section"
-      title="Section Title"
-      badges={[{ text: "New", variant: "new" }]}
-      showDragHandle={true}
-      defaultOpen={false}
-    >
-      <p>Your content here</p>
-    </Section>
-  );
-}
-```
-
-#### MetricItem
-A metric display component with value, label, and optional tooltip.
-
-```tsx
-import { MetricItem } from 'ennabl-ui-kit-beta';
-
-function MyComponent() {
-  return (
-    <MetricItem
-      value="123"
-      label="Total Items"
-      onClick={() => console.log('Clicked')}
-      tooltip={{
-        content: "Additional information",
-        variant: "info"
-      }}
-    />
-  );
-}
-```
-
-#### SelectionToolbar
-A toolbar component for handling multiple selections.
-
-```tsx
-import { SelectionToolbar } from 'ennabl-ui-kit-beta';
-
-function MyComponent() {
-  return (
-    <SelectionToolbar
-      selectedCount={5}
-      onClear={() => console.log('Clear')}
-      actions={[
-        {
-          label: "Export",
-          onClick: () => console.log('Export'),
-          icon: ExportIcon
-        }
-      ]}
-    />
-  );
-}
-```
-
-### Insurance Domain Components
-
-#### ProductsTable
-Displays a table of insurance products with auto-generated mock data.
-
-```tsx
-import { ProductsTable } from 'ennabl-ui-kit-beta';
-
-// No props needed - uses realistic mock data by default
-<ProductsTable />
-
-// Or with custom data
-<ProductsTable data={customData} rows={10} />
-```
-
-**Features:**
-- Auto-generates realistic insurance product data
-- Includes product name, carrier, coverage amount, status
-- Color-coded status badges
-- Responsive design
-- Hover effects
-
-#### ClientsTable
-Displays a table of insurance clients with auto-generated mock data.
-
-```tsx
-import { ClientsTable } from 'ennabl-ui-kit-beta';
-
-// No props needed - uses realistic mock data by default
-<ClientsTable />
-
-// With contact information
-<ClientsTable showContactInfo={true} rows={8} />
-```
-
-**Features:**
-- Auto-generates realistic client data
-- Includes company name, broker, policy number, premium
-- Industry classification
-- Contact information (optional)
-- Color-coded status badges
-
-## Mock Data Utilities
-
-The library includes smart mock data generation for insurance applications:
-
-```tsx
-import { 
-  generateProductsData, 
-  generateClientsData,
-  type InsuranceProduct,
-  type InsuranceClient 
-} from 'ennabl-ui-kit-beta';
-
-// Generate 10 insurance products
-const products = generateProductsData(10);
-
-// Generate 5 clients
-const clients = generateClientsData(5);
-```
-
-## AI-Friendly Usage
-
-This library is designed to work seamlessly with AI coding tools. You can simply say:
-
-> "Add a products table and clients table to my dashboard"
-
-And the AI can render:
-
-```tsx
-import { ProductsTable, ClientsTable } from 'ennabl-ui-kit-beta';
-
-function Dashboard() {
+function App() {
   return (
     <div>
-      <ProductsTable />
-      <ClientsTable />
+      <Header title="My Application" />
+      <Section title="Main Content">
+        <p>Your content here</p>
+      </Section>
+      <Footer />
     </div>
   );
 }
 ```
 
-The components will automatically generate realistic insurance domain data without any manual configuration.
+## 📦 Available Components
 
-## Style Protection
+### Core Components
+- `Header` - Main application header with navigation
+- `Footer` - Application footer
+- `Section` - Content sections with titles and badges
+- `AnchorNavBar` - Navigation bar with anchor links
 
-This component library uses protected CSS classes to prevent style conflicts with your host application. The components are designed to maintain their appearance regardless of your project's existing styles.
+### Toolbars
+- `SelectionToolbar` - Generic selection toolbar
+- `PackageSelectionToolbar` - Package-specific toolbar
+- `DocumentSelectionToolbar` - Document-specific toolbar
 
-### How it works:
+### Data Display
+- `MetricItem` - Metric display component
+- `ProductsTable` - Products data table
+- `ClientsTable` - Clients data table
 
-1. **Scoped CSS Classes**: All components use prefixed class names (e.g., `ennabl-section__title`)
-2. **CSS Custom Properties**: Components define their own CSS variables with fallback values
-3. **High Specificity**: Important styles use `!important` to prevent overrides
-4. **Style Isolation**: Components are wrapped in isolation containers
+### Header Components
+- `Breadcrumb` - Navigation breadcrumbs
+- `PageTitle` - Page title component
+- `TopSearch` - Search functionality
+- `TopAI` - AI assistant integration
+- `Dropdown` - Dropdown menus
+- `OverviewSection` - Overview metrics section
 
-### Customization
+### Layout Headers
+- `DashboardHeader` - Dashboard layout header
+- `DetailHeader` - Detail page header
+- `RootHeader` - Root application header
 
-If you need to override component styles, you can do so by targeting the specific CSS custom properties:
+## 🛠️ Development
 
-```css
-.ennabl-section {
-  --ennabl-section-title-color: #your-color;
-  --ennabl-section-title-size: 1.5rem;
-  --ennabl-section-content-bg: #your-background;
-}
-```
+### Prerequisites
+- Node.js 18+
+- npm or yarn
 
-## Peer Dependencies
-
-Make sure you have these dependencies installed in your project:
-
-- react >= 16.8.0
-- react-dom >= 16.8.0
-- @radix-ui/react-dropdown-menu ^2.1.1
-- @radix-ui/react-tooltip ^1.1.4
-- class-variance-authority ^0.7.1
-- clsx ^2.1.1
-- lucide-react ^0.462.0
-
-## TypeScript Support
-
-Full TypeScript support with exported types:
-
-```tsx
-import type { 
-  ToolbarAction, 
-  MetricItemProps, 
-  ProductsTableProps,
-  ClientsTableProps,
-  InsuranceProduct,
-  InsuranceClient
-} from 'ennabl-ui-kit-beta';
-```
-
-## Troubleshooting
-
-### Styles not appearing correctly
-
-1. Make sure you've imported the CSS file
-2. Check that the CSS file is being bundled correctly
-3. Verify there are no CSS conflicts in your application
-
-### Component styles being overridden
-
-The components are designed to be style-protected, but if you're still experiencing issues:
-
-1. Check browser developer tools for conflicting CSS rules
-2. Ensure the component CSS is loaded after your global styles
-3. Use CSS custom properties for customization instead of direct class overrides
-
-## Development
-
+### Setup
 ```bash
-# Install dependencies
+cd lib
 npm install
+```
 
-# Build the library
+### Development Commands
+```bash
+# Start development build with watch mode
+npm run dev
+
+# Build for production
 npm run build
 
-# Watch for changes during development
-npm run dev
+# Type checking
+npm run type-check
+
+# Lint code
+npm run lint
+
+# Track component changes
+npm run track-components
+
+# Check component status
+npm run check-status
 ```
 
-## License
+## 🚀 Release Process
 
-MIT
+### Automated Release (Recommended)
+1. **Run release checklist:**
+   ```bash
+   npm run release-checklist
+   ```
+
+2. **Bump version:**
+   ```bash
+   npm version patch  # or minor/major
+   ```
+
+3. **Push to GitHub:**
+   ```bash
+   git push origin main --tags
+   ```
+
+4. **GitHub Actions will automatically:**
+   - Run all checks
+   - Build the package
+   - Publish to npm
+   - Create a GitHub release
+
+### Manual Release
+1. **Pre-release checks:**
+   ```bash
+   npm run pre-release
+   npm run verify-exports
+   ```
+
+2. **Build and test:**
+   ```bash
+   npm run build
+   npm run dry-run
+   ```
+
+3. **Publish:**
+   ```bash
+   npm publish --access public
+   ```
+
+4. **Push changes:**
+   ```bash
+   git push origin main --tags
+   ```
+
+## 📋 Release Checklist
+
+The automated release process includes:
+
+- ✅ Git status check
+- ✅ Pull latest changes
+- ✅ Component tracking
+- ✅ TypeScript type checking
+- ✅ Build verification
+- ✅ Export verification
+- ✅ Package testing
+- ✅ npm publishing
+- ✅ GitHub release creation
+
+## 🔧 Configuration
+
+### NPM Token Setup
+For automated releases, add your npm token to GitHub Secrets:
+1. Go to your GitHub repository settings
+2. Navigate to Secrets and variables → Actions
+3. Add `NPM_TOKEN` with your npm access token
+
+### Package Configuration
+The package is configured with:
+- **Main entry:** `dist/index.js` (CommonJS)
+- **Module entry:** `dist/index.esm.js` (ESM)
+- **Types:** `dist/index.d.ts` (TypeScript definitions)
+- **Files:** `dist/` and `README.md`
+
+## 📊 Component Tracking
+
+The library includes automated component tracking:
+
+```bash
+# Track all components
+npm run track-components
+
+# Check component status
+npm run check-status
+
+# View recent activity
+npm run check-recent
+
+# View new components
+npm run check-new
+```
+
+## 🎨 Styling
+
+Components use Tailwind CSS with custom design tokens. Styles are automatically included in the build.
+
+## 📝 TypeScript
+
+Full TypeScript support with generated `.d.ts` files for all components.
+
+## 🤝 Contributing
+
+1. Create a feature branch
+2. Add your components to the `components/` directory
+3. Update exports in `components/index.ts`
+4. Run `npm run track-components` to update metadata
+5. Test with `npm run verify-exports`
+6. Submit a pull request
+
+## 📄 License
+
+MIT License - see LICENSE file for details.

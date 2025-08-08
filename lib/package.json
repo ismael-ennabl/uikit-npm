@@ -14,12 +14,20 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "update-metadata": "node scripts/update-metadata.js",
-    "prepublishOnly": "npm run update-metadata && npm run build",
+    "prepublishOnly": "npm run update-metadata && npm run build && npm run type-check",
     "track-components": "node scripts/track-components.js",
     "check-components": "node scripts/check-components.js",
     "check-status": "node scripts/check-components.js status",
     "check-recent": "node scripts/check-components.js recent",
-    "check-new": "node scripts/check-components.js new"
+    "check-new": "node scripts/check-components.js new",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint . --ext .ts,.tsx",
+    "test-build": "npm run build && node -e \"console.log('✅ Build successful')\"",
+    "verify-exports": "node scripts/verify-exports.js",
+    "pre-release": "npm run track-components && npm run check-status && npm run type-check && npm run build",
+    "dry-run": "npm pack",
+    "test-install": "npm run dry-run && mkdir -p ../test-install && cd ../test-install && npm init -y && npm install ../lib/ennabl-ui-kit-beta-*.tgz && node -e \"const { Header, Footer } = require('ennabl-ui-kit-beta'); console.log('✅ Components imported successfully');\"",
+    "release-checklist": "node scripts/release-checklist.js"
   },
   "keywords": [
     "react",
