@@ -6,6 +6,11 @@
 > No custom styles or unrelated UI libraries allowed.  
 > See full guidelines in the link above.
 
+**📖 Documentation:** When installed via npm, see the documentation files in your `node_modules/ennabl-ui-kit-beta/` directory:
+- `BEST_PRACTICES.md` - Comprehensive guidelines
+- `QUICK_REFERENCE.md` - Developer quick reference
+- `RELEASE_WORKFLOW.md` - Release process documentation
+
 ---
 
 ## 📦 Installation
