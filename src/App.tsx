@@ -14,6 +14,7 @@ import Documents from "./pages/Documents";
 import AllDocuments from "./pages/AllDocuments";
 import Tables from "./pages/Tables";
 import NotFound from "./pages/NotFound";
+import ToastDebug from "./components/dev/ToastDebug";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
+        <ToastDebug />
         <ProtectedApp>
           <BrowserRouter>
             <Routes>
