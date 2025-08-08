@@ -32,6 +32,7 @@ const Layout = () => {
     
     return (
       <div className={PAGE.container}>
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-primary text-primary-foreground rounded px-3 py-2 z-[100]">Skip to main content</a>
         <DetailHeader
            title={packageInfo.name}
           breadcrumbItems={breadcrumbItems}
@@ -39,7 +40,7 @@ const Layout = () => {
           actions={actions}
         />
         
-        <main className="flex-1">
+        <main id="main-content" className="flex-1">
           <Outlet />
         </main>
 
@@ -57,12 +58,13 @@ const Layout = () => {
     
     return (
       <div className={PAGE.container}>
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-primary text-primary-foreground rounded px-3 py-2 z-[100]">Skip to main content</a>
         <DashboardHeader 
           title="Compare Docs"
           breadcrumbItems={breadcrumbItems}
         />
         
-        <main className="flex-1">
+        <main id="main-content" className="flex-1">
           <Outlet />
         </main>
 
@@ -80,12 +82,13 @@ const Layout = () => {
     
     return (
       <div className={PAGE.container}>
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-primary text-primary-foreground rounded px-3 py-2 z-[100]">Skip to main content</a>
         <DashboardHeader 
           title="Docs Library"
           breadcrumbItems={breadcrumbItems}
         />
         
-        <main className="flex-1">
+        <main id="main-content" className="flex-1">
           <Outlet />
         </main>
 
@@ -103,12 +106,13 @@ const Layout = () => {
     
     return (
       <div className={PAGE.container}>
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-primary text-primary-foreground rounded px-3 py-2 z-[100]">Skip to main content</a>
         <DashboardHeader 
           title="Tables"
           breadcrumbItems={breadcrumbItems}
         />
         
-        <main className="flex-1">
+        <main id="main-content" className="flex-1">
           <Outlet />
         </main>
 
@@ -128,12 +132,13 @@ const Layout = () => {
     
     return (
       <div className={PAGE.container}>
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-primary text-primary-foreground rounded px-3 py-2 z-[100]">Skip to main content</a>
         <DashboardHeader 
           title={packageInfo.name}
           breadcrumbItems={breadcrumbItems}
         />
         
-        <main className="flex-1">
+        <main id="main-content" className="flex-1">
           <Outlet />
         </main>
 
@@ -145,9 +150,10 @@ const Layout = () => {
   // Root page layout
   return (
     <div className={PAGE.container}>
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-primary text-primary-foreground rounded px-3 py-2 z-[100]">Skip to main content</a>
       <RootHeader />
       
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         <Outlet />
       </main>
 
