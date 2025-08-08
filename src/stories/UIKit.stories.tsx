@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { Button } from '../../lib';
 
 const meta: Meta = {
   title: 'Ennabl UI Kit/Components',
@@ -20,10 +21,66 @@ export const SimpleTest: Story = {
   ),
 };
 
+// Real component stories
+export const PrimaryButton: Story = {
+  render: () => (
+    <div style={{ padding: '20px' }}>
+      <h2>Primary Button</h2>
+      <Button variant="primary">Primary Button</Button>
+    </div>
+  ),
+};
+
+export const SecondaryButton: Story = {
+  render: () => (
+    <div style={{ padding: '20px' }}>
+      <h2>Secondary Button</h2>
+      <Button variant="secondary">Secondary Button</Button>
+    </div>
+  ),
+};
+
+export const DestructiveButton: Story = {
+  render: () => (
+    <div style={{ padding: '20px' }}>
+      <h2>Destructive Button</h2>
+      <Button variant="destructive">Delete</Button>
+    </div>
+  ),
+};
+
+export const OutlineButton: Story = {
+  render: () => (
+    <div style={{ padding: '20px' }}>
+      <h2>Outline Button</h2>
+      <Button variant="outline">Outline Button</Button>
+    </div>
+  ),
+};
+
+export const GhostButton: Story = {
+  render: () => (
+    <div style={{ padding: '20px' }}>
+      <h2>Ghost Button</h2>
+      <Button variant="ghost">Ghost Button</Button>
+    </div>
+  ),
+};
+
+export const LinkButton: Story = {
+  render: () => (
+    <div style={{ padding: '20px' }}>
+      <h2>Link Button</h2>
+      <Button variant="link">Link Button</Button>
+    </div>
+  ),
+};
+
+// HTML-based stories for comparison
 export const ButtonTest: Story = {
   render: () => (
     <div style={{ padding: '20px' }}>
-      <h2>Button Test</h2>
+      <h2>Button Test (HTML)</h2>
       <button style={{ 
         padding: '10px 20px', 
         backgroundColor: '#007bff', 
