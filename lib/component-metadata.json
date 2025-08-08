@@ -1,30 +1,134 @@
 {
-  "lastUpdate": "2025-08-05T19:02:54.404Z",
+  "lastUpdate": "2025-08-08T10:11:41.684Z",
   "components": [
+    {
+      "name": "AnchorNavBar",
+      "path": "AnchorNavBar",
+      "type": "directory",
+      "git": {
+        "firstCommit": {
+          "hash": "7d899ee41ea06a3fa831388cf2d0ac8545e64ca5",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 11:10:21 +0000",
+          "message": "feat: Implement AnchorNavBar section-only navigation"
+        },
+        "lastCommit": {
+          "hash": "7d899ee41ea06a3fa831388cf2d0ac8545e64ca5",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 11:10:21 +0000",
+          "message": "feat: Implement AnchorNavBar section-only navigation"
+        }
+      },
+      "stats": {
+        "size": 128,
+        "created": "2025-08-07T10:24:15.424Z",
+        "modified": "2025-08-07T11:19:13.904Z"
+      },
+      "lastModified": "2025-08-07T11:19:13.904Z",
+      "exports": []
+    },
+    {
+      "name": "AnchorNavBar",
+      "path": "AnchorNavBar/AnchorNavBar.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "7d899ee41ea06a3fa831388cf2d0ac8545e64ca5",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 11:10:21 +0000",
+          "message": "feat: Implement AnchorNavBar section-only navigation"
+        },
+        "lastCommit": {
+          "hash": "7d899ee41ea06a3fa831388cf2d0ac8545e64ca5",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 11:10:21 +0000",
+          "message": "feat: Implement AnchorNavBar section-only navigation"
+        }
+      },
+      "stats": {
+        "size": 11282,
+        "created": "2025-08-07T11:19:13.904Z",
+        "modified": "2025-08-07T11:19:13.904Z"
+      },
+      "lastModified": "2025-08-07T11:19:13.904Z",
+      "exports": []
+    },
+    {
+      "name": "ClientsTable",
+      "path": "ClientsTable",
+      "type": "directory",
+      "git": {
+        "firstCommit": {
+          "hash": "8ce79c5e416c451b26a5aee5a1861113b45ea50a",
+          "author": "ismael-ennabl",
+          "date": "2025-08-06 13:37:11 +0200",
+          "message": "feat: add insurance domain components with faker mock data"
+        },
+        "lastCommit": {
+          "hash": "8ce79c5e416c451b26a5aee5a1861113b45ea50a",
+          "author": "ismael-ennabl",
+          "date": "2025-08-06 13:37:11 +0200",
+          "message": "feat: add insurance domain components with faker mock data"
+        }
+      },
+      "stats": {
+        "size": 128,
+        "created": "2025-08-06T11:29:10.755Z",
+        "modified": "2025-08-06T11:29:31.540Z"
+      },
+      "lastModified": "2025-08-06T11:29:31.540Z",
+      "exports": []
+    },
+    {
+      "name": "ClientsTable",
+      "path": "ClientsTable/ClientsTable.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "8ce79c5e416c451b26a5aee5a1861113b45ea50a",
+          "author": "ismael-ennabl",
+          "date": "2025-08-06 13:37:11 +0200",
+          "message": "feat: add insurance domain components with faker mock data"
+        },
+        "lastCommit": {
+          "hash": "8ce79c5e416c451b26a5aee5a1861113b45ea50a",
+          "author": "ismael-ennabl",
+          "date": "2025-08-06 13:37:11 +0200",
+          "message": "feat: add insurance domain components with faker mock data"
+        }
+      },
+      "stats": {
+        "size": 4912,
+        "created": "2025-08-06T11:29:10.755Z",
+        "modified": "2025-08-06T11:34:54.889Z"
+      },
+      "lastModified": "2025-08-06T11:34:54.889Z",
+      "exports": []
+    },
     {
       "name": "DocumentSelectionToolbar",
       "path": "DocumentSelectionToolbar",
       "type": "directory",
       "git": {
         "firstCommit": {
-          "hash": "05b345f15b21c771216eba436237f16e8f32e805",
+          "hash": "737e5e5c73117e89b991f17af21280b78c9dced2",
           "author": "gpt-engineer-app[bot]",
-          "date": "2025-08-05 18:18:57 +0000",
-          "message": "feat: Implement NPM component library structure"
+          "date": "2025-08-05 18:59:22 +0000",
+          "message": "feat: Implement component timestamp mechanism"
         },
         "lastCommit": {
-          "hash": "05b345f15b21c771216eba436237f16e8f32e805",
+          "hash": "737e5e5c73117e89b991f17af21280b78c9dced2",
           "author": "gpt-engineer-app[bot]",
-          "date": "2025-08-05 18:18:57 +0000",
-          "message": "feat: Implement NPM component library structure"
+          "date": "2025-08-05 18:59:22 +0000",
+          "message": "feat: Implement component timestamp mechanism"
         }
       },
       "stats": {
         "size": 128,
         "created": "2025-08-05T18:39:04.239Z",
-        "modified": "2025-08-05T18:39:04.239Z"
+        "modified": "2025-08-06T04:40:19.673Z"
       },
-      "lastModified": "2025-08-05T18:39:04.239Z",
+      "lastModified": "2025-08-06T04:40:19.673Z",
       "exports": []
     },
     {
@@ -33,24 +137,388 @@
       "type": "file",
       "git": {
         "firstCommit": {
-          "hash": "05b345f15b21c771216eba436237f16e8f32e805",
+          "hash": "737e5e5c73117e89b991f17af21280b78c9dced2",
           "author": "gpt-engineer-app[bot]",
-          "date": "2025-08-05 18:18:57 +0000",
-          "message": "feat: Implement NPM component library structure"
+          "date": "2025-08-05 18:59:22 +0000",
+          "message": "feat: Implement component timestamp mechanism"
         },
         "lastCommit": {
-          "hash": "05b345f15b21c771216eba436237f16e8f32e805",
+          "hash": "737e5e5c73117e89b991f17af21280b78c9dced2",
           "author": "gpt-engineer-app[bot]",
-          "date": "2025-08-05 18:18:57 +0000",
-          "message": "feat: Implement NPM component library structure"
+          "date": "2025-08-05 18:59:22 +0000",
+          "message": "feat: Implement component timestamp mechanism"
         }
       },
       "stats": {
-        "size": 1776,
-        "created": "2025-08-05T18:39:04.239Z",
-        "modified": "2025-08-05T18:39:04.239Z"
+        "size": 1892,
+        "created": "2025-08-06T04:40:19.673Z",
+        "modified": "2025-08-06T04:40:19.673Z"
       },
-      "lastModified": "2025-08-05T18:39:04.239Z",
+      "lastModified": "2025-08-06T04:40:19.673Z",
+      "exports": []
+    },
+    {
+      "name": "Footer",
+      "path": "Footer",
+      "type": "directory",
+      "git": {
+        "firstCommit": {
+          "hash": "7608279a950294b656da407af2bd0ebdffb5d94d",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-06 05:04:38 +0000",
+          "message": "feat: Make Footer a reusable component"
+        },
+        "lastCommit": {
+          "hash": "7608279a950294b656da407af2bd0ebdffb5d94d",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-06 05:04:38 +0000",
+          "message": "feat: Make Footer a reusable component"
+        }
+      },
+      "stats": {
+        "size": 128,
+        "created": "2025-08-06T05:22:06.000Z",
+        "modified": "2025-08-06T05:22:06.000Z"
+      },
+      "lastModified": "2025-08-06T05:22:06.000Z",
+      "exports": []
+    },
+    {
+      "name": "Footer",
+      "path": "Footer/Footer.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "7608279a950294b656da407af2bd0ebdffb5d94d",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-06 05:04:38 +0000",
+          "message": "feat: Make Footer a reusable component"
+        },
+        "lastCommit": {
+          "hash": "7608279a950294b656da407af2bd0ebdffb5d94d",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-06 05:04:38 +0000",
+          "message": "feat: Make Footer a reusable component"
+        }
+      },
+      "stats": {
+        "size": 1899,
+        "created": "2025-08-06T05:22:06.000Z",
+        "modified": "2025-08-06T05:22:06.000Z"
+      },
+      "lastModified": "2025-08-06T05:22:06.000Z",
+      "exports": []
+    },
+    {
+      "name": "Header",
+      "path": "Header",
+      "type": "directory",
+      "git": {
+        "firstCommit": {
+          "hash": "aba9b2531109924051d2ed1d27aca8aa139bfb44",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 05:24:46 +0000",
+          "message": "feat: Prepare header components for NPM publish"
+        },
+        "lastCommit": {
+          "hash": "aba9b2531109924051d2ed1d27aca8aa139bfb44",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 05:24:46 +0000",
+          "message": "feat: Prepare header components for NPM publish"
+        }
+      },
+      "stats": {
+        "size": 352,
+        "created": "2025-08-07T05:29:15.044Z",
+        "modified": "2025-08-07T05:29:15.045Z"
+      },
+      "lastModified": "2025-08-07T05:29:15.045Z",
+      "exports": []
+    },
+    {
+      "name": "Breadcrumb",
+      "path": "Header/Breadcrumb.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "aba9b2531109924051d2ed1d27aca8aa139bfb44",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 05:24:46 +0000",
+          "message": "feat: Prepare header components for NPM publish"
+        },
+        "lastCommit": {
+          "hash": "aba9b2531109924051d2ed1d27aca8aa139bfb44",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 05:24:46 +0000",
+          "message": "feat: Prepare header components for NPM publish"
+        }
+      },
+      "stats": {
+        "size": 1853,
+        "created": "2025-08-07T05:29:15.044Z",
+        "modified": "2025-08-07T05:29:15.045Z"
+      },
+      "lastModified": "2025-08-07T05:29:15.045Z",
+      "exports": []
+    },
+    {
+      "name": "Dropdown",
+      "path": "Header/Dropdown.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "aba9b2531109924051d2ed1d27aca8aa139bfb44",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 05:24:46 +0000",
+          "message": "feat: Prepare header components for NPM publish"
+        },
+        "lastCommit": {
+          "hash": "aba9b2531109924051d2ed1d27aca8aa139bfb44",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 05:24:46 +0000",
+          "message": "feat: Prepare header components for NPM publish"
+        }
+      },
+      "stats": {
+        "size": 1310,
+        "created": "2025-08-07T05:29:15.045Z",
+        "modified": "2025-08-07T05:29:15.045Z"
+      },
+      "lastModified": "2025-08-07T05:29:15.045Z",
+      "exports": []
+    },
+    {
+      "name": "Header",
+      "path": "Header/Header.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "aba9b2531109924051d2ed1d27aca8aa139bfb44",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 05:24:46 +0000",
+          "message": "feat: Prepare header components for NPM publish"
+        },
+        "lastCommit": {
+          "hash": "aba9b2531109924051d2ed1d27aca8aa139bfb44",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 05:24:46 +0000",
+          "message": "feat: Prepare header components for NPM publish"
+        }
+      },
+      "stats": {
+        "size": 1032,
+        "created": "2025-08-07T05:29:15.045Z",
+        "modified": "2025-08-07T05:29:15.045Z"
+      },
+      "lastModified": "2025-08-07T05:29:15.045Z",
+      "exports": []
+    },
+    {
+      "name": "OverviewSection",
+      "path": "Header/OverviewSection.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "aba9b2531109924051d2ed1d27aca8aa139bfb44",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 05:24:46 +0000",
+          "message": "feat: Prepare header components for NPM publish"
+        },
+        "lastCommit": {
+          "hash": "aba9b2531109924051d2ed1d27aca8aa139bfb44",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 05:24:46 +0000",
+          "message": "feat: Prepare header components for NPM publish"
+        }
+      },
+      "stats": {
+        "size": 2119,
+        "created": "2025-08-07T05:29:15.045Z",
+        "modified": "2025-08-07T05:29:15.045Z"
+      },
+      "lastModified": "2025-08-07T05:29:15.045Z",
+      "exports": []
+    },
+    {
+      "name": "PageTitle",
+      "path": "Header/PageTitle.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "aba9b2531109924051d2ed1d27aca8aa139bfb44",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 05:24:46 +0000",
+          "message": "feat: Prepare header components for NPM publish"
+        },
+        "lastCommit": {
+          "hash": "aba9b2531109924051d2ed1d27aca8aa139bfb44",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 05:24:46 +0000",
+          "message": "feat: Prepare header components for NPM publish"
+        }
+      },
+      "stats": {
+        "size": 751,
+        "created": "2025-08-07T05:29:15.045Z",
+        "modified": "2025-08-07T05:29:15.045Z"
+      },
+      "lastModified": "2025-08-07T05:29:15.045Z",
+      "exports": []
+    },
+    {
+      "name": "TopAI",
+      "path": "Header/TopAI.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "aba9b2531109924051d2ed1d27aca8aa139bfb44",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 05:24:46 +0000",
+          "message": "feat: Prepare header components for NPM publish"
+        },
+        "lastCommit": {
+          "hash": "aba9b2531109924051d2ed1d27aca8aa139bfb44",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 05:24:46 +0000",
+          "message": "feat: Prepare header components for NPM publish"
+        }
+      },
+      "stats": {
+        "size": 744,
+        "created": "2025-08-07T05:29:15.045Z",
+        "modified": "2025-08-07T05:29:15.045Z"
+      },
+      "lastModified": "2025-08-07T05:29:15.045Z",
+      "exports": []
+    },
+    {
+      "name": "TopSearch",
+      "path": "Header/TopSearch.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "aba9b2531109924051d2ed1d27aca8aa139bfb44",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 05:24:46 +0000",
+          "message": "feat: Prepare header components for NPM publish"
+        },
+        "lastCommit": {
+          "hash": "aba9b2531109924051d2ed1d27aca8aa139bfb44",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 05:24:46 +0000",
+          "message": "feat: Prepare header components for NPM publish"
+        }
+      },
+      "stats": {
+        "size": 895,
+        "created": "2025-08-07T05:29:15.045Z",
+        "modified": "2025-08-07T05:29:15.045Z"
+      },
+      "lastModified": "2025-08-07T05:29:15.045Z",
+      "exports": []
+    },
+    {
+      "name": "Header/layouts",
+      "path": "Header/layouts",
+      "type": "directory",
+      "git": {
+        "firstCommit": {
+          "hash": "aba9b2531109924051d2ed1d27aca8aa139bfb44",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 05:24:46 +0000",
+          "message": "feat: Prepare header components for NPM publish"
+        },
+        "lastCommit": {
+          "hash": "aba9b2531109924051d2ed1d27aca8aa139bfb44",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 05:24:46 +0000",
+          "message": "feat: Prepare header components for NPM publish"
+        }
+      },
+      "stats": {
+        "size": 192,
+        "created": "2025-08-07T05:29:15.045Z",
+        "modified": "2025-08-07T05:29:15.045Z"
+      },
+      "lastModified": "2025-08-07T05:29:15.045Z",
+      "exports": []
+    },
+    {
+      "name": "DashboardHeader",
+      "path": "Header/layouts/DashboardHeader.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "aba9b2531109924051d2ed1d27aca8aa139bfb44",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 05:24:46 +0000",
+          "message": "feat: Prepare header components for NPM publish"
+        },
+        "lastCommit": {
+          "hash": "aba9b2531109924051d2ed1d27aca8aa139bfb44",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 05:24:46 +0000",
+          "message": "feat: Prepare header components for NPM publish"
+        }
+      },
+      "stats": {
+        "size": 1407,
+        "created": "2025-08-07T05:29:15.045Z",
+        "modified": "2025-08-07T05:29:15.045Z"
+      },
+      "lastModified": "2025-08-07T05:29:15.045Z",
+      "exports": []
+    },
+    {
+      "name": "DetailHeader",
+      "path": "Header/layouts/DetailHeader.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "aba9b2531109924051d2ed1d27aca8aa139bfb44",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 05:24:46 +0000",
+          "message": "feat: Prepare header components for NPM publish"
+        },
+        "lastCommit": {
+          "hash": "aba9b2531109924051d2ed1d27aca8aa139bfb44",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 05:24:46 +0000",
+          "message": "feat: Prepare header components for NPM publish"
+        }
+      },
+      "stats": {
+        "size": 1820,
+        "created": "2025-08-07T05:29:15.045Z",
+        "modified": "2025-08-07T05:29:15.045Z"
+      },
+      "lastModified": "2025-08-07T05:29:15.045Z",
+      "exports": []
+    },
+    {
+      "name": "RootHeader",
+      "path": "Header/layouts/RootHeader.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "aba9b2531109924051d2ed1d27aca8aa139bfb44",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 05:24:46 +0000",
+          "message": "feat: Prepare header components for NPM publish"
+        },
+        "lastCommit": {
+          "hash": "aba9b2531109924051d2ed1d27aca8aa139bfb44",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 05:24:46 +0000",
+          "message": "feat: Prepare header components for NPM publish"
+        }
+      },
+      "stats": {
+        "size": 830,
+        "created": "2025-08-07T05:29:15.045Z",
+        "modified": "2025-08-07T05:29:15.045Z"
+      },
+      "lastModified": "2025-08-07T05:29:15.045Z",
       "exports": []
     },
     {
@@ -59,24 +527,24 @@
       "type": "directory",
       "git": {
         "firstCommit": {
-          "hash": "4b9df9f969e08fdd66db5be74261574a391b8d5f",
+          "hash": "737e5e5c73117e89b991f17af21280b78c9dced2",
           "author": "gpt-engineer-app[bot]",
-          "date": "2025-08-05 18:25:51 +0000",
-          "message": "feat: Configure library build system"
+          "date": "2025-08-05 18:59:22 +0000",
+          "message": "feat: Implement component timestamp mechanism"
         },
         "lastCommit": {
-          "hash": "4b9df9f969e08fdd66db5be74261574a391b8d5f",
+          "hash": "737e5e5c73117e89b991f17af21280b78c9dced2",
           "author": "gpt-engineer-app[bot]",
-          "date": "2025-08-05 18:25:51 +0000",
-          "message": "feat: Configure library build system"
+          "date": "2025-08-05 18:59:22 +0000",
+          "message": "feat: Implement component timestamp mechanism"
         }
       },
       "stats": {
         "size": 128,
         "created": "2025-08-05T18:39:04.239Z",
-        "modified": "2025-08-05T18:39:04.239Z"
+        "modified": "2025-08-06T04:40:19.673Z"
       },
-      "lastModified": "2025-08-05T18:39:04.239Z",
+      "lastModified": "2025-08-06T04:40:19.673Z",
       "exports": []
     },
     {
@@ -85,24 +553,24 @@
       "type": "file",
       "git": {
         "firstCommit": {
-          "hash": "4b9df9f969e08fdd66db5be74261574a391b8d5f",
+          "hash": "737e5e5c73117e89b991f17af21280b78c9dced2",
           "author": "gpt-engineer-app[bot]",
-          "date": "2025-08-05 18:25:51 +0000",
-          "message": "feat: Configure library build system"
+          "date": "2025-08-05 18:59:22 +0000",
+          "message": "feat: Implement component timestamp mechanism"
         },
         "lastCommit": {
-          "hash": "4b9df9f969e08fdd66db5be74261574a391b8d5f",
+          "hash": "737e5e5c73117e89b991f17af21280b78c9dced2",
           "author": "gpt-engineer-app[bot]",
-          "date": "2025-08-05 18:25:51 +0000",
-          "message": "feat: Configure library build system"
+          "date": "2025-08-05 18:59:22 +0000",
+          "message": "feat: Implement component timestamp mechanism"
         }
       },
       "stats": {
-        "size": 2087,
-        "created": "2025-08-05T18:39:04.239Z",
-        "modified": "2025-08-05T18:39:04.239Z"
+        "size": 2189,
+        "created": "2025-08-06T04:40:19.673Z",
+        "modified": "2025-08-06T04:40:19.673Z"
       },
-      "lastModified": "2025-08-05T18:39:04.239Z",
+      "lastModified": "2025-08-06T04:40:19.673Z",
       "exports": []
     },
     {
@@ -111,24 +579,24 @@
       "type": "directory",
       "git": {
         "firstCommit": {
-          "hash": "05b345f15b21c771216eba436237f16e8f32e805",
+          "hash": "737e5e5c73117e89b991f17af21280b78c9dced2",
           "author": "gpt-engineer-app[bot]",
-          "date": "2025-08-05 18:18:57 +0000",
-          "message": "feat: Implement NPM component library structure"
+          "date": "2025-08-05 18:59:22 +0000",
+          "message": "feat: Implement component timestamp mechanism"
         },
         "lastCommit": {
-          "hash": "05b345f15b21c771216eba436237f16e8f32e805",
+          "hash": "737e5e5c73117e89b991f17af21280b78c9dced2",
           "author": "gpt-engineer-app[bot]",
-          "date": "2025-08-05 18:18:57 +0000",
-          "message": "feat: Implement NPM component library structure"
+          "date": "2025-08-05 18:59:22 +0000",
+          "message": "feat: Implement component timestamp mechanism"
         }
       },
       "stats": {
         "size": 128,
         "created": "2025-08-05T18:39:04.239Z",
-        "modified": "2025-08-05T18:39:04.239Z"
+        "modified": "2025-08-06T04:40:19.673Z"
       },
-      "lastModified": "2025-08-05T18:39:04.239Z",
+      "lastModified": "2025-08-06T04:40:19.673Z",
       "exports": []
     },
     {
@@ -137,24 +605,128 @@
       "type": "file",
       "git": {
         "firstCommit": {
-          "hash": "05b345f15b21c771216eba436237f16e8f32e805",
+          "hash": "737e5e5c73117e89b991f17af21280b78c9dced2",
           "author": "gpt-engineer-app[bot]",
-          "date": "2025-08-05 18:18:57 +0000",
-          "message": "feat: Implement NPM component library structure"
+          "date": "2025-08-05 18:59:22 +0000",
+          "message": "feat: Implement component timestamp mechanism"
         },
         "lastCommit": {
-          "hash": "05b345f15b21c771216eba436237f16e8f32e805",
+          "hash": "737e5e5c73117e89b991f17af21280b78c9dced2",
           "author": "gpt-engineer-app[bot]",
-          "date": "2025-08-05 18:18:57 +0000",
-          "message": "feat: Implement NPM component library structure"
+          "date": "2025-08-05 18:59:22 +0000",
+          "message": "feat: Implement component timestamp mechanism"
         }
       },
       "stats": {
-        "size": 1233,
-        "created": "2025-08-05T18:39:04.239Z",
-        "modified": "2025-08-05T18:39:04.239Z"
+        "size": 1348,
+        "created": "2025-08-06T04:40:19.673Z",
+        "modified": "2025-08-06T04:40:19.673Z"
       },
-      "lastModified": "2025-08-05T18:39:04.239Z",
+      "lastModified": "2025-08-06T04:40:19.673Z",
+      "exports": []
+    },
+    {
+      "name": "ProductsTable",
+      "path": "ProductsTable",
+      "type": "directory",
+      "git": {
+        "firstCommit": {
+          "hash": "8ce79c5e416c451b26a5aee5a1861113b45ea50a",
+          "author": "ismael-ennabl",
+          "date": "2025-08-06 13:37:11 +0200",
+          "message": "feat: add insurance domain components with faker mock data"
+        },
+        "lastCommit": {
+          "hash": "8ce79c5e416c451b26a5aee5a1861113b45ea50a",
+          "author": "ismael-ennabl",
+          "date": "2025-08-06 13:37:11 +0200",
+          "message": "feat: add insurance domain components with faker mock data"
+        }
+      },
+      "stats": {
+        "size": 128,
+        "created": "2025-08-06T11:28:47.371Z",
+        "modified": "2025-08-06T11:29:23.980Z"
+      },
+      "lastModified": "2025-08-06T11:29:23.980Z",
+      "exports": []
+    },
+    {
+      "name": "ProductsTable",
+      "path": "ProductsTable/ProductsTable.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "8ce79c5e416c451b26a5aee5a1861113b45ea50a",
+          "author": "ismael-ennabl",
+          "date": "2025-08-06 13:37:11 +0200",
+          "message": "feat: add insurance domain components with faker mock data"
+        },
+        "lastCommit": {
+          "hash": "8ce79c5e416c451b26a5aee5a1861113b45ea50a",
+          "author": "ismael-ennabl",
+          "date": "2025-08-06 13:37:11 +0200",
+          "message": "feat: add insurance domain components with faker mock data"
+        }
+      },
+      "stats": {
+        "size": 4080,
+        "created": "2025-08-06T11:28:47.371Z",
+        "modified": "2025-08-06T11:34:54.889Z"
+      },
+      "lastModified": "2025-08-06T11:34:54.889Z",
+      "exports": []
+    },
+    {
+      "name": "Section",
+      "path": "Section",
+      "type": "directory",
+      "git": {
+        "firstCommit": {
+          "hash": "f6f6d94c79a60c3e2556fd8394a5804b229baa4a",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 11:14:10 +0000",
+          "message": "Refactor section components"
+        },
+        "lastCommit": {
+          "hash": "f6f6d94c79a60c3e2556fd8394a5804b229baa4a",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 11:14:10 +0000",
+          "message": "Refactor section components"
+        }
+      },
+      "stats": {
+        "size": 128,
+        "created": "2025-08-06T06:47:57.924Z",
+        "modified": "2025-08-07T11:19:13.904Z"
+      },
+      "lastModified": "2025-08-07T11:19:13.904Z",
+      "exports": []
+    },
+    {
+      "name": "Section",
+      "path": "Section/Section.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "f6f6d94c79a60c3e2556fd8394a5804b229baa4a",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 11:14:10 +0000",
+          "message": "Refactor section components"
+        },
+        "lastCommit": {
+          "hash": "f6f6d94c79a60c3e2556fd8394a5804b229baa4a",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 11:14:10 +0000",
+          "message": "Refactor section components"
+        }
+      },
+      "stats": {
+        "size": 5686,
+        "created": "2025-08-07T11:19:13.904Z",
+        "modified": "2025-08-07T11:19:13.904Z"
+      },
+      "lastModified": "2025-08-07T11:19:13.904Z",
       "exports": []
     },
     {
@@ -163,24 +735,24 @@
       "type": "directory",
       "git": {
         "firstCommit": {
-          "hash": "4b9df9f969e08fdd66db5be74261574a391b8d5f",
+          "hash": "737e5e5c73117e89b991f17af21280b78c9dced2",
           "author": "gpt-engineer-app[bot]",
-          "date": "2025-08-05 18:25:51 +0000",
-          "message": "feat: Configure library build system"
+          "date": "2025-08-05 18:59:22 +0000",
+          "message": "feat: Implement component timestamp mechanism"
         },
         "lastCommit": {
-          "hash": "4b9df9f969e08fdd66db5be74261574a391b8d5f",
+          "hash": "737e5e5c73117e89b991f17af21280b78c9dced2",
           "author": "gpt-engineer-app[bot]",
-          "date": "2025-08-05 18:25:51 +0000",
-          "message": "feat: Configure library build system"
+          "date": "2025-08-05 18:59:22 +0000",
+          "message": "feat: Implement component timestamp mechanism"
         }
       },
       "stats": {
         "size": 128,
         "created": "2025-08-05T18:39:04.239Z",
-        "modified": "2025-08-05T18:39:04.240Z"
+        "modified": "2025-08-06T04:40:19.674Z"
       },
-      "lastModified": "2025-08-05T18:39:04.240Z",
+      "lastModified": "2025-08-06T04:40:19.674Z",
       "exports": []
     },
     {
@@ -189,24 +761,24 @@
       "type": "file",
       "git": {
         "firstCommit": {
-          "hash": "4b9df9f969e08fdd66db5be74261574a391b8d5f",
+          "hash": "737e5e5c73117e89b991f17af21280b78c9dced2",
           "author": "gpt-engineer-app[bot]",
-          "date": "2025-08-05 18:25:51 +0000",
-          "message": "feat: Configure library build system"
+          "date": "2025-08-05 18:59:22 +0000",
+          "message": "feat: Implement component timestamp mechanism"
         },
         "lastCommit": {
-          "hash": "4b9df9f969e08fdd66db5be74261574a391b8d5f",
+          "hash": "737e5e5c73117e89b991f17af21280b78c9dced2",
           "author": "gpt-engineer-app[bot]",
-          "date": "2025-08-05 18:25:51 +0000",
-          "message": "feat: Configure library build system"
+          "date": "2025-08-05 18:59:22 +0000",
+          "message": "feat: Implement component timestamp mechanism"
         }
       },
       "stats": {
-        "size": 4168,
-        "created": "2025-08-05T18:39:04.239Z",
-        "modified": "2025-08-05T18:39:04.240Z"
+        "size": 4276,
+        "created": "2025-08-06T04:40:19.674Z",
+        "modified": "2025-08-06T04:40:19.674Z"
       },
-      "lastModified": "2025-08-05T18:39:04.240Z",
+      "lastModified": "2025-08-06T04:40:19.674Z",
       "exports": []
     },
     {
@@ -215,24 +787,206 @@
       "type": "directory",
       "git": {
         "firstCommit": {
-          "hash": "4b9df9f969e08fdd66db5be74261574a391b8d5f",
+          "hash": "d44c3cd55e9e76297b817ebeab5a36bee50d7f1e",
           "author": "gpt-engineer-app[bot]",
-          "date": "2025-08-05 18:25:51 +0000",
-          "message": "feat: Configure library build system"
+          "date": "2025-08-08 09:27:29 +0000",
+          "message": "Refactor: Implement UI component plan"
         },
         "lastCommit": {
-          "hash": "4b9df9f969e08fdd66db5be74261574a391b8d5f",
+          "hash": "d44c3cd55e9e76297b817ebeab5a36bee50d7f1e",
           "author": "gpt-engineer-app[bot]",
-          "date": "2025-08-05 18:25:51 +0000",
-          "message": "feat: Configure library build system"
+          "date": "2025-08-08 09:27:29 +0000",
+          "message": "Refactor: Implement UI component plan"
         }
       },
       "stats": {
-        "size": 160,
+        "size": 1632,
         "created": "2025-08-05T18:39:04.240Z",
-        "modified": "2025-08-05T18:39:04.240Z"
+        "modified": "2025-08-08T10:10:55.440Z"
       },
-      "lastModified": "2025-08-05T18:39:04.240Z",
+      "lastModified": "2025-08-08T10:10:55.440Z",
+      "exports": []
+    },
+    {
+      "name": "accordion",
+      "path": "ui/accordion.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        },
+        "lastCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        }
+      },
+      "stats": {
+        "size": 1979,
+        "created": "2025-08-08T10:10:55.435Z",
+        "modified": "2025-08-08T10:10:55.435Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.435Z",
+      "exports": []
+    },
+    {
+      "name": "alert-dialog",
+      "path": "ui/alert-dialog.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        },
+        "lastCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        }
+      },
+      "stats": {
+        "size": 4454,
+        "created": "2025-08-08T10:10:55.435Z",
+        "modified": "2025-08-08T10:10:55.435Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.435Z",
+      "exports": []
+    },
+    {
+      "name": "alert",
+      "path": "ui/alert.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        },
+        "lastCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        }
+      },
+      "stats": {
+        "size": 1586,
+        "created": "2025-08-08T10:10:55.435Z",
+        "modified": "2025-08-08T10:10:55.435Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.435Z",
+      "exports": []
+    },
+    {
+      "name": "aspect-ratio",
+      "path": "ui/aspect-ratio.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        },
+        "lastCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        }
+      },
+      "stats": {
+        "size": 143,
+        "created": "2025-08-08T10:10:55.435Z",
+        "modified": "2025-08-08T10:10:55.435Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.435Z",
+      "exports": []
+    },
+    {
+      "name": "avatar",
+      "path": "ui/avatar.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        },
+        "lastCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        }
+      },
+      "stats": {
+        "size": 1418,
+        "created": "2025-08-08T10:10:55.435Z",
+        "modified": "2025-08-08T10:10:55.435Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.435Z",
+      "exports": []
+    },
+    {
+      "name": "badge",
+      "path": "ui/badge.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "d44c3cd55e9e76297b817ebeab5a36bee50d7f1e",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 09:27:29 +0000",
+          "message": "Refactor: Implement UI component plan"
+        },
+        "lastCommit": {
+          "hash": "d44c3cd55e9e76297b817ebeab5a36bee50d7f1e",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 09:27:29 +0000",
+          "message": "Refactor: Implement UI component plan"
+        }
+      },
+      "stats": {
+        "size": 1583,
+        "created": "2025-08-08T10:10:55.435Z",
+        "modified": "2025-08-08T10:10:55.435Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.435Z",
+      "exports": []
+    },
+    {
+      "name": "breadcrumb",
+      "path": "ui/breadcrumb.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        },
+        "lastCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        }
+      },
+      "stats": {
+        "size": 2837,
+        "created": "2025-08-08T10:10:55.435Z",
+        "modified": "2025-08-08T10:10:55.435Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.435Z",
       "exports": []
     },
     {
@@ -262,6 +1016,266 @@
       "exports": []
     },
     {
+      "name": "calendar",
+      "path": "ui/calendar.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        },
+        "lastCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        }
+      },
+      "stats": {
+        "size": 2629,
+        "created": "2025-08-08T10:10:55.435Z",
+        "modified": "2025-08-08T10:10:55.436Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.436Z",
+      "exports": []
+    },
+    {
+      "name": "card",
+      "path": "ui/card.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        },
+        "lastCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        }
+      },
+      "stats": {
+        "size": 1869,
+        "created": "2025-08-08T10:10:55.436Z",
+        "modified": "2025-08-08T10:10:55.436Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.436Z",
+      "exports": []
+    },
+    {
+      "name": "carousel",
+      "path": "ui/carousel.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        },
+        "lastCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        }
+      },
+      "stats": {
+        "size": 6198,
+        "created": "2025-08-08T10:10:55.436Z",
+        "modified": "2025-08-08T10:10:55.436Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.436Z",
+      "exports": []
+    },
+    {
+      "name": "chart",
+      "path": "ui/chart.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        },
+        "lastCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        }
+      },
+      "stats": {
+        "size": 10542,
+        "created": "2025-08-08T10:10:55.436Z",
+        "modified": "2025-08-08T10:10:55.436Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.436Z",
+      "exports": []
+    },
+    {
+      "name": "checkbox",
+      "path": "ui/checkbox.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        },
+        "lastCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        }
+      },
+      "stats": {
+        "size": 1066,
+        "created": "2025-08-08T10:10:55.436Z",
+        "modified": "2025-08-08T10:10:55.436Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.436Z",
+      "exports": []
+    },
+    {
+      "name": "collapsible",
+      "path": "ui/collapsible.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "b2ddf2e9ccb8eb17412f47ac29a72779607180d5",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-06 05:52:48 +0000",
+          "message": "Fix: Resolve Section component import error"
+        },
+        "lastCommit": {
+          "hash": "b2ddf2e9ccb8eb17412f47ac29a72779607180d5",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-06 05:52:48 +0000",
+          "message": "Fix: Resolve Section component import error"
+        }
+      },
+      "stats": {
+        "size": 314,
+        "created": "2025-08-06T06:47:57.926Z",
+        "modified": "2025-08-06T06:47:57.926Z"
+      },
+      "lastModified": "2025-08-06T06:47:57.926Z",
+      "exports": []
+    },
+    {
+      "name": "command",
+      "path": "ui/command.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        },
+        "lastCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        }
+      },
+      "stats": {
+        "size": 4868,
+        "created": "2025-08-08T10:10:55.436Z",
+        "modified": "2025-08-08T10:10:55.436Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.436Z",
+      "exports": []
+    },
+    {
+      "name": "context-menu",
+      "path": "ui/context-menu.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        },
+        "lastCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        }
+      },
+      "stats": {
+        "size": 7249,
+        "created": "2025-08-08T10:10:55.436Z",
+        "modified": "2025-08-08T10:10:55.436Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.436Z",
+      "exports": []
+    },
+    {
+      "name": "dialog",
+      "path": "ui/dialog.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        },
+        "lastCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        }
+      },
+      "stats": {
+        "size": 3833,
+        "created": "2025-08-08T10:10:55.436Z",
+        "modified": "2025-08-08T10:10:55.437Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.437Z",
+      "exports": []
+    },
+    {
+      "name": "drawer",
+      "path": "ui/drawer.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        },
+        "lastCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        }
+      },
+      "stats": {
+        "size": 3005,
+        "created": "2025-08-08T10:10:55.437Z",
+        "modified": "2025-08-08T10:10:55.437Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.437Z",
+      "exports": []
+    },
+    {
       "name": "dropdown-menu",
       "path": "ui/dropdown-menu.tsx",
       "type": "file",
@@ -285,6 +1299,710 @@
         "modified": "2025-08-05T18:39:04.240Z"
       },
       "lastModified": "2025-08-05T18:39:04.240Z",
+      "exports": []
+    },
+    {
+      "name": "form",
+      "path": "ui/form.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        },
+        "lastCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        }
+      },
+      "stats": {
+        "size": 4074,
+        "created": "2025-08-08T10:10:55.437Z",
+        "modified": "2025-08-08T10:10:55.437Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.437Z",
+      "exports": []
+    },
+    {
+      "name": "hover-card",
+      "path": "ui/hover-card.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        },
+        "lastCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        }
+      },
+      "stats": {
+        "size": 1195,
+        "created": "2025-08-08T10:10:55.437Z",
+        "modified": "2025-08-08T10:10:55.437Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.437Z",
+      "exports": []
+    },
+    {
+      "name": "input-otp",
+      "path": "ui/input-otp.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        },
+        "lastCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        }
+      },
+      "stats": {
+        "size": 2156,
+        "created": "2025-08-08T10:10:55.437Z",
+        "modified": "2025-08-08T10:10:55.437Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.437Z",
+      "exports": []
+    },
+    {
+      "name": "input",
+      "path": "ui/input.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "aba9b2531109924051d2ed1d27aca8aa139bfb44",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 05:24:46 +0000",
+          "message": "feat: Prepare header components for NPM publish"
+        },
+        "lastCommit": {
+          "hash": "aba9b2531109924051d2ed1d27aca8aa139bfb44",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-07 05:24:46 +0000",
+          "message": "feat: Prepare header components for NPM publish"
+        }
+      },
+      "stats": {
+        "size": 880,
+        "created": "2025-08-07T05:29:15.046Z",
+        "modified": "2025-08-07T05:29:15.046Z"
+      },
+      "lastModified": "2025-08-07T05:29:15.046Z",
+      "exports": []
+    },
+    {
+      "name": "label",
+      "path": "ui/label.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        },
+        "lastCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        }
+      },
+      "stats": {
+        "size": 721,
+        "created": "2025-08-08T10:10:55.437Z",
+        "modified": "2025-08-08T10:10:55.437Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.437Z",
+      "exports": []
+    },
+    {
+      "name": "menubar",
+      "path": "ui/menubar.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        },
+        "lastCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        }
+      },
+      "stats": {
+        "size": 7933,
+        "created": "2025-08-08T10:10:55.437Z",
+        "modified": "2025-08-08T10:10:55.438Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.438Z",
+      "exports": []
+    },
+    {
+      "name": "navigation-menu",
+      "path": "ui/navigation-menu.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        },
+        "lastCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        }
+      },
+      "stats": {
+        "size": 5049,
+        "created": "2025-08-08T10:10:55.438Z",
+        "modified": "2025-08-08T10:10:55.438Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.438Z",
+      "exports": []
+    },
+    {
+      "name": "pagination",
+      "path": "ui/pagination.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        },
+        "lastCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        }
+      },
+      "stats": {
+        "size": 2740,
+        "created": "2025-08-08T10:10:55.438Z",
+        "modified": "2025-08-08T10:10:55.438Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.438Z",
+      "exports": []
+    },
+    {
+      "name": "popover",
+      "path": "ui/popover.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        },
+        "lastCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        }
+      },
+      "stats": {
+        "size": 1241,
+        "created": "2025-08-08T10:10:55.438Z",
+        "modified": "2025-08-08T10:10:55.438Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.438Z",
+      "exports": []
+    },
+    {
+      "name": "progress",
+      "path": "ui/progress.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        },
+        "lastCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        }
+      },
+      "stats": {
+        "size": 786,
+        "created": "2025-08-08T10:10:55.438Z",
+        "modified": "2025-08-08T10:10:55.438Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.438Z",
+      "exports": []
+    },
+    {
+      "name": "radio-group",
+      "path": "ui/radio-group.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        },
+        "lastCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        }
+      },
+      "stats": {
+        "size": 1481,
+        "created": "2025-08-08T10:10:55.438Z",
+        "modified": "2025-08-08T10:10:55.438Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.438Z",
+      "exports": []
+    },
+    {
+      "name": "resizable",
+      "path": "ui/resizable.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        },
+        "lastCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        }
+      },
+      "stats": {
+        "size": 1720,
+        "created": "2025-08-08T10:10:55.438Z",
+        "modified": "2025-08-08T10:10:55.438Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.438Z",
+      "exports": []
+    },
+    {
+      "name": "scroll-area",
+      "path": "ui/scroll-area.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        },
+        "lastCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        }
+      },
+      "stats": {
+        "size": 1653,
+        "created": "2025-08-08T10:10:55.438Z",
+        "modified": "2025-08-08T10:10:55.438Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.438Z",
+      "exports": []
+    },
+    {
+      "name": "select",
+      "path": "ui/select.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        },
+        "lastCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        }
+      },
+      "stats": {
+        "size": 5618,
+        "created": "2025-08-08T10:10:55.438Z",
+        "modified": "2025-08-08T10:10:55.438Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.438Z",
+      "exports": []
+    },
+    {
+      "name": "separator",
+      "path": "ui/separator.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        },
+        "lastCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        }
+      },
+      "stats": {
+        "size": 765,
+        "created": "2025-08-08T10:10:55.438Z",
+        "modified": "2025-08-08T10:10:55.438Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.438Z",
+      "exports": []
+    },
+    {
+      "name": "sheet",
+      "path": "ui/sheet.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        },
+        "lastCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        }
+      },
+      "stats": {
+        "size": 4276,
+        "created": "2025-08-08T10:10:55.438Z",
+        "modified": "2025-08-08T10:10:55.438Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.438Z",
+      "exports": []
+    },
+    {
+      "name": "sidebar",
+      "path": "ui/sidebar.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        },
+        "lastCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        }
+      },
+      "stats": {
+        "size": 23337,
+        "created": "2025-08-08T10:10:55.438Z",
+        "modified": "2025-08-08T10:10:55.438Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.438Z",
+      "exports": []
+    },
+    {
+      "name": "skeleton",
+      "path": "ui/skeleton.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        },
+        "lastCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        }
+      },
+      "stats": {
+        "size": 267,
+        "created": "2025-08-08T10:10:55.439Z",
+        "modified": "2025-08-08T10:10:55.439Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.439Z",
+      "exports": []
+    },
+    {
+      "name": "slider",
+      "path": "ui/slider.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        },
+        "lastCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        }
+      },
+      "stats": {
+        "size": 1086,
+        "created": "2025-08-08T10:10:55.439Z",
+        "modified": "2025-08-08T10:10:55.439Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.439Z",
+      "exports": []
+    },
+    {
+      "name": "switch",
+      "path": "ui/switch.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        },
+        "lastCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        }
+      },
+      "stats": {
+        "size": 1148,
+        "created": "2025-08-08T10:10:55.439Z",
+        "modified": "2025-08-08T10:10:55.439Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.439Z",
+      "exports": []
+    },
+    {
+      "name": "table",
+      "path": "ui/table.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        },
+        "lastCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        }
+      },
+      "stats": {
+        "size": 2884,
+        "created": "2025-08-08T10:10:55.439Z",
+        "modified": "2025-08-08T10:10:55.439Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.439Z",
+      "exports": []
+    },
+    {
+      "name": "tabs",
+      "path": "ui/tabs.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        },
+        "lastCommit": {
+          "hash": "128c07aa4461670a2647416051bf541a7b73b3b8",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:18:54 +0000",
+          "message": "Port remaining Shadcn components"
+        }
+      },
+      "stats": {
+        "size": 1899,
+        "created": "2025-08-08T10:10:55.439Z",
+        "modified": "2025-08-08T10:10:55.439Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.439Z",
+      "exports": []
+    },
+    {
+      "name": "textarea",
+      "path": "ui/textarea.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        },
+        "lastCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        }
+      },
+      "stats": {
+        "size": 779,
+        "created": "2025-08-08T10:10:55.439Z",
+        "modified": "2025-08-08T10:10:55.439Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.439Z",
+      "exports": []
+    },
+    {
+      "name": "toast",
+      "path": "ui/toast.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "fef1d10988e68d4f025302416a0b1058aaa5f247",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:26:25 +0000",
+          "message": "Migrate UI imports"
+        },
+        "lastCommit": {
+          "hash": "fef1d10988e68d4f025302416a0b1058aaa5f247",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 07:26:25 +0000",
+          "message": "Migrate UI imports"
+        }
+      },
+      "stats": {
+        "size": 4569,
+        "created": "2025-08-08T10:10:55.439Z",
+        "modified": "2025-08-08T10:10:55.439Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.439Z",
+      "exports": []
+    },
+    {
+      "name": "toaster",
+      "path": "ui/toaster.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        },
+        "lastCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        }
+      },
+      "stats": {
+        "size": 767,
+        "created": "2025-08-08T10:10:55.439Z",
+        "modified": "2025-08-08T10:10:55.439Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.439Z",
+      "exports": [
+        "Toaster"
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "path": "ui/toggle-group.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        },
+        "lastCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        }
+      },
+      "stats": {
+        "size": 1741,
+        "created": "2025-08-08T10:10:55.439Z",
+        "modified": "2025-08-08T10:10:55.439Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.439Z",
+      "exports": []
+    },
+    {
+      "name": "toggle",
+      "path": "ui/toggle.tsx",
+      "type": "file",
+      "git": {
+        "firstCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        },
+        "lastCommit": {
+          "hash": "43b2eab4c2251f80a8ea23fdeda6a8740a8069ec",
+          "author": "gpt-engineer-app[bot]",
+          "date": "2025-08-08 06:50:49 +0000",
+          "message": "feat: Integrate shadcn components into UI kit"
+        }
+      },
+      "stats": {
+        "size": 1446,
+        "created": "2025-08-08T10:10:55.439Z",
+        "modified": "2025-08-08T10:10:55.439Z"
+      },
+      "lastModified": "2025-08-08T10:10:55.439Z",
       "exports": []
     },
     {
@@ -315,8 +2033,8 @@
     }
   ],
   "stats": {
-    "total": 12,
-    "new": 12,
-    "updated": 0
+    "total": 78,
+    "new": 0,
+    "updated": 2
   }
 }
