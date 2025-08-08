@@ -289,7 +289,7 @@ const AnchorNavBar = ({
             </Button>}
 
           {/* Navigation Pills */}
-          {sections.map(section => <Button key={section.id} variant={activeSection === section.id ? "default" : "ghost"} size="sm" onClick={() => scrollToSection(section.id)} className={cn("whitespace-nowrap transition-all duration-200 min-w-fit rounded-lg font-normal text-sm", activeSection === section.id ? "bg-[#0000c5]/[0.08] text-foreground hover:bg-[#0000c5]/[0.10]" : "text-muted-foreground hover:text-foreground hover:bg-[#0000c5]/[0.10]")}>
+          {sections.map(section => <Button key={section.id} variant={activeSection === section.id ? "default" : "ghost"} size="sm" onClick={() => scrollToSection(section.id)} className={cn("whitespace-nowrap transition-all duration-200 min-w-fit rounded-lg font-normal text-sm", activeSection === section.id ? "bg-brand-blue/10 text-foreground hover:bg-brand-blue/20" : "text-muted-foreground hover:text-foreground hover:bg-hover-primary")}>
               {section.title}
             </Button>)}
         </div>
