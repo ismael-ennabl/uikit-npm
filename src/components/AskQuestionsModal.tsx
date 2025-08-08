@@ -298,7 +298,7 @@ const AskQuestionsModal = ({
               <>
             {/* Top Actions */}
             <div className="space-y-2 mb-6">
-              <Button onClick={handleNewChat} className="w-full justify-start gap-2 bg-white hover:bg-hover-primary text-gray-700 border rounded-[12px]" variant="outline">
+              <Button onClick={handleNewChat} className="w-full justify-start gap-2 bg-background hover:bg-hover-primary text-foreground border rounded-[12px]" variant="outline">
                 <Plus className="h-4 w-4" />
                 New Chat
               </Button>
@@ -321,10 +321,10 @@ const AskQuestionsModal = ({
             {/* Recent Section */}
             <div className="flex-1">
               <div className="flex items-center justify-between mb-3">
-                <h3 className="text-sm font-medium text-gray-700">Recent</h3>
+                <h3 className="text-sm font-medium text-muted-foreground">Recent</h3>
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" size="sm" className="text-xs text-gray-500 hover:bg-hover-primary rounded-[12px]">
+                    <Button variant="ghost" size="sm" className="text-xs text-muted-foreground hover:bg-hover-primary rounded-[12px]">
                       {activeFilter}
                       <ChevronDown className="h-3 w-3 ml-1" />
                     </Button>
@@ -346,12 +346,12 @@ const AskQuestionsModal = ({
               {/* Date Group with ScrollArea */}
               <ScrollArea className="flex-1">
                 <div className="mb-3">
-                  <h4 className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-2">
+                  <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-2">
                     MAY
                   </h4>
                   <div className="space-y-1">
                     {chatSessions.map(chat => <button key={chat.id} onClick={() => handleChatSelect(chat.id)} className={`w-full text-left p-2 rounded-[12px] text-sm hover:bg-hover-primary transition-colors ${activeChatId === chat.id ? 'bg-hover-primary' : ''}`}>
-                        <div className="text-gray-800 truncate">
+                        <div className="text-foreground truncate">
                           {chat.title}
                         </div>
                       </button>)}
@@ -430,7 +430,7 @@ const AskQuestionsModal = ({
                         >
                           <div className="flex items-start justify-between">
                             <div className="flex-1 min-w-0">
-                              <h3 className="text-sm font-medium text-gray-900 mb-1">
+                              <h3 className="text-sm font-medium text-foreground mb-1">
                                 {prompt.title}
                               </h3>
                               <p className="text-sm text-secondary-text">{prompt.category}</p>
@@ -467,7 +467,7 @@ const AskQuestionsModal = ({
                         </div>
                       ))}
                       {getFilteredPrompts().length === 0 && (
-                        <div className="text-center py-8 text-gray-500">
+                        <div className="text-center py-8 text-muted-foreground">
                           No prompts found in this category
                         </div>
                       )}
@@ -571,7 +571,7 @@ const AskQuestionsModal = ({
             <div className="border-t pt-4 flex-shrink-0 bg-page px-6 pb-6">
               <div className="flex gap-3">
                 <Textarea placeholder={selectedDocuments && selectedDocuments.length > 0 ? "Ask anything about your selected documents..." : "Ask anything..."} value={inputValue} onChange={e => setInputValue(e.target.value)} onKeyDown={handleKeyPress} className="flex-1 min-h-[60px] max-h-[120px] resize-none rounded-[12px] focus-visible:ring-[#0000c5] focus:border-[#0000c5]" rows={2} />
-                <Button onClick={handleSendQuestion} disabled={!inputValue.trim()} className="self-end px-6 bg-[#0000c5] text-white hover:bg-[#0000c5]/90 rounded">
+                <Button onClick={handleSendQuestion} disabled={!inputValue.trim()} className="self-end px-6 bg-brand-blue text-brand-blue-foreground hover:bg-brand-blue/90 rounded">
                   <Send className="h-4 w-4" />
                   Send
                 </Button>

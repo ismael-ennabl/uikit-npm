@@ -62,7 +62,7 @@ const AnswerActions = ({ messageId, content }: AnswerActionsProps) => {
             size="sm"
             onClick={handleThumbsUp}
             className={`h-8 w-8 p-0 hover:bg-accent ${
-              liked ? 'text-green-600 bg-green-50' : 'text-muted-foreground'
+              liked ? 'text-success bg-success/10' : 'text-muted-foreground'
             }`}
           >
             <ThumbsUp className="h-4 w-4" />
@@ -80,7 +80,7 @@ const AnswerActions = ({ messageId, content }: AnswerActionsProps) => {
             size="sm"
             onClick={handleThumbsDown}
             className={`h-8 w-8 p-0 hover:bg-accent ${
-              disliked ? 'text-red-600 bg-red-50' : 'text-muted-foreground'
+              disliked ? 'text-destructive bg-destructive/10' : 'text-muted-foreground'
             }`}
           >
             <ThumbsDown className="h-4 w-4" />

@@ -104,26 +104,26 @@ const DocumentComparisonInterface = () => {
 
         {/* Document Analysis Summary */}
         <div id="analysis-summary" data-section className="mt-8 mb-6">
-          <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-6">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+          <div className="bg-card rounded-lg border border-border shadow-sm p-6">
+            <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center">
               <span className="mr-2">📊</span>
               Document Analysis Summary
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-blue-50 p-4 rounded-lg">
-                <h3 className="font-medium text-blue-900 mb-2">Documents Analyzed</h3>
-                <p className="text-2xl font-bold text-blue-700">{packageDocuments.length}</p>
-                <p className="text-sm text-blue-600 mt-1">Files processed and compared</p>
+              <div className="bg-brand-blue/10 p-4 rounded-lg">
+                <h3 className="font-medium text-brand-blue mb-2">Documents Analyzed</h3>
+                <p className="text-2xl font-bold text-brand-blue">{packageDocuments.length}</p>
+                <p className="text-sm text-brand-blue mt-1">Files processed and compared</p>
               </div>
-              <div className="bg-yellow-50 p-4 rounded-lg">
-                <h3 className="font-medium text-yellow-900 mb-2">Total Issues Found</h3>
-                <p className="text-2xl font-bold text-yellow-700">{discrepancies.length}</p>
-                <p className="text-sm text-yellow-600 mt-1">Discrepancies requiring attention</p>
+              <div className="bg-warning/10 p-4 rounded-lg">
+                <h3 className="font-medium text-warning mb-2">Total Issues Found</h3>
+                <p className="text-2xl font-bold text-warning">{discrepancies.length}</p>
+                <p className="text-sm text-warning mt-1">Discrepancies requiring attention</p>
               </div>
-              <div className="bg-green-50 p-4 rounded-lg">
-                <h3 className="font-medium text-green-900 mb-2">Sync Score</h3>
-                <p className="text-2xl font-bold text-green-700">{currentPackageData.syncScore}%</p>
-                <p className="text-sm text-green-600 mt-1">Overall document alignment</p>
+              <div className="bg-success/10 p-4 rounded-lg">
+                <h3 className="font-medium text-success mb-2">Sync Score</h3>
+                <p className="text-2xl font-bold text-success">{currentPackageData.syncScore}%</p>
+                <p className="text-sm text-success mt-1">Overall document alignment</p>
               </div>
             </div>
           </div>
@@ -131,23 +131,23 @@ const DocumentComparisonInterface = () => {
 
         {/* Key Discrepancies Overview */}
         <div id="key-discrepancies" data-section className="mb-6">
-          <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-6">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+          <div className="bg-card rounded-lg border border-border shadow-sm p-6">
+            <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center">
               <span className="mr-2">⚠️</span>
               Key Discrepancies Overview
             </h2>
             <div className="space-y-4">
               {filteredDiscrepancies.slice(0, 3).map((discrepancy, index) => (
-                <div key={index} className="bg-red-50 border-l-4 border-red-400 p-4 rounded-r-lg">
+                <div key={index} className="bg-destructive/10 border-l-4 border-destructive p-4 rounded-r-lg">
                   <div className="flex justify-between items-start">
                     <div>
-                      <h3 className="font-medium text-red-900">{discrepancy.type}</h3>
-                      <p className="text-sm text-red-700 mt-1">{discrepancy.description}</p>
-                      <p className="text-xs text-red-600 mt-2">
+                      <h3 className="font-medium text-destructive">{discrepancy.type}</h3>
+                      <p className="text-sm text-destructive mt-1">{discrepancy.description}</p>
+                      <p className="text-xs text-destructive mt-2">
                         Found in: {packageDocuments.find(doc => doc.name.toLowerCase().includes(discrepancy.documentId))?.name || discrepancy.documentId}
                       </p>
                     </div>
-                    <span className="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">
+                    <span className="bg-destructive/10 text-destructive text-xs font-medium px-2.5 py-0.5 rounded">
                       High Priority
                     </span>
                   </div>
@@ -155,7 +155,7 @@ const DocumentComparisonInterface = () => {
               ))}
               <button 
                 onClick={() => setSelectedDiscrepancy(0)}
-                className="w-full mt-4 bg-red-600 text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors"
+                className="w-full mt-4 bg-destructive text-destructive-foreground py-2 px-4 rounded-lg hover:bg-destructive/90 transition-colors"
               >
                 View All Discrepancies →
               </button>
@@ -165,14 +165,14 @@ const DocumentComparisonInterface = () => {
 
         {/* Comparison Results */}
         <div id="comparison-results" data-section className="mb-6">
-          <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-6">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+          <div className="bg-card rounded-lg border border-border shadow-sm p-6">
+            <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center">
               <span className="mr-2">📋</span>
               Comparison Results
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div>
-                <h3 className="font-medium text-gray-900 mb-3">Document Categories</h3>
+                <h3 className="font-medium text-foreground mb-3">Document Categories</h3>
                 <div className="space-y-2">
                   {availableSections.filter(section => section !== 'Source Files').map((section, index) => {
                     const sectionDiscrepancies = filteredDiscrepancies.filter(d => {
@@ -189,14 +189,14 @@ const DocumentComparisonInterface = () => {
                     }).length;
                     
                     return (
-                      <div key={index} className="flex justify-between items-center py-2 px-3 bg-gray-50 rounded">
-                        <span className="text-sm font-medium text-gray-700">{section}</span>
+                      <div key={index} className="flex justify-between items-center py-2 px-3 bg-muted rounded">
+                        <span className="text-sm font-medium text-muted-foreground">{section}</span>
                         <span className={`text-xs px-2 py-1 rounded-full ${
                           sectionDiscrepancies === 0 
-                            ? 'bg-green-100 text-green-800' 
+                            ? 'bg-success/10 text-success' 
                             : sectionDiscrepancies <= 2 
-                              ? 'bg-yellow-100 text-yellow-800'
-                              : 'bg-red-100 text-red-800'
+                              ? 'bg-warning/10 text-warning'
+                              : 'bg-destructive/10 text-destructive'
                         }`}>
                           {sectionDiscrepancies} issues
                         </span>
@@ -206,27 +206,27 @@ const DocumentComparisonInterface = () => {
                 </div>
               </div>
               <div>
-                <h3 className="font-medium text-gray-900 mb-3">Processing Status</h3>
+                <h3 className="font-medium text-foreground mb-3">Processing Status</h3>
                 <div className="space-y-3">
                   <div className="flex items-center">
-                    <div className="w-4 h-4 bg-green-500 rounded-full mr-3"></div>
-                    <span className="text-sm text-gray-700">Document parsing complete</span>
+                    <div className="w-4 h-4 bg-success rounded-full mr-3"></div>
+                    <span className="text-sm text-muted-foreground">Document parsing complete</span>
                   </div>
                   <div className="flex items-center">
-                    <div className="w-4 h-4 bg-green-500 rounded-full mr-3"></div>
-                    <span className="text-sm text-gray-700">Field extraction finished</span>
+                    <div className="w-4 h-4 bg-success rounded-full mr-3"></div>
+                    <span className="text-sm text-muted-foreground">Field extraction finished</span>
                   </div>
                   <div className="flex items-center">
-                    <div className="w-4 h-4 bg-green-500 rounded-full mr-3"></div>
-                    <span className="text-sm text-gray-700">Cross-comparison analysis done</span>
+                    <div className="w-4 h-4 bg-success rounded-full mr-3"></div>
+                    <span className="text-sm text-muted-foreground">Cross-comparison analysis done</span>
                   </div>
                   <div className="flex items-center">
-                    <div className="w-4 h-4 bg-blue-500 rounded-full mr-3"></div>
-                    <span className="text-sm text-gray-700">Ready for review</span>
+                    <div className="w-4 h-4 bg-brand-blue rounded-full mr-3"></div>
+                    <span className="text-sm text-muted-foreground">Ready for review</span>
                   </div>
                 </div>
-                <div className="mt-4 p-3 bg-blue-50 rounded-lg">
-                  <p className="text-sm text-blue-700">
+                <div className="mt-4 p-3 bg-brand-blue/10 rounded-lg">
+                  <p className="text-sm text-brand-blue">
                     <strong>Next step:</strong> Review discrepancies and resolve conflicts to improve sync score.
                   </p>
                 </div>

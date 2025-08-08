@@ -92,7 +92,7 @@ const PDFViewer = ({ documentName, highlightField, highlightFields, isSourceDocu
   return (
     <div className="h-full flex flex-col">
       {/* Document Name Header - Sticky */}
-      <div className="bg-gray-800 text-white p-3 border-b border-gray-600 flex-shrink-0">
+      <div className="bg-card text-foreground p-3 border-b border-border flex-shrink-0">
         {titleComponent ? (
           titleComponent
         ) : (
@@ -104,40 +104,40 @@ const PDFViewer = ({ documentName, highlightField, highlightFields, isSourceDocu
       
       {/* PDF Content */}
       <ScrollArea className="flex-1" ref={scrollAreaRef}>
-        <div className="p-6" style={{ backgroundColor: '#333' }}>
+        <div className="p-6 bg-muted">
           {pdfContent.map((page) => (
             <div key={page.pageNumber} className="mb-8">
               {/* Page Header */}
               <div className="flex justify-between items-center mb-4 pb-2 border-b">
-                <h4 className="text-sm font-medium text-gray-500">
+                <h4 className="text-sm font-medium text-muted-foreground">
                   Page {page.pageNumber} of {pdfContent.length}
                 </h4>
-                <div className="text-xs text-gray-400">
+                <div className="text-xs text-muted-foreground">
                   Document ID: INS-2024-{page.pageNumber.toString().padStart(3, '0')}
                 </div>
               </div>
 
               {/* Page Content - A4 Proportions with Full Width */}
               <div 
-                className="bg-white border border-gray-200 p-8 shadow-sm overflow-hidden w-full max-w-4xl mx-auto aspect-[1/1.414]"
+                className="bg-card border border-border p-8 shadow-sm overflow-hidden w-full max-w-4xl mx-auto aspect-[1/1.414]"
               >
                 {page.sections.map((section, sectionIndex) => (
                   <div key={sectionIndex} className="mb-6">
-                    <h5 className="font-bold text-gray-900 mb-3 text-sm uppercase tracking-wide">
+                    <h5 className="font-bold text-foreground mb-3 text-sm uppercase tracking-wide">
                       {section.title}
                     </h5>
                      <div className="space-y-2">
                        {section.content.map((content, contentIndex) => {
                          const shouldHighlight = shouldContentHighlight(content);
                          return (
-                           <div 
-                             key={contentIndex} 
-                             className={`text-sm leading-relaxed px-2 py-1 -mx-2 ${
-                               shouldHighlight 
-                                 ? `${isSourceDocument ? 'bg-green-200 border-l-4 border-green-400' : 'bg-red-200 border-l-4 border-red-400'} font-medium shadow-sm transition-all duration-300` 
-                                 : 'text-gray-700'
-                             }`}
-                           >
+            <div 
+              key={contentIndex} 
+              className={`text-sm leading-relaxed px-2 py-1 -mx-2 ${
+                shouldHighlight 
+                  ? `${isSourceDocument ? 'bg-success/20 border-l-4 border-success' : 'bg-destructive/20 border-l-4 border-destructive'} font-medium shadow-sm transition-all duration-300` 
+                  : 'text-muted-foreground'
+              }`}
+            >
                              {renderContent(content, contentIndex)}
                            </div>
                          );
@@ -152,12 +152,12 @@ const PDFViewer = ({ documentName, highlightField, highlightFields, isSourceDocu
       </ScrollArea>
 
       {/* Toolbar */}
-      <div className="bg-black p-2 flex justify-between items-center rounded-b-lg">
+      <div className="bg-card p-2 flex justify-between items-center rounded-b-lg">
         {/* Search on the left */}
         <Button 
           variant="ghost" 
           size="sm" 
-          className="text-white hover:bg-gray-800"
+          className="text-foreground hover:bg-muted"
         >
           <Search className="h-4 w-4 mr-1" />
           Search
@@ -168,14 +168,14 @@ const PDFViewer = ({ documentName, highlightField, highlightFields, isSourceDocu
           <Button 
             variant="ghost" 
             size="sm" 
-            className="text-white hover:bg-gray-800"
+            className="text-foreground hover:bg-muted"
           >
             <ZoomOut className="h-4 w-4" />
           </Button>
           <Button 
             variant="ghost" 
             size="sm" 
-            className="text-white hover:bg-gray-800"
+            className="text-foreground hover:bg-muted"
           >
             <ZoomIn className="h-4 w-4" />
           </Button>
@@ -185,7 +185,7 @@ const PDFViewer = ({ documentName, highlightField, highlightFields, isSourceDocu
         <Button 
           variant="ghost" 
           size="sm" 
-          className="text-white hover:bg-gray-800"
+          className="text-foreground hover:bg-muted"
         >
           <Download className="h-4 w-4 mr-1" />
           Download

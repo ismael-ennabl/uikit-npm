@@ -8,18 +8,18 @@ const AISearchInterface = () => {
       {/* AI Button */}
       <Button 
         variant="outline"
-        className="h-10 bg-white hover:bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 flex items-center space-x-1 text-gray-600 shadow-sm"
+        className="h-10 bg-card hover:bg-hover-subtle border border-border rounded-lg px-3 py-2 flex items-center space-x-1 text-muted-foreground shadow-sm"
       >
-        <Sparkles className="h-5 w-5 text-gray-400" />
+        <Sparkles className="h-5 w-5 text-muted-foreground" />
         <span className="text-sm font-medium">AI</span>
       </Button>
       
       {/* Search Input Container */}
-      <div className="relative bg-white border border-gray-200 rounded-lg shadow-sm flex items-center">
-        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+      <div className="relative bg-card border border-border rounded-lg shadow-sm flex items-center">
+        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
         <Input 
           placeholder="Search"
-          className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 pl-10 pr-3 py-2 text-sm placeholder:text-gray-500 min-w-[200px]"
+          className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 pl-10 pr-3 py-2 text-sm placeholder:text-muted-foreground min-w-[200px]"
         />
       </div>
       
@@ -27,9 +27,9 @@ const AISearchInterface = () => {
       <Button 
         variant="ghost" 
         size="sm"
-        className="hover:bg-gray-100 rounded-lg p-2 bg-transparent"
+        className="hover:bg-hover-subtle rounded-lg p-2 bg-transparent"
       >
-        <MoreVertical className="h-4 w-4 text-gray-600" />
+        <MoreVertical className="h-4 w-4 text-muted-foreground" />
       </Button>
     </div>
   );

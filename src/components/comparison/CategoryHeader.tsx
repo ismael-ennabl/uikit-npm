@@ -18,8 +18,8 @@ const CategoryHeader = ({
       <div className="py-2 cursor-pointer w-full">
         <div className="flex items-center justify-between">
           <div className="flex items-baseline space-x-3">
-            <GripVertical className="h-4 w-4 text-foreground" />
-            {isExpanded ? <ChevronDown className="h-4 w-4 text-foreground" /> : <ChevronRight className="h-4 w-4 text-foreground" />}
+            <GripVertical className="h-4 w-4 text-muted-foreground" />
+            {isExpanded ? <ChevronDown className="h-4 w-4 text-muted-foreground" /> : <ChevronRight className="h-4 w-4 text-muted-foreground" />}
             <span className={TYPOGRAPHY.h2}>{categoryType}</span>
             <div className="flex items-center space-x-2">
               <Badge variant="outline" className="text-muted-foreground border-border">

@@ -202,15 +202,15 @@ const CardViewMode = ({
         <div className="bg-white p-4 rounded-lg min-h-96 border">
           {selectedDiscrepancy !== null && (
             <div className="space-y-4">
-              <div className="p-3 bg-white border-l-4 border-green-500 rounded">
+              <div className="p-3 bg-card border-l-4 border-success rounded">
                 <p className={`${TYPOGRAPHY.sectionLabel} mb-1`}>
                   {filteredDiscrepancies[selectedDiscrepancy].field}
                 </p>
-                <p className={`${TYPOGRAPHY.cardHeading} text-green-600`}>
+                <p className={`${TYPOGRAPHY.cardHeading} text-success`}>
                   {filteredDiscrepancies[selectedDiscrepancy].sourceValue}
                 </p>
               </div>
-              <div className="text-sm text-gray-600">
+              <div className="text-sm text-muted-foreground">
                 <p><strong>Type:</strong> {filteredDiscrepancies[selectedDiscrepancy].type}</p>
               </div>
             </div>
@@ -221,15 +221,15 @@ const CardViewMode = ({
         <div className="bg-white p-4 rounded-lg min-h-96 border">
           {selectedDiscrepancy !== null && (
             <div className="space-y-4">
-              <div className="p-3 bg-white border-l-4 border-blue-500 rounded">
+              <div className="p-3 bg-card border-l-4 border-brand-blue rounded">
                 <p className={`${TYPOGRAPHY.sectionLabel} mb-1`}>
                   {filteredDiscrepancies[selectedDiscrepancy].field}
                 </p>
-                <p className={`${TYPOGRAPHY.cardHeading} text-blue-600`}>
+                <p className={`${TYPOGRAPHY.cardHeading} text-brand-blue`}>
                   {filteredDiscrepancies[selectedDiscrepancy].compareValue}
                 </p>
               </div>
-              <div className="text-sm text-gray-600">
+              <div className="text-sm text-muted-foreground">
                 <p className="mb-2"><strong>Doc Name:</strong> {documents.find(doc => doc.id === filteredDiscrepancies[selectedDiscrepancy].documentId)?.name || 'Unknown Document'}</p>
                 <p className="mb-2"><strong>Page:</strong> {filteredDiscrepancies[selectedDiscrepancy].page}</p>
                 <p><strong>Row:</strong> {filteredDiscrepancies[selectedDiscrepancy].row}</p>
