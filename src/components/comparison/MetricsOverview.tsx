@@ -91,6 +91,7 @@ const MetricsOverview = ({
                 variant="ctaPrimary"
                 onClick={() => setShareModalOpen(true)}
                 size="icon"
+                aria-label="Share comparison"
               >
                 <Share2 className="h-4 w-4" />
               </Button>

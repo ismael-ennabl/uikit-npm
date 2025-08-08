@@ -176,7 +176,7 @@ const PDFViewMode = ({
                   <ChevronRight className="h-4 w-4" />
                 </Button>
                 {onExpandModal && (
-                  <Button variant="ghost" size="icon" onClick={onExpandModal} className="h-8 w-8">
+                  <Button variant="ghost" size="icon" onClick={onExpandModal} className="h-8 w-8" aria-label="Expand PDFs to fullscreen">
                     <Expand className="h-4 w-4" />
                   </Button>
                 )}

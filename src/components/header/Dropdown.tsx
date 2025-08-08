@@ -28,6 +28,7 @@ const Dropdown = ({ items, className }: DropdownProps) => {
           variant="ghost" 
           size="sm"
           className={cn(DROPDOWN_TOKENS.trigger, className)}
+          aria-label="Open menu"
         >
           <MoreVertical className={DROPDOWN_TOKENS.triggerIcon} />
         </Button>

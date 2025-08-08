@@ -383,6 +383,7 @@ const AskQuestionsModal = ({
                         variant="ghost"
                         size="sm"
                         className="h-8 w-8 p-0 hover:bg-hover-primary"
+                        aria-label="Back to chat"
                       >
                         <ArrowLeft className="h-4 w-4" />
                       </Button>
@@ -393,6 +394,7 @@ const AskQuestionsModal = ({
                       variant="ghost"
                       size="sm"
                       className="h-8 w-8 p-0 hover:bg-hover-primary"
+                      aria-label="Close"
                     >
                       <X className="h-4 w-4" />
                     </Button>
