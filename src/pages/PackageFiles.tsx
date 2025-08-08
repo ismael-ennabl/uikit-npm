@@ -150,14 +150,14 @@ const PackageFiles = () => {
                 <div className="flex items-center space-x-2">
                   {selectedSourceOfTruth === file.id && (
                     <div className="flex items-center space-x-1">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
-                      <Badge className="bg-green-100 text-green-800">
+                      <CheckCircle className="h-5 w-5 text-success" />
+                      <Badge className="bg-success/10 text-success">
                         Selected as Source of Truth
                       </Badge>
                     </div>
                   )}
                   {file.isSourceOfTruth && selectedSourceOfTruth !== file.id && (
-                    <Badge className="bg-blue-100 text-blue-800">
+                    <Badge className="bg-brand-blue/10 text-brand-blue">
                       Current Source of Truth
                     </Badge>
                   )}

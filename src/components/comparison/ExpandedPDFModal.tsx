@@ -185,7 +185,7 @@ const ExpandedPDFModal = ({
                 </>
               ) : (
                 <>
-                  <Label className="text-sm font-medium text-gray-700">Doc</Label>
+                  <Label className="text-sm font-medium text-muted-foreground">Doc</Label>
                   <Select value={selectedDocument} onValueChange={onDocumentChange}>
                     <SelectTrigger className="w-80">
                       <SelectValue placeholder="Select document" />

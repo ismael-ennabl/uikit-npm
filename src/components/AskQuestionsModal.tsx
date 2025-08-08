@@ -525,8 +525,8 @@ const AskQuestionsModal = ({
                         </>}
                     </p>
                     {selectedDocuments && selectedDocuments.length > 0 && <div className="rounded-lg p-4 mb-4 text-left max-w-md mx-auto bg-neutral-50">
-                        <h4 className="font-medium mb-2 text-gray-950">Selected Documents:</h4>
-                        <div className={`space-y-1 text-sm text-blue-700 ${selectedDocuments.length > 3 ? 'max-h-32' : ''}`}>
+                        <h4 className="font-medium mb-2 text-foreground">Selected Documents:</h4>
+                        <div className={`space-y-1 text-sm text-brand-blue ${selectedDocuments.length > 3 ? 'max-h-32' : ''}`}>
                           <ScrollArea className={selectedDocuments.length > 3 ? 'h-32' : 'h-auto'}>
                             {selectedDocuments.map(doc => <div key={doc.id} className="flex justify-between items-center py-1">
                             <span className="truncate mr-2 text-foreground">{doc.name}</span>

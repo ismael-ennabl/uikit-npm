@@ -141,9 +141,9 @@ const UploadModal = ({ open, onClose, packageId, packageName, onComplete }: Uplo
 
         {packageId && packageName && (
           <div className="flex items-center gap-2 mb-6">
-            <span className="text-sm text-gray-600">Adding to Group:</span>
-            <span className="text-sm font-medium text-gray-900">{packageName}</span>
-            <Badge variant="static" className="bg-green-100 text-green-800 border-green-200">
+            <span className="text-sm text-muted-foreground">Adding to Group:</span>
+            <span className="text-sm font-medium text-foreground">{packageName}</span>
+            <Badge variant="static" className="bg-success/10 text-success border-success/30">
               Primary Doc to Compare
             </Badge>
           </div>
@@ -152,7 +152,7 @@ const UploadModal = ({ open, onClose, packageId, packageName, onComplete }: Uplo
         <div className="space-y-6">
           {!packageId && (
             <div className="space-y-2">
-              <Label htmlFor="groupName" className="text-sm font-medium text-gray-900">
+              <Label htmlFor="groupName" className="text-sm font-medium text-foreground">
                 Enter Group Name
               </Label>
               <Input

@@ -16,10 +16,10 @@ const DocumentDropdownTitle = ({
   return (
     <div className="flex items-center space-x-2">
       <Select value={selectedDocument} onValueChange={onSelectedDocumentChange}>
-        <SelectTrigger className="w-64 h-8 text-sm bg-gray-800 border-gray-600 text-white">
+        <SelectTrigger className="w-64 h-8 text-sm bg-background border-input text-foreground">
           <SelectValue />
         </SelectTrigger>
-        <SelectContent className="bg-white z-50">
+        <SelectContent className="bg-popover text-popover-foreground z-50">
           {documentsInCategory.map((doc) => (
             <SelectItem key={doc.id} value={doc.id}>
               {getDocumentNameWithoutExtension(doc.name)}

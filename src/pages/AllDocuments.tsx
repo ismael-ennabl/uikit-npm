@@ -125,7 +125,7 @@ const AllDocuments = () => {
       />
 
       {/* Filters */}
-      <div className="bg-white rounded-lg rounded-b-none p-6">
+      <div className="bg-card rounded-lg rounded-b-none p-6">
         <DocumentFilters
           searchQuery={searchQuery}
           onSearchChange={setSearchQuery}
@@ -139,7 +139,7 @@ const AllDocuments = () => {
       </div>
 
       {/* Content */}
-      <div className="bg-white rounded-lg rounded-t-none pb-6 px-6">
+      <div className="bg-card rounded-lg rounded-t-none pb-6 px-6">
         {selectedDocuments.length > 0 && (
           <div className="mb-6">
             <DocumentSelectionToolbar

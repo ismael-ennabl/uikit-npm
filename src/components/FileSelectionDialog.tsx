@@ -115,8 +115,8 @@ const FileSelectionDialog = ({ open, onClose, packageName, packageId, onUpdatePa
                 key={file.id} 
                 className={`cursor-pointer transition-all ${
                   selectedSourceOfTruth === file.id 
-                    ? 'border-blue-500 bg-blue-50' 
-                    : 'hover:border-gray-300'
+                    ? 'border-brand-blue bg-brand-blue/10' 
+                    : 'hover:border-border'
                 }`}
                 onClick={() => handleSetSourceOfTruth(file.id)}
               >

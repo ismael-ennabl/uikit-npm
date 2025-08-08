@@ -114,7 +114,7 @@ const CardViewMode = ({
       <div className="flex items-center justify-between mb-6 p-4 bg-brand-blue/10 rounded-lg">
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-3">
-            <Label htmlFor="pdf-view-toggle" className="text-sm font-medium text-gray-700">
+            <Label htmlFor="pdf-view-toggle" className="text-sm font-medium text-muted-foreground">
               View on Docs
             </Label>
             <Switch id="pdf-view-toggle" checked={isPdfViewMode} onCheckedChange={onPdfViewModeChange} />

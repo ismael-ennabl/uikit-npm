@@ -45,7 +45,7 @@ const PasswordPrompt: React.FC = () => {
     <Dialog open={true}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader className="text-center">
-          <DialogTitle className="text-2xl font-bold text-gray-900">
+          <DialogTitle className="text-2xl font-bold text-foreground">
             ennablDocs
           </DialogTitle>
           <p className="text-sm text-muted-foreground mt-2">

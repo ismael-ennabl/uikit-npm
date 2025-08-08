@@ -16,9 +16,9 @@ const PackageHeader = ({ packageId, getPackageName }: PackageHeaderProps) => {
     <div>
       <h1 className={TYPOGRAPHY.h1}>Add More Documents</h1>
       <div className="flex items-center gap-2">
-        <span className="text-lg text-gray-600">Adding to:</span>
-        <span className="text-lg font-medium text-gray-900">{getPackageName(packageId)}</span>
-        <Badge variant="static" className="bg-green-100 text-green-800 border-green-200">Source of Truth</Badge>
+        <span className="text-lg text-muted-foreground">Adding to:</span>
+        <span className="text-lg font-medium text-foreground">{getPackageName(packageId)}</span>
+        <Badge variant="static" className="bg-success/10 text-success border-success/30">Source of Truth</Badge>
       </div>
     </div>
   );

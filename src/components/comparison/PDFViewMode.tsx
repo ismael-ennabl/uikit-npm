@@ -106,7 +106,7 @@ const PDFViewMode = ({
               <DocumentHeaderSelector label="Doc" selectedDocument={selectedDocument} documents={secondColumnDocuments} onDocumentChange={onDocumentChange} packageDocuments={packageDocuments} />
             ) : (
               <div className="flex items-center space-x-2">
-                <Label className="text-sm font-medium text-gray-700">Differences</Label>
+                <Label className="text-sm font-medium text-muted-foreground">Differences</Label>
                 <Select value={selectedIssueType} onValueChange={onIssueTypeChange}>
                   <SelectTrigger className="w-60">
                     <SelectValue placeholder="Select issue type" />

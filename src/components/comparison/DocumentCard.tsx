@@ -47,11 +47,11 @@ const DocumentCard = ({
         <div className="flex items-start space-x-3">
           <div className="flex-1">
             <div className="flex items-center space-x-2">
-              <h4 className="font-medium text-gray-900">{getDocumentNameWithoutExtension(doc.name)}</h4>
-              <Badge variant="static" className="bg-gray-100 text-gray-700 border-gray-200 text-xs rounded-sm">
+              <h4 className="font-medium text-foreground">{getDocumentNameWithoutExtension(doc.name)}</h4>
+              <Badge variant="static" className="bg-muted text-muted-foreground border-border text-xs rounded-sm">
                 {getFileExtension(index)}
               </Badge>
-              <Badge variant="static" className="bg-muted text-muted-foreground border-muted text-xs">
+              <Badge variant="static" className="bg-muted text-muted-foreground border-border text-xs">
                 {index === 3 ? 'V4' : `V${index + 1}`}
               </Badge>
               {doc.isSourceOfTruth && (
@@ -60,7 +60,7 @@ const DocumentCard = ({
                 </Badge>
               )}
             </div>
-            <div className="flex items-center space-x-4 mt-2 text-xs text-gray-500">
+            <div className="flex items-center space-x-4 mt-2 text-xs text-muted-foreground">
               {doc.confidence && (
                 <>
                   <span className="text-foreground">{getEditsCount(index)} changes</span>

@@ -55,7 +55,7 @@ const EmailSelector = ({ selectedEmails, onEmailsChange }: EmailSelectorProps) =
   return (
     <div className="space-y-3">
       <div className="space-y-2">
-        <label className="text-sm font-medium text-gray-900">
+        <label className="text-sm font-medium text-foreground">
           Email Recipients
         </label>
         

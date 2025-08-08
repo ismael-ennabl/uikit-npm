@@ -97,7 +97,7 @@ const SummarizeModal = ({ open, onClose, onComplete }: SummarizeModalProps) => {
           <DialogTitle className="text-2xl font-bold text-center">
             Summarize Documents
           </DialogTitle>
-          <p className="text-base text-gray-600 text-center mt-2">
+          <p className="text-base text-muted-foreground text-center mt-2">
             Upload documents and we'll extract key insights instantly
           </p>
         </DialogHeader>

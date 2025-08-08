@@ -25,15 +25,14 @@ export const SummarizeFileList = ({ files, onRemoveFile }: SummarizeFileListProp
           {files.map((file) => (
             <div key={file.id} className="flex items-center justify-between py-3">
               <div className="flex items-center space-x-3">
-                <FileText className="h-4 w-4 text-black" />
+                <FileText className="h-4 w-4 text-foreground" />
                 <div>
-                  <p className="font-normal text-gray-900">{file.name}</p>
+                  <p className="font-normal text-foreground">{file.name}</p>
                 </div>
               </div>
               <div className="flex items-center">
                 <button 
-                  className="text-sm hover:opacity-75"
-                  style={{ color: '#0000C5' }}
+                  className="text-sm text-brand-blue hover:opacity-75"
                   onClick={() => onRemoveFile(file.id)}
                 >
                   Remove
