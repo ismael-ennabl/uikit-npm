@@ -9,7 +9,10 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
+    "build:lib": "npm --prefix lib run build",
+    "prestorybook": "npm run -s build:lib",
     "storybook": "storybook dev -p 6006",
+    "prebuild-storybook": "npm run -s build:lib",
     "build-storybook": "storybook build",
     "gen:stories": "node scripts/generate-stories.js"
   },
