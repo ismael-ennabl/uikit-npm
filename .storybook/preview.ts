@@ -3,8 +3,8 @@ import type { Preview } from '@storybook/react-vite'
 import '../lib/styles/index.css'
 // Load app tailwind styles so shadcn-based UI components render correctly in Storybook
 import '../src/index.css'
-// Theme overrides: unify default styling to tweakcn palette
-import '../src/styles/themes/tweakcn.css'
+// Theme overrides: unify default styling to the Ennabl UI theme palette
+import '../src/styles/themes/ennablui.css'
 
 const preview: Preview = {
   parameters: {

@@ -1,13 +1,12 @@
-/* Tweakcn theme tokens mapped to our CSS variables.
-   This is a lightweight mapping layer so UI components using Tailwind
-   tokens render with the imported theme. */
+/* Ennabl UI theme tokens mapped to our CSS variables.
+   One-theme repo: these values apply globally via :root. */
 
 :root {
   /* Backgrounds / Foregrounds */
   --background: 0 0% 100%;
   --foreground: 224 71% 4%;
 
-  /* Brand palette (adjusted to a vivid blue similar to tweakcn preview) */
+  /* Brand */
   --primary: 221 83% 53%;
   --primary-foreground: 210 40% 98%;
 
