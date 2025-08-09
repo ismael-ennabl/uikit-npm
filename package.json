@@ -9,7 +9,7 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-    "build:lib": "npm --prefix lib run build",
+    "build:lib": "npm --prefix lib ci && npm --prefix lib run build",
     "prestorybook": "npm run -s build:lib",
     "storybook": "storybook dev -p 6006",
     "prebuild-storybook": "npm run -s build:lib",
