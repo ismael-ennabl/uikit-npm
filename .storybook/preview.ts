@@ -1,27 +1,12 @@
-import type { Preview, Decorator } from '@storybook/react-vite'
+import type { Preview } from '@storybook/react-vite'
 // Load component library styles
 import '../lib/styles/index.css'
 // Load app tailwind styles so shadcn-based UI components render correctly in Storybook
 import '../src/index.css'
-// Optional theme (tweakcn) overrides, scoped by data-theme attribute
+// Theme overrides: unify default styling to tweakcn palette
 import '../src/styles/themes/tweakcn.css'
 
 const preview: Preview = {
-  globalTypes: {
-    theme: {
-      description: 'Theme for Storybook preview',
-      defaultValue: 'default',
-      toolbar: {
-        title: 'Theme',
-        icon: 'paintbrush',
-        items: [
-          { value: 'default', title: 'Default' },
-          { value: 'tweakcn', title: 'Tweakcn' },
-        ],
-        dynamicTitle: true,
-      },
-    },
-  },
   parameters: {
     controls: {
       matchers: {
@@ -47,19 +32,5 @@ const preview: Preview = {
     layout: 'fullscreen',
   },
 };
-
-// Decorator to apply selected theme by toggling a data attribute on <html>
-export const decorators: Decorator[] = [
-  (Story, context) => {
-    const theme = context.globals.theme ?? 'default';
-    const root = document.documentElement;
-    if (theme === 'default') {
-      root.removeAttribute('data-theme');
-    } else {
-      root.setAttribute('data-theme', String(theme));
-    }
-    return Story();
-  },
-];
 
 export default preview;
