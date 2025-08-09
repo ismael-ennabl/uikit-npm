@@ -1,0 +1,161 @@
+---
+alwaysApply: true
+---
+# Storybook Rules (Project: uikit-npm)
+
+Purpose: Author high-quality Storybook stories for this repository. These rules instruct the AI assistant exactly what “good” looks like for our stack and design system.
+
+Stack assumptions:
+- React + TypeScript + Vite + Tailwind + Storybook 9 (react-vite)
+- Single theme repo: Ennabl UI theme. Theme variables are defined via `src/index.css` and `src/styles/themes/ennablui.css` and loaded in `.storybook/preview.ts`.
+- UI Kit: Prefer `ennabl-ui-kit-beta` components and tokens. Import specific components only.
+- Tokens: Use `src/styles/tokens.ts` (re-exports from `lib/tokens`). Never hardcode colors/spacing/typography.
+
+Do/Don’t quick checks:
+- Do: CSF 3 stories, typed args, realistic controls, docs descriptions, accessibility
+- Don’t: fetch live data, hardcode styles, duplicate UI library components, wildcard imports
+
+---
+
+## 🎯 Goal
+When asked “Create Storybook stories for Component X”, do the following:
+1) Analyze the component API (props, variants, internal states). Identify boolean/enum/union props and default props.
+2) Generate stories covering: Default, Variants, Hidden elements, Disabled, Empty, Loading, Error (if applicable), and Extreme cases.
+3) Use CSF 3 format with good naming, args/argTypes, and docs descriptions. Keep stories self-contained with inline/mock data only.
+
+---
+
+## 🏛️ Story Structure & Conventions
+- Use CSF 3: `export const Example: Story = { args: { ... } }`.
+- Title: group under `Ennabl UI/<ComponentName>` for app components, or `Ennabl UI Kit/<ComponentName>` for library components.
+- Co-locate stories next to the component file with name `<Component>.stories.tsx`.
+- Include `tags: ['autodocs']` so Docs tab works well.
+- Provide argTypes for public props with helpful descriptions and sensible controls.
+- No external data fetching. Use inline constants or `@faker-js/faker` to synthesize data when needed.
+
+Skeleton:
+```ts
+import type { Meta, StoryObj } from '@storybook/react';
+import { Section } from './Section';
+// If using tokens
+import { COMPONENTS as TOKENS } from '@/styles/tokens';
+
+const meta: Meta<typeof Section> = {
+  title: 'Ennabl UI/Section',
+  component: Section,
+  tags: ['autodocs'],
+  argTypes: {
+    variant: {
+      control: 'select',
+      options: ['default', 'compact', 'spacious'],
+      description: 'Controls spacing and layout density',
+    },
+  },
+};
+export default meta;
+
+type Story = StoryObj<typeof Section>;
+
+export const Default: Story = {
+  args: {
+    title: 'Section title',
+    children: 'Content goes here',
+  },
+  parameters: {
+    docs: {
+      description: { story: 'Default layout for the Section component with title and content.' },
+    },
+  },
+};
+```
+
+---
+
+## 🔍 Required Variations (include if applicable)
+- Default: realistic props, primary use-case
+- Variants: enumerate all variant/enum/union props (e.g., `variant`, `size`, `tone`)
+- Hidden elements: props that hide/show parts (e.g., `showTitle={false}`)
+- Disabled: disabled buttons / non-interactive mode
+- Empty state: no data / no children; show placeholders/messages if supported
+- Loading: skeleton/spinner via `isLoading` or similar
+- Error: render fallback/error UI if component supports it
+- Extreme cases: long/overflowing text, large lists, unusual token combos
+
+If two variations are visually identical, skip duplicates.
+
+---
+
+## 🎨 Tokens & Theming
+- This is a one-theme repo (Ennabl UI). Stories render with the default theme – do not add theme toggles.
+- Use tokens from `src/styles/tokens.ts`. Never hardcode colors/spacing/typography. Example:
+```ts
+const wrapperClass = TOKENS.SECTION_HEADER.container; // preferred over raw strings
+```
+- If a component exposes token/slot props, include one story demonstrating token overrides via classNames or props, but reference tokens by name.
+
+---
+
+## 📖 Documentation Requirements
+- Story names: Title Case (e.g., `Empty State`, not `empty state`).
+- Every story should include a short docs description: what this state shows and when to use it.
+- For complex components, add usage notes (keyboard interactions, ARIA) in the Default story description.
+
+---
+
+## ⚙️ AI Behavior Rules
+- Detect all public props from the component definition.
+- Infer logical variations from boolean/enum/union props.
+- Generate at least: Default, all Variants (if any), Disabled, Empty, Loading. Add Error/Extreme when applicable.
+- Provide interactive controls for appropriate props (strings, numbers, enums, booleans).
+- Ensure imports are specific: `import { Button } from 'ennabl-ui-kit-beta'` – no wildcard imports.
+- Ensure Storybook compiles by resolving relative paths correctly and not importing Node-only modules.
+
+---
+
+## 🧪 Accessibility & Interactions
+- Prefer semantic elements and ensure keyboard accessibility in examples.
+- Demonstrate notable ARIA attributes if present.
+- Consider simple `play` tests for critical interactions (e.g., clicking primary action, tabbing focus).
+
+---
+
+## 📂 File Organization
+- Place stories next to the component: `Component.stories.tsx`.
+- Order stories logically: Default → Variants → Hidden/Disabled → Empty → Loading → Error → Extreme.
+
+---
+
+## 🛑 What NOT to Do
+- Do NOT fetch live data – always mock.
+- Do NOT leave props undocumented.
+- Do NOT create meaningless/duplicate variations.
+- Do NOT hardcode style values when tokens exist.
+- Do NOT introduce other UI libraries.
+
+---
+
+## 🧭 Example Output (Abbreviated)
+For props:
+```ts
+interface SectionProps {
+  title?: string;
+  variant?: 'default' | 'compact' | 'spacious';
+  isLoading?: boolean;
+  isDisabled?: boolean;
+}
+```
+Stories to include:
+- Default
+- Compact
+- Spacious
+- No Title
+- Disabled
+- Loading
+- Empty
+
+---
+
+## 📦 NPM & Kit References
+- NPM package: `ennabl-ui-kit-beta` (e.g., `import { Button } from 'ennabl-ui-kit-beta'`).
+- Ensure `ennabl-ui-kit-beta/dist/index.css` is loaded globally (already handled in `.storybook/preview.ts`). Do not import it per story.
+
