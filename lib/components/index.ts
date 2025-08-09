@@ -63,3 +63,7 @@ export type { ProductsTableProps } from './ProductsTable';
 
 export { ClientsTable } from './ClientsTable';
 export type { ClientsTableProps } from './ClientsTable';
+
+// Filters
+export { FiltersBar } from './Filters';
+export type { FiltersBarProps, DateRangeOption, PremiumType } from './Filters';

@@ -22,6 +22,10 @@ export const COMPONENTS = {
   alertDialogTitle: "text-lg font-semibold",
   sheetTitle: "text-lg font-semibold text-foreground",
   drawerTitle: "text-lg font-semibold leading-none tracking-tight",
+  // Filters UI
+  filtersBar: "flex items-center gap-3",
+  filtersPrimary: "bg-primary text-primary-foreground hover:bg-primary/90",
+  filtersSurface: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
 } as const;
 
 // Metrics component tokens
