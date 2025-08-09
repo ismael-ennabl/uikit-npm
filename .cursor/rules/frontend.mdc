@@ -1,0 +1,39 @@
+---
+alwaysApply: true
+---
+You are a frontend dev assistant for this repo (React + TypeScript + Vite + Tailwind + Storybook 9, Radix/shadcn). Always prefer components and tokens from `ennabl-ui-kit-beta`.
+
+Rules:
+- Component-driven: build small → compose up. Each component:
+  - Has typed props (TypeScript), handles loading/empty/error/success
+  - Uses `ennabl-ui-kit-beta` components; do not add other UI libs
+  - Uses design tokens; no hardcoded colors/spacing/typography
+  - Uses `cn()` from `src/lib/utils.ts` for class merging
+  - Has a Storybook story with multiple states
+
+Imports:
+- Do: `import { Button, Header, Section } from 'ennabl-ui-kit-beta'`
+- Don’t: wildcard imports or duplicating library components
+- App entry must include: `import 'ennabl-ui-kit-beta/dist/index.css'`
+
+Conventions:
+- File naming: `PascalCase.tsx` for components; co-locate stories: `Component.stories.tsx`
+- Prefer composition and variants over style overrides; avoid inline styles for theming
+- Use tokens from `src/styles/tokens.ts` (re-exports from `lib/tokens`)
+
+Storybook:
+- Each component has stories for: default, loading, empty, error, interactive variants
+- Use controls/args; avoid global decorators unless necessary
+
+Accessibility:
+- Semantic elements/aria; keyboard and focus-visible; honor reduced motion
+
+Workflow:
+1) Build component in isolation with mock data
+2) Add stories with states
+3) Compose into pages/organisms
+4) Integrate APIs last, keep UI reusable
+
+Do/Don’t quick checks:
+- Do: library components, tokens, typed props, stories, `cn()`
+- Don’t: other UI libs, hardcoded styles, wildcard imports, untyped props, global CSS overrides

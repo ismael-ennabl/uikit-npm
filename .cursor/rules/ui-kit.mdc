@@ -1,0 +1,59 @@
+---
+alwaysApply: true
+---
+UI Kit enforcement for this repo.
+
+Required:
+- Use `ennabl-ui-kit-beta` for all UI elements and design tokens.
+- Import styles once at app entry: `import 'ennabl-ui-kit-beta/dist/index.css'`.
+- Import specific components/types:
+  - `import { Button, Header, Section } from 'ennabl-ui-kit-beta'`
+  - `import type { ButtonProps } from 'ennabl-ui-kit-beta'`
+- Use tokens via `src/styles/tokens.ts` (re-exports from `lib/tokens`) instead of hardcoded values.
+- Use `cn()` from `src/lib/utils.ts` for Tailwind class merging.
+
+Prohibited:
+- Adding other UI libraries (e.g., MUI, AntD) or duplicating existing kit components.
+- Hardcoded colors/spacing/typography; no inline theming overrides.
+- `import * as UI from 'ennabl-ui-kit-beta'` wildcard imports.
+
+Examples:
+- Correct:
+  - `import { Button } from 'ennabl-ui-kit-beta'`
+  - `const card = tokens => ({ padding: tokens.spacing.md })`
+- Incorrect:
+  - `import * as UI from 'ennabl-ui-kit-beta'`
+  - `style={{ backgroundColor: '#ff0000' }}`
+
+Reference:
+- See `lib/BEST_PRACTICES.md` and `lib/QUICK_REFERENCE.md` for full guidance.
+
+---
+alwaysApply: true
+---
+UI Kit enforcement for this repo.
+
+Required:
+- Use `ennabl-ui-kit-beta` for all UI elements and design tokens.
+- Import styles once at app entry: `import 'ennabl-ui-kit-beta/dist/index.css'`.
+- Import specific components/types:
+  - `import { Button, Header, Section } from 'ennabl-ui-kit-beta'`
+  - `import type { ButtonProps } from 'ennabl-ui-kit-beta'`
+- Use tokens via `src/styles/tokens.ts` (re-exports from `lib/tokens`) instead of hardcoded values.
+- Use `cn()` from `src/lib/utils.ts` for Tailwind class merging.
+
+Prohibited:
+- Adding other UI libraries (e.g., MUI, AntD) or duplicating existing kit components.
+- Hardcoded colors/spacing/typography; no inline theming overrides.
+- `import * as UI from 'ennabl-ui-kit-beta'` wildcard imports.
+
+Examples:
+- Correct:
+  - `import { Button } from 'ennabl-ui-kit-beta'`
+  - `const card = tokens => ({ padding: tokens.spacing.md })`
+- Incorrect:
+  - `import * as UI from 'ennabl-ui-kit-beta'`
+  - `style={{ backgroundColor: '#ff0000' }}`
+
+Reference:
+- See `lib/BEST_PRACTICES.md` and `lib/QUICK_REFERENCE.md` for full guidance.
