@@ -18,8 +18,8 @@ export const TOOLTIP_STYLES = LIB_TOOLTIP_STYLES;
 
 // Page layout tokens (app-specific)
 export const PAGE = {
-  background: 'bg-page',
-  container: 'min-h-screen bg-page',
+  background: 'bg-[hsl(var(--page-background))]',
+  container: 'min-h-screen bg-[hsl(var(--page-background))]',
   content: 'flex flex-col min-h-screen',
 } as const;
 

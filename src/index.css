@@ -16,7 +16,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 240 1% 23%;
+    /* Brand primary (requested: #0000C5 ≈ hsl(240 100% 38.6%)) */
+    --primary: 240 100% 38.6%;
     --primary-foreground: 210 40% 98%;
 
     --brand-blue: 240 100% 38.6%;
@@ -49,7 +50,8 @@
 
     --radius: 0.5rem;
 
-    --page-background: 214 40% 98%;
+    /* Page background (requested: #F5F8FD ≈ hsl(217 66% 97%)) */
+    --page-background: 217 66% 97%;
 
     --sidebar-background: 0 0% 98%;
 

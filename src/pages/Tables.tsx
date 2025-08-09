@@ -3,6 +3,8 @@ import { Section } from '../../lib/components';
 import AnchorNavBar from "@/components/AnchorNavBar";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import 'ennabl-ui-kit-beta/dist/index.css';
+import { PAGE } from '@/styles/tokens';
+import { cn } from '@/lib/utils';
 
 // Refreshed components to use latest library version 0.1.20
 
@@ -29,7 +31,7 @@ const Tables = () => {
   ];
 
   return (
-    <div className="relative">
+    <div className={cn('relative', PAGE.container)}>
       <AnchorNavBar />
       <div className="p-6 space-y-8">
         <div className="max-w-7xl mx-auto">
