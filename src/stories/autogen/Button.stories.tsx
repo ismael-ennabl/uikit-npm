@@ -1,4 +1,3 @@
-import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from '../../../lib';
 import type { Meta, StoryObj } from '@storybook/react';
 
