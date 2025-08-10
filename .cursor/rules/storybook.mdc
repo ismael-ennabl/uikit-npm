@@ -159,11 +159,3 @@ Stories to include:
 - NPM package: `ennabl-ui-kit-beta` (e.g., `import { Button } from 'ennabl-ui-kit-beta'`).
 - Ensure `ennabl-ui-kit-beta/dist/index.css` is loaded globally (already handled in `.storybook/preview.ts`). Do not import it per story.
 
----
-
-## 🧰 Automation & Dev QoL
-- Always build the `lib` package before running Storybook so new/changed library exports are available:
-  - The repo provides npm lifecycle hooks: `prestorybook` and `prebuild-storybook` which call `npm run build:lib` automatically.
-  - If you add new components under `lib/`, rely on `npm run storybook` and `npm run build-storybook` to prebuild.
-- If Storybook fails with “module does not provide an export”, run `npm run build:lib` manually, then restart Storybook.
-

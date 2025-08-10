@@ -9,12 +9,10 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-    "build:lib": "npm --prefix lib ci && npm --prefix lib run build",
-    "prestorybook": "npm run -s build:lib",
     "storybook": "storybook dev -p 6006",
-    "prebuild-storybook": "npm run -s build:lib",
     "build-storybook": "storybook build",
-    "gen:stories": "node scripts/generate-stories.js"
+    "gen:stories": "node scripts/generate-stories.js",
+    "story-ui": "story-ui start --port 4001"
   },
   "dependencies": {
     "@faker-js/faker": "^9.9.0",
@@ -80,6 +78,7 @@
     "@storybook/addon-vitest": "^9.1.1",
     "@storybook/react-vite": "^9.1.1",
     "@tailwindcss/typography": "^0.5.15",
+    "@tpitre/story-ui": "^2.2.0",
     "@types/node": "^22.5.5",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",

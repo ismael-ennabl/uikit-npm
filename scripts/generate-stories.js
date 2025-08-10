@@ -106,8 +106,188 @@ function collectUiComponentNames(uiDir) {
   return names;
 }
 
+function uiTemplate(componentName) {
+  if (componentName === 'Accordion') {
+    return `import type { Meta, StoryObj } from '@storybook/react';
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '${libImportPath}';
+
+const meta: Meta<typeof Accordion> = {
+  title: 'Auto/UI/Accordion',
+  component: Accordion,
+  tags: ['autodocs'],
+};
+export default meta;
+
+type Story = StoryObj<typeof Accordion>;
+
+export const Default: Story = {
+  render: () => (
+    <Accordion type="single" collapsible className="w-[360px]">
+      <AccordionItem value="item-1">
+        <AccordionTrigger>Section 1</AccordionTrigger>
+        <AccordionContent>Content 1</AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-2">
+        <AccordionTrigger>Section 2</AccordionTrigger>
+        <AccordionContent>Content 2</AccordionContent>
+      </AccordionItem>
+    </Accordion>
+  ),
+};
+`;
+  }
+
+  if (componentName === 'Tabs') {
+    return `import type { Meta, StoryObj } from '@storybook/react';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '${libImportPath}';
+
+const meta: Meta<typeof Tabs> = {
+  title: 'Auto/UI/Tabs',
+  component: Tabs,
+  tags: ['autodocs'],
+};
+export default meta;
+
+type Story = StoryObj<typeof Tabs>;
+
+export const Default: Story = {
+  render: () => (
+    <Tabs defaultValue="tab1" className="w-[360px]">
+      <TabsList>
+        <TabsTrigger value="tab1">Tab 1</TabsTrigger>
+        <TabsTrigger value="tab2">Tab 2</TabsTrigger>
+      </TabsList>
+      <TabsContent value="tab1">Content 1</TabsContent>
+      <TabsContent value="tab2">Content 2</TabsContent>
+    </Tabs>
+  ),
+};
+`;
+  }
+
+  if (componentName === 'Section') {
+    return `import type { Meta, StoryObj } from '@storybook/react';
+import { Section } from '${libImportPath}';
+
+const meta: Meta<typeof Section> = {
+  title: 'Auto/Components/Section',
+  component: Section,
+  tags: ['autodocs'],
+};
+export default meta;
+
+type Story = StoryObj<typeof Section>;
+
+export const Default: Story = {
+  render: () => (
+    <div style={{ padding: 16 }}>
+      <Section id="example" title="Example Section" defaultOpen>
+        <div>Section content goes here.</div>
+      </Section>
+    </div>
+  ),
+};
+`;
+  }
+
+  if (componentName === 'SelectionToolbar') {
+    return `import type { Meta, StoryObj } from '@storybook/react';
+import { SelectionToolbar } from '${libImportPath}';
+import { Share2, Download } from 'lucide-react';
+
+const meta: Meta<typeof SelectionToolbar> = {
+  title: 'Auto/Components/SelectionToolbar',
+  component: SelectionToolbar,
+  tags: ['autodocs'],
+};
+export default meta;
+
+type Story = StoryObj<typeof SelectionToolbar>;
+
+export const Default: Story = {
+  render: () => (
+    <SelectionToolbar
+      selectedCount={2}
+      onClearSelection={() => {}}
+      actions={[
+        { icon: Share2, label: 'Share', onClick: () => {} },
+        { icon: Download, label: 'Download', onClick: () => {} },
+      ]}
+    />
+  ),
+};
+`;
+  }
+
+  if (componentName === 'PackageSelectionToolbar') {
+    return `import type { Meta, StoryObj } from '@storybook/react';
+import { PackageSelectionToolbar } from '${libImportPath}';
+
+const meta: Meta<typeof PackageSelectionToolbar> = {
+  title: 'Auto/Components/PackageSelectionToolbar',
+  component: PackageSelectionToolbar,
+  tags: ['autodocs'],
+};
+export default meta;
+
+type Story = StoryObj<typeof PackageSelectionToolbar>;
+
+export const Default: Story = {
+  render: () => (
+    <PackageSelectionToolbar
+      selectedCount={3}
+      onClearSelection={() => {}}
+      onShare={() => {}}
+      onExportExcel={() => {}}
+      onExportPDF={() => {}}
+      onDelete={() => {}}
+    />
+  ),
+};
+`;
+  }
+
+  if (componentName === 'DocumentSelectionToolbar') {
+    return `import type { Meta, StoryObj } from '@storybook/react';
+import { DocumentSelectionToolbar } from '${libImportPath}';
+
+const meta: Meta<typeof DocumentSelectionToolbar> = {
+  title: 'Auto/Components/DocumentSelectionToolbar',
+  component: DocumentSelectionToolbar,
+  tags: ['autodocs'],
+};
+export default meta;
+
+type Story = StoryObj<typeof DocumentSelectionToolbar>;
+
+export const Default: Story = {
+  render: () => (
+    <DocumentSelectionToolbar
+      selectedCount={4}
+      onClearSelection={() => {}}
+      onAskQuestions={() => {}}
+      onShare={() => {}}
+      onExportExcel={() => {}}
+      onExportPDF={() => {}}
+      onDigitize={() => {}}
+      onCompare={() => {}}
+      onMove={() => {}}
+      onDelete={() => {}}
+    />
+  ),
+};
+`;
+  }
+
+  return null;
+}
+
 function storyContent(componentName, group) {
   // Use render with @ts-ignore to avoid prop requirement friction
+  if (group === 'UI') {
+    const specialized = uiTemplate(componentName);
+    if (specialized) return specialized;
+  }
   return `import type { Meta, StoryObj } from '@storybook/react';
 import { ${componentName} } from '${libImportPath}';
 
