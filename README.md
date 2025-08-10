@@ -33,7 +33,7 @@ import 'ennabl-ui-kit-beta/dist/index.css';
 ## 🎨 Storybook
 
 Explore the full component library and usage examples live:
-**[Storybook Demo](https://your-storybook-url.com)**
+**[Storybook Demo](https://ismael-ennabl.github.io/uikit-npm/)**
 
 ## 🚀 Quick Usage Example
 

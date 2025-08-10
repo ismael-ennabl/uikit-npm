@@ -200,7 +200,7 @@ npm run release-checklist # Automated release
 ## 🆘 Need Help?
 
 - **📖 [Full Best Practices](./BEST_PRACTICES.md)**
-- **🎨 [Storybook](https://your-storybook-url.com)**
+- **🎨 [Storybook](https://ismael-ennabl.github.io/uikit-npm/)**
 - **🐛 [GitHub Issues](https://github.com/ismael-ennabl/uikit-npm/issues)**
 - **💬 [Discussions](https://github.com/ismael-ennabl/uikit-npm/discussions)**
 

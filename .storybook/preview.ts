@@ -1,34 +1,28 @@
-import type { Preview } from '@storybook/react-vite'
-// Library component styles
-import '../lib/styles/index.css'
+import type { Preview } from '@storybook/react-vite';
+// Library component styles (if present)
+// import '../lib/styles/index.css'
 // App Tailwind and CSS variables (single theme)
-import '../src/index.css'
+import '../src/index.css';
 // UI Kit CSS (ensure design tokens/styles are available)
-import 'ennabl-ui-kit-beta/dist/index.css'
+import 'ennabl-ui-kit-beta/dist/index.css';
 
 const preview: Preview = {
   parameters: {
     controls: {
       matchers: {
-       color: /(background|color)$/i,
-       date: /Date$/i,
+        color: /(background|color)$/i,
+        date: /Date$/i,
       },
     },
-
     a11y: {
-      // 'todo' - show a11y violations in the test UI only
-      // 'error' - fail CI on a11y violations
-      // 'off' - skip a11y checks entirely
-      test: 'todo'
+      test: 'todo',
     },
-
     docs: {
-      // Show the full source code in the docs
       source: {
-        state: 'open'
-      }
+        state: 'open',
+      },
+      autodocs: true,
     },
-
     layout: 'fullscreen',
   },
 };

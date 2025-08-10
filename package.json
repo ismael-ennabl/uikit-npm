@@ -9,10 +9,13 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "node scripts/gen-all-stories.js && storybook dev -p 6006",
     "build-storybook": "storybook build",
     "gen:stories": "node scripts/generate-stories.js",
-    "story-ui": "story-ui start --port 4001"
+    "story-ui": "story-ui start --port 4001",
+    "mcp:context7": "node mcp-servers/context7/dist/index.js --transport http --port 4010",
+    "mcp:design-systems": "node mcp-servers/design-systems-mcp/standalone-mcp-server.js",
+    "browserslist:update": "npm update caniuse-lite && npx --yes browserslist@latest --clear-cache"
   },
   "dependencies": {
     "@faker-js/faker": "^9.9.0",
